@@ -1,0 +1,143 @@
+Analysis started at 20191006_1135  and is located in /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC1-18S_S2_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC1-18S_S2_L001_R2_001.fastq
+Assembled reads ...................: 238,775 / 240,346 (99.346%)
+Discarded reads ...................: 1,571 / 240,346 (0.654%)
+
+Not assembled reads ...............: 0 / 240,346 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC2-18S_S3_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC2-18S_S3_L001_R2_001.fastq
+Assembled reads ...................: 173,051 / 173,756 (99.594%)
+Discarded reads ...................: 705 / 173,756 (0.406%)
+
+Not assembled reads ...............: 0 / 173,756 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC3-18S_S4_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC3-18S_S4_L001_R2_001.fastq
+Assembled reads ...................: 237,762 / 238,828 (99.554%)
+Discarded reads ...................: 1,066 / 238,828 (0.446%)
+
+Not assembled reads ...............: 0 / 238,828 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC4-18S_S5_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC4-18S_S5_L001_R2_001.fastq
+Assembled reads ...................: 151,163 / 151,901 (99.514%)
+Discarded reads ...................: 738 / 151,901 (0.486%)
+
+Not assembled reads ...............: 0 / 151,901 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC5-18S_S6_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC5-18S_S6_L001_R2_001.fastq
+Assembled reads ...................: 253,447 / 255,740 (99.103%)
+Discarded reads ...................: 2,293 / 255,740 (0.897%)
+
+Not assembled reads ...............: 0 / 255,740 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC6-18S_S7_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC6-18S_S7_L001_R2_001.fastq
+Assembled reads ...................: 213,561 / 214,433 (99.593%)
+Discarded reads ...................: 872 / 214,433 (0.407%)
+
+Not assembled reads ...............: 0 / 214,433 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC7-18S_S8_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC7-18S_S8_L001_R2_001.fastq
+Assembled reads ...................: 232,799 / 234,034 (99.472%)
+Discarded reads ...................: 1,235 / 234,034 (0.528%)
+
+Not assembled reads ...............: 0 / 234,034 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC9-18S_S9_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC9-18S_S9_L001_R2_001.fastq
+Assembled reads ...................: 214,103 / 215,141 (99.518%)
+Discarded reads ...................: 1,038 / 215,141 (0.482%)
+
+Not assembled reads ...............: 0 / 215,141 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC10-18S_S10_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC10-18S_S10_L001_R2_001.fastq
+Assembled reads ...................: 202,894 / 204,621 (99.156%)
+Discarded reads ...................: 1,727 / 204,621 (0.844%)
+
+Not assembled reads ...............: 0 / 204,621 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC12-18S_S11_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC12-18S_S11_L001_R2_001.fastq
+Assembled reads ...................: 160,132 / 160,674 (99.663%)
+Discarded reads ...................: 542 / 160,674 (0.337%)
+
+Not assembled reads ...............: 0 / 160,674 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC13-18S_S12_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC13-18S_S12_L001_R2_001.fastq
+Assembled reads ...................: 160,534 / 163,094 (98.430%)
+Discarded reads ...................: 2,560 / 163,094 (1.570%)
+
+Not assembled reads ...............: 0 / 163,094 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC14-18S_S13_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC14-18S_S13_L001_R2_001.fastq
+Assembled reads ...................: 152,448 / 153,291 (99.450%)
+Discarded reads ...................: 843 / 153,291 (0.550%)
+
+Not assembled reads ...............: 0 / 153,291 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC15-18S_S14_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC15-18S_S14_L001_R2_001.fastq
+Assembled reads ...................: 152,721 / 154,255 (99.006%)
+Discarded reads ...................: 1,534 / 154,255 (0.994%)
+
+Not assembled reads ...............: 0 / 154,255 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/GOC2a-18S_S15_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/GOC2a-18S_S15_L001_R2_001.fastq
+Assembled reads ...................: 136,585 / 138,722 (98.460%)
+Discarded reads ...................: 2,137 / 138,722 (1.540%)
+
+Not assembled reads ...............: 0 / 138,722 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/GOC2b-18S_S16_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/GOC2b-18S_S16_L001_R2_001.fastq
+Assembled reads ...................: 99,918 / 101,183 (98.750%)
+Discarded reads ...................: 1,265 / 101,183 (1.250%)
+
+Not assembled reads ...............: 0 / 101,183 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/CP23-18S_S17_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/CP23-18S_S17_L001_R2_001.fastq
+Assembled reads ...................: 239,233 / 242,813 (98.526%)
+Discarded reads ...................: 3,580 / 242,813 (1.474%)
+
+Not assembled reads ...............: 0 / 242,813 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC3-2-18S_S18_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC3-2-18S_S18_L001_R2_001.fastq
+Assembled reads ...................: 239,792 / 240,761 (99.598%)
+Discarded reads ...................: 969 / 240,761 (0.402%)
+
+Not assembled reads ...............: 0 / 240,761 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/CP23-2-18S_S19_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/CP23-2-18S_S19_L001_R2_001.fastq
+Assembled reads ...................: 185,709 / 187,592 (98.996%)
+Discarded reads ...................: 1,883 / 187,592 (1.004%)
+
+Not assembled reads ...............: 0 / 187,592 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC3-1-18S_S20_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC3-1-18S_S20_L001_R2_001.fastq
+Assembled reads ...................: 166,767 / 167,586 (99.511%)
+Discarded reads ...................: 819 / 167,586 (0.489%)
+
+Not assembled reads ...............: 0 / 167,586 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/CP23-1-18S_S21_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/CP23-1-18S_S21_L001_R2_001.fastq
+Assembled reads ...................: 220,299 / 223,451 (98.589%)
+Discarded reads ...................: 3,152 / 223,451 (1.411%)
+
+Not assembled reads ...............: 0 / 223,451 (0.000%)
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/NTC-1-18S_S1_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/NTC-1-18S_S1_L001_R2_001.fastq
+Assembled reads ...................: 36,051 / 523,292 (6.889%)
+Discarded reads ...................: 487,241 / 523,292 (93.111%)
+
+Not assembled reads ...............: 0 / 523,292 (0.000%)
+Assembled read mean = 94.796095%
+Discarded read mean = 5.203905%
+Count = 21

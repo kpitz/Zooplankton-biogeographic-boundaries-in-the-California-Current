@@ -1,0 +1,3110 @@
+Checking metadata file format for /home/mbonteam/MBARI/reiko/scripts/GOC_18S_Metadata.csv
+banzai_2019v1.2.sh: line 85: /home/mbonteam/dev/scripts/newline_fix.sh: No such file or directory
+Checking for dependencies: pear cutadapt vsearch swarm seqtk python blastn R
+Found program pear in /usr/local/bin/pear
+Found program cutadapt in /usr/bin/cutadapt
+Found program vsearch in /usr/local/bin/vsearch
+Found program swarm in /usr/local/bin/swarm
+Found program seqtk in /usr/local/bin/seqtk
+Found program python in /usr/bin/python
+Found program blastn in /usr/bin/blastn
+Found program R in /usr/bin/R
+pigz installation found
+32 cores detected; Running 8
+Analysis started at 20191006_1135  and is located in /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135
+Running script from: 
+banzai_2019v1.2.sh
+Parameters read from: 
+cutadapt_GOC_18S_params.sh
+metadata read from: 
+/home/mbonteam/MBARI/reiko/scripts/GOC_18S_Metadata.csv
+Checking for duplicate sample names.
+ 
+Multiplex tags read from sequencing metadata (21) total
+Primers read from sequencing metadata: GCTTGTCTCAAAGATTAAGCC GCCTGCTGCCTTCCTTGGA
+Primers read from metadata columns 5 and 6
+Primer sequences: GCTTGTCTCAAAGATTAAGCC GCCTGCTGCCTTCCTTGGA
+PRIMER2RC= TCCAAGGAAGGCAGCAGGC
+**** Extra_seq=, TTCTAGCT_AATTCTAGCT_AAGCTTGTCTCAAAGATTAAGCCGCCTGCTGCCTTCCTTGGA,  Length_ROI=, 388
+21 library directories found:
+Library names read from sequencing metadata (21) total
+L7
+L8
+L11
+L12
+L13
+L14
+L15
+L16
+L17
+L18
+L19
+L20
+L21
+L4
+L5
+L3
+L10
+L2
+L9
+L1
+L6
+Warning: Library directories and library names in metadata are NOT the same. Something will probably go wrong later...
+rm: cannot remove ‘/home/mbonteam/MBARI/reiko/scripts/data/*.fastq*’: No such file or directory
+Library  /BOG_Archive/Gulf_of_California/18S/L/L7
+11:35 copying  /BOG_Archive/Gulf_of_California/18S/L/L7/UC1-18S_S2_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC1-18S_S2_L001_R2_001.fastq.gz
+11:35 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC1-18S_S2_L001_R2_001.fastq.gz
+11:35 copying  /BOG_Archive/Gulf_of_California/18S/L/L7/UC1-18S_S2_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC1-18S_S2_L001_R1_001.fastq.gz
+11:35 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC1-18S_S2_L001_R1_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7
+11:35 Merging reads in library L7...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC1-18S_S2_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC1-18S_S2_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.255503
+  C: 0.253413
+  G: 0.225315
+  T: 0.265769
+  6231 uncalled bases
+Assemblying reads: 0%Assemblying reads: 28%Assemblying reads: 57%Assemblying reads: 86%Assemblying reads: 100%
+
+Assembled reads ...................: 238,775 / 240,346 (99.346%)
+Discarded reads ...................: 1,571 / 240,346 (0.654%)
+Not assembled reads ...............: 0 / 240,346 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7/1_merged.unassembled.reverse.fastq
+11:36 Filtering merged reads...
+211085 sequences kept (of which 0 truncated), 27690 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:36 Compressing PEAR output...
+11:36 PEAR output compressed.
+11:36 Renaming reads in library L7...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7/demultiplexed
+11:36 Demultiplexing: removing tags and adding to sequence ID in library L7...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7/demultiplexed/tag_TTCTAGCT_AA/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7/demultiplexed/tag_TTCTAGCT_AA/2_notags.fasta
+11:36 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7/demultiplexed/tag_TTCTAGCT_AA/2_notags.fasta
+11:36 211085 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7/demultiplexed/tag_TTCTAGCT_AA/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7/demultiplexed/tag_TTCTAGCT_AA/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.13 s (10 us/read; 5.95 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 211,085
+Reads with adapters:                   210,822 (99.9%)
+Reads that were too short:                 118 (0.1%)
+Reads written (passing filters):       210,704 (99.8%)
+
+Total basepairs processed:    86,167,026 bp
+Total written (filtered):     81,623,086 bp (94.7%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 210822 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	208	0.0	1	0 0 208
+20	4038	0.0	2	0 3728 310
+21	206150	0.0	2	198350 7654 146
+22	408	0.0	2	0 372 36
+23	18	0.0	2	0 0 18
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7/demultiplexed/tag_TTCTAGCT_AA/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.27 s (11 us/read; 5.57 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 210,704
+Reads with adapters:                   210,344 (99.8%)
+Reads that were too short:                   9 (0.0%)
+Reads written (passing filters):       210,335 (99.8%)
+
+Total basepairs processed:    81,623,086 bp
+Total written (filtered):     77,486,341 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 210344 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 96.7%
+  C: 0.1%
+  G: 0.5%
+  T: 2.7%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	1068	0.0	1	0 1068
+19	208893	0.0	1	201804 7089
+20	383	0.0	1	0 383
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L8
+11:36 copying  /BOG_Archive/Gulf_of_California/18S/L/L8/UC2-18S_S3_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC2-18S_S3_L001_R2_001.fastq.gz
+11:36 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC2-18S_S3_L001_R2_001.fastq.gz
+11:36 copying  /BOG_Archive/Gulf_of_California/18S/L/L8/UC2-18S_S3_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC2-18S_S3_L001_R1_001.fastq.gz
+11:36 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC2-18S_S3_L001_R1_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8
+11:36 Merging reads in library L8...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC2-18S_S3_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC2-18S_S3_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.257039
+  C: 0.252503
+  G: 0.223667
+  T: 0.266791
+  4309 uncalled bases
+Assemblying reads: 0%Assemblying reads: 39%Assemblying reads: 79%Assemblying reads: 100%
+
+Assembled reads ...................: 173,051 / 173,756 (99.594%)
+Discarded reads ...................: 705 / 173,756 (0.406%)
+Not assembled reads ...............: 0 / 173,756 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8/1_merged.unassembled.reverse.fastq
+11:36 Filtering merged reads...
+155306 sequences kept (of which 0 truncated), 17745 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:36 Compressing PEAR output...
+11:36 PEAR output compressed.
+11:36 Renaming reads in library L8...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8/demultiplexed
+11:37 Demultiplexing: removing tags and adding to sequence ID in library L8...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8/demultiplexed/tag_CCTAGAGT_AA/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8/demultiplexed/tag_CCTAGAGT_AA/2_notags.fasta
+11:37 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8/demultiplexed/tag_CCTAGAGT_AA/2_notags.fasta
+11:37 155306 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8/demultiplexed/tag_CCTAGAGT_AA/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8/demultiplexed/tag_CCTAGAGT_AA/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.54 s (10 us/read; 6.05 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 155,306
+Reads with adapters:                   155,108 (99.9%)
+Reads that were too short:                  77 (0.0%)
+Reads written (passing filters):       155,031 (99.8%)
+
+Total basepairs processed:    62,941,778 bp
+Total written (filtered):     59,597,096 bp (94.7%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 155108 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	130	0.0	1	0 0 130
+20	2874	0.0	2	0 2658 216
+21	151762	0.0	2	146099 5525 138
+22	333	0.0	2	0 303 30
+23	9	0.0	2	0 0 9
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8/demultiplexed/tag_CCTAGAGT_AA/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.69 s (11 us/read; 5.50 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 155,031
+Reads with adapters:                   154,749 (99.8%)
+Reads that were too short:                   8 (0.0%)
+Reads written (passing filters):       154,741 (99.8%)
+
+Total basepairs processed:    59,597,096 bp
+Total written (filtered):     56,547,417 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 154749 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 99.2%
+  C: 0.0%
+  G: 0.5%
+  T: 0.3%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	716	0.0	1	0 716
+19	153707	0.0	1	148434 5273
+20	326	0.0	1	0 326
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L11
+11:37 copying  /BOG_Archive/Gulf_of_California/18S/L/L11/UC3-18S_S4_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC3-18S_S4_L001_R1_001.fastq.gz
+11:37 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC3-18S_S4_L001_R1_001.fastq.gz
+11:37 copying  /BOG_Archive/Gulf_of_California/18S/L/L11/UC3-18S_S4_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC3-18S_S4_L001_R2_001.fastq.gz
+11:37 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC3-18S_S4_L001_R2_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11
+11:37 Merging reads in library L11...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC3-18S_S4_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC3-18S_S4_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.258331
+  C: 0.250836
+  G: 0.221819
+  T: 0.269014
+  6312 uncalled bases
+Assemblying reads: 0%Assemblying reads: 28%Assemblying reads: 57%Assemblying reads: 86%Assemblying reads: 100%
+
+Assembled reads ...................: 237,762 / 238,828 (99.554%)
+Discarded reads ...................: 1,066 / 238,828 (0.446%)
+Not assembled reads ...............: 0 / 238,828 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11/1_merged.unassembled.reverse.fastq
+11:37 Filtering merged reads...
+212042 sequences kept (of which 0 truncated), 25720 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:37 Compressing PEAR output...
+11:37 PEAR output compressed.
+11:37 Renaming reads in library L11...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11/demultiplexed
+11:37 Demultiplexing: removing tags and adding to sequence ID in library L11...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11/demultiplexed/tag_GCGTAAGA_AA/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11/demultiplexed/tag_GCGTAAGA_AA/2_notags.fasta
+11:37 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11/demultiplexed/tag_GCGTAAGA_AA/2_notags.fasta
+11:37 212042 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11/demultiplexed/tag_GCGTAAGA_AA/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11/demultiplexed/tag_GCGTAAGA_AA/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.11 s (10 us/read; 6.03 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 212,042
+Reads with adapters:                   211,782 (99.9%)
+Reads that were too short:                  93 (0.0%)
+Reads written (passing filters):       211,689 (99.8%)
+
+Total basepairs processed:    85,705,526 bp
+Total written (filtered):     81,144,341 bp (94.7%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 211782 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	182	0.0	1	0 0 182
+20	3958	0.0	2	0 3674 284
+21	207242	0.0	2	199388 7691 163
+22	389	0.0	2	0 360 29
+23	11	0.0	2	0 0 11
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11/demultiplexed/tag_GCGTAAGA_AA/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.23 s (11 us/read; 5.70 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 211,689
+Reads with adapters:                   211,386 (99.9%)
+Reads that were too short:                  18 (0.0%)
+Reads written (passing filters):       211,368 (99.8%)
+
+Total basepairs processed:    81,144,341 bp
+Total written (filtered):     77,009,649 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 211386 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 99.1%
+  C: 0.0%
+  G: 0.6%
+  T: 0.4%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	1123	0.0	1	0 1123
+19	209893	0.0	1	202737 7156
+20	370	0.0	1	0 370
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L12
+11:37 copying  /BOG_Archive/Gulf_of_California/18S/L/L12/UC4-18S_S5_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC4-18S_S5_L001_R1_001.fastq.gz
+11:37 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC4-18S_S5_L001_R1_001.fastq.gz
+11:37 copying  /BOG_Archive/Gulf_of_California/18S/L/L12/UC4-18S_S5_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC4-18S_S5_L001_R2_001.fastq.gz
+11:37 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC4-18S_S5_L001_R2_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12
+11:37 Merging reads in library L12...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC4-18S_S5_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC4-18S_S5_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.261919
+  C: 0.244978
+  G: 0.214998
+  T: 0.278104
+  4087 uncalled bases
+Assemblying reads: 0%Assemblying reads: 45%Assemblying reads: 90%Assemblying reads: 100%
+
+Assembled reads ...................: 151,163 / 151,901 (99.514%)
+Discarded reads ...................: 738 / 151,901 (0.486%)
+Not assembled reads ...............: 0 / 151,901 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12/1_merged.unassembled.reverse.fastq
+11:38 Filtering merged reads...
+134913 sequences kept (of which 0 truncated), 16250 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:38 Compressing PEAR output...
+11:38 PEAR output compressed.
+11:38 Renaming reads in library L12...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12/demultiplexed
+11:38 Demultiplexing: removing tags and adding to sequence ID in library L12...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12/demultiplexed/tag_CTATTAAG_AA/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12/demultiplexed/tag_CTATTAAG_AA/2_notags.fasta
+11:38 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12/demultiplexed/tag_CTATTAAG_AA/2_notags.fasta
+11:38 134913 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12/demultiplexed/tag_CTATTAAG_AA/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12/demultiplexed/tag_CTATTAAG_AA/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.35 s (10 us/read; 6.00 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 134,913
+Reads with adapters:                   134,773 (99.9%)
+Reads that were too short:                  56 (0.0%)
+Reads written (passing filters):       134,717 (99.9%)
+
+Total basepairs processed:    54,640,661 bp
+Total written (filtered):     51,749,627 bp (94.7%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 134773 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	123	0.0	1	0 0 123
+20	2561	0.0	2	0 2332 229
+21	131810	0.0	2	126827 4882 101
+22	273	0.0	2	0 249 24
+23	6	0.0	2	0 0 6
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12/demultiplexed/tag_CTATTAAG_AA/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.45 s (11 us/read; 5.57 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 134,717
+Reads with adapters:                   134,518 (99.9%)
+Reads that were too short:                   8 (0.0%)
+Reads written (passing filters):       134,510 (99.8%)
+
+Total basepairs processed:    51,749,627 bp
+Total written (filtered):     49,116,409 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 134518 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.7%
+  C: 0.0%
+  G: 0.6%
+  T: 0.6%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	627	0.0	1	0 627
+19	133632	0.0	1	129095 4537
+20	259	0.0	1	0 259
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L13
+11:38 copying  /BOG_Archive/Gulf_of_California/18S/L/L13/UC5-18S_S6_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC5-18S_S6_L001_R2_001.fastq.gz
+11:38 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC5-18S_S6_L001_R2_001.fastq.gz
+11:38 copying  /BOG_Archive/Gulf_of_California/18S/L/L13/UC5-18S_S6_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC5-18S_S6_L001_R1_001.fastq.gz
+11:38 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC5-18S_S6_L001_R1_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13
+11:38 Merging reads in library L13...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC5-18S_S6_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC5-18S_S6_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.247614
+  C: 0.257438
+  G: 0.232008
+  T: 0.262940
+  6963 uncalled bases
+Assemblying reads: 0%Assemblying reads: 26%Assemblying reads: 53%Assemblying reads: 80%Assemblying reads: 100%
+
+Assembled reads ...................: 253,447 / 255,740 (99.103%)
+Discarded reads ...................: 2,293 / 255,740 (0.897%)
+Not assembled reads ...............: 0 / 255,740 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13/1_merged.unassembled.reverse.fastq
+11:39 Filtering merged reads...
+220499 sequences kept (of which 0 truncated), 32948 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:39 Compressing PEAR output...
+11:39 PEAR output compressed.
+11:39 Renaming reads in library L13...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13/demultiplexed
+11:39 Demultiplexing: removing tags and adding to sequence ID in library L13...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13/demultiplexed/tag_AAGGCTAT_AA/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13/demultiplexed/tag_AAGGCTAT_AA/2_notags.fasta
+11:39 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13/demultiplexed/tag_AAGGCTAT_AA/2_notags.fasta
+11:39 220499 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13/demultiplexed/tag_AAGGCTAT_AA/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13/demultiplexed/tag_AAGGCTAT_AA/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.24 s (10 us/read; 5.91 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 220,499
+Reads with adapters:                   220,230 (99.9%)
+Reads that were too short:                 165 (0.1%)
+Reads written (passing filters):       220,066 (99.8%)
+
+Total basepairs processed:    91,159,553 bp
+Total written (filtered):     86,404,527 bp (94.8%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 220230 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	189	0.0	1	0 0 189
+20	4048	0.0	2	0 3824 224
+21	215521	0.0	2	207237 8107 177
+22	453	0.0	2	0 420 33
+23	19	0.0	2	0 0 19
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13/demultiplexed/tag_AAGGCTAT_AA/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.36 s (11 us/read; 5.59 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 220,066
+Reads with adapters:                   219,728 (99.8%)
+Reads that were too short:                  27 (0.0%)
+Reads written (passing filters):       219,701 (99.8%)
+
+Total basepairs processed:    86,404,527 bp
+Total written (filtered):     82,092,658 bp (95.0%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 219728 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.7%
+  C: 0.0%
+  G: 0.7%
+  T: 0.6%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	1016	0.0	1	0 1016
+19	218271	0.0	1	210987 7284
+20	441	0.0	1	0 441
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L14
+11:39 copying  /BOG_Archive/Gulf_of_California/18S/L/L14/UC6-18S_S7_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC6-18S_S7_L001_R2_001.fastq.gz
+11:39 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC6-18S_S7_L001_R2_001.fastq.gz
+11:39 copying  /BOG_Archive/Gulf_of_California/18S/L/L14/UC6-18S_S7_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC6-18S_S7_L001_R1_001.fastq.gz
+11:39 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC6-18S_S7_L001_R1_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14
+11:39 Merging reads in library L14...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC6-18S_S7_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC6-18S_S7_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.260340
+  C: 0.248114
+  G: 0.218561
+  T: 0.272985
+  5755 uncalled bases
+Assemblying reads: 0%Assemblying reads: 32%Assemblying reads: 64%Assemblying reads: 96%Assemblying reads: 100%
+
+Assembled reads ...................: 213,561 / 214,433 (99.593%)
+Discarded reads ...................: 872 / 214,433 (0.407%)
+Not assembled reads ...............: 0 / 214,433 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14/1_merged.unassembled.reverse.fastq
+11:39 Filtering merged reads...
+192519 sequences kept (of which 0 truncated), 21042 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:40 Compressing PEAR output...
+11:40 PEAR output compressed.
+11:40 Renaming reads in library L14...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14/demultiplexed
+11:40 Demultiplexing: removing tags and adding to sequence ID in library L14...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14/demultiplexed/tag_GAGCCTTA_AA/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14/demultiplexed/tag_GAGCCTTA_AA/2_notags.fasta
+11:40 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14/demultiplexed/tag_GAGCCTTA_AA/2_notags.fasta
+11:40 192519 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14/demultiplexed/tag_GAGCCTTA_AA/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14/demultiplexed/tag_GAGCCTTA_AA/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.97 s (10 us/read; 5.86 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 192,519
+Reads with adapters:                   192,265 (99.9%)
+Reads that were too short:                 106 (0.1%)
+Reads written (passing filters):       192,160 (99.8%)
+
+Total basepairs processed:    77,794,759 bp
+Total written (filtered):     73,644,743 bp (94.7%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 192265 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	190	0.0	1	0 0 190
+20	3520	0.0	2	0 3269 251
+21	188171	0.0	2	181403 6611 157
+22	374	0.0	2	0 344 30
+23	10	0.0	2	0 0 10
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14/demultiplexed/tag_GAGCCTTA_AA/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.05 s (11 us/read; 5.62 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 192,160
+Reads with adapters:                   191,902 (99.9%)
+Reads that were too short:                  17 (0.0%)
+Reads written (passing filters):       191,885 (99.9%)
+
+Total basepairs processed:    73,644,743 bp
+Total written (filtered):     69,897,356 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 191902 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 96.7%
+  C: 0.1%
+  G: 0.6%
+  T: 2.7%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	869	0.0	1	0 869
+19	190689	0.0	1	184269 6420
+20	344	0.0	1	0 344
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L15
+11:40 copying  /BOG_Archive/Gulf_of_California/18S/L/L15/UC7-18S_S8_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC7-18S_S8_L001_R1_001.fastq.gz
+11:40 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC7-18S_S8_L001_R1_001.fastq.gz
+11:40 copying  /BOG_Archive/Gulf_of_California/18S/L/L15/UC7-18S_S8_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC7-18S_S8_L001_R2_001.fastq.gz
+11:40 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC7-18S_S8_L001_R2_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15
+11:40 Merging reads in library L15...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC7-18S_S8_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC7-18S_S8_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.255215
+  C: 0.251985
+  G: 0.224495
+  T: 0.268305
+  6685 uncalled bases
+Assemblying reads: 0%Assemblying reads: 29%Assemblying reads: 58%Assemblying reads: 88%Assemblying reads: 100%
+
+Assembled reads ...................: 232,799 / 234,034 (99.472%)
+Discarded reads ...................: 1,235 / 234,034 (0.528%)
+Not assembled reads ...............: 0 / 234,034 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15/1_merged.unassembled.reverse.fastq
+11:40 Filtering merged reads...
+206506 sequences kept (of which 0 truncated), 26293 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:40 Compressing PEAR output...
+11:40 PEAR output compressed.
+11:40 Renaming reads in library L15...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15/demultiplexed
+11:40 Demultiplexing: removing tags and adding to sequence ID in library L15...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15/demultiplexed/tag_TTATGCGA_AA/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15/demultiplexed/tag_TTATGCGA_AA/2_notags.fasta
+11:40 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15/demultiplexed/tag_TTATGCGA_AA/2_notags.fasta
+11:40 206506 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15/demultiplexed/tag_TTATGCGA_AA/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15/demultiplexed/tag_TTATGCGA_AA/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.04 s (10 us/read; 6.07 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 206,506
+Reads with adapters:                   206,190 (99.8%)
+Reads that were too short:                 488 (0.2%)
+Reads written (passing filters):       205,712 (99.6%)
+
+Total basepairs processed:    84,020,776 bp
+Total written (filtered):     79,510,561 bp (94.6%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 206190 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	149	0.0	1	0 0 149
+20	3866	0.0	2	0 3563 303
+21	201732	0.0	2	194361 7194 177
+22	433	0.0	2	0 406 27
+23	10	0.0	2	0 0 10
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15/demultiplexed/tag_TTATGCGA_AA/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.18 s (11 us/read; 5.66 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 205,712
+Reads with adapters:                   205,410 (99.9%)
+Reads that were too short:                  37 (0.0%)
+Reads written (passing filters):       205,373 (99.8%)
+
+Total basepairs processed:    79,510,561 bp
+Total written (filtered):     75,484,990 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 205410 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.2%
+  C: 0.0%
+  G: 0.7%
+  T: 1.1%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	923	0.0	1	0 923
+19	204134	0.0	1	197380 6754
+20	353	0.0	1	0 353
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L16
+11:40 copying  /BOG_Archive/Gulf_of_California/18S/L/L16/UC9-18S_S9_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC9-18S_S9_L001_R1_001.fastq.gz
+11:40 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC9-18S_S9_L001_R1_001.fastq.gz
+11:41 copying  /BOG_Archive/Gulf_of_California/18S/L/L16/UC9-18S_S9_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC9-18S_S9_L001_R2_001.fastq.gz
+11:41 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC9-18S_S9_L001_R2_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16
+11:41 Merging reads in library L16...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC9-18S_S9_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC9-18S_S9_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.253769
+  C: 0.252871
+  G: 0.225576
+  T: 0.267785
+  6076 uncalled bases
+Assemblying reads: 0%Assemblying reads: 32%Assemblying reads: 64%Assemblying reads: 96%Assemblying reads: 100%
+
+Assembled reads ...................: 214,103 / 215,141 (99.518%)
+Discarded reads ...................: 1,038 / 215,141 (0.482%)
+Not assembled reads ...............: 0 / 215,141 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16/1_merged.unassembled.reverse.fastq
+11:41 Filtering merged reads...
+190254 sequences kept (of which 0 truncated), 23849 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:41 Compressing PEAR output...
+11:41 PEAR output compressed.
+11:41 Renaming reads in library L16...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16/demultiplexed
+11:41 Demultiplexing: removing tags and adding to sequence ID in library L16...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16/demultiplexed/tag_TCGACTAG_AA/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16/demultiplexed/tag_TCGACTAG_AA/2_notags.fasta
+11:41 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16/demultiplexed/tag_TCGACTAG_AA/2_notags.fasta
+11:41 190254 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16/demultiplexed/tag_TCGACTAG_AA/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16/demultiplexed/tag_TCGACTAG_AA/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.88 s (10 us/read; 6.07 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 190,254
+Reads with adapters:                   190,001 (99.9%)
+Reads that were too short:                  42 (0.0%)
+Reads written (passing filters):       189,960 (99.8%)
+
+Total basepairs processed:    77,199,830 bp
+Total written (filtered):     73,105,926 bp (94.7%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 190001 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	176	0.0	1	0 0 176
+20	3656	0.0	2	0 3369 287
+21	185746	0.0	2	178916 6672 158
+22	406	0.0	2	0 364 42
+23	17	0.0	2	0 0 17
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16/demultiplexed/tag_TCGACTAG_AA/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.95 s (10 us/read; 5.84 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 189,960
+Reads with adapters:                   189,646 (99.8%)
+Reads that were too short:                  48 (0.0%)
+Reads written (passing filters):       189,598 (99.8%)
+
+Total basepairs processed:    73,105,926 bp
+Total written (filtered):     69,373,744 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 189646 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 99.1%
+  C: 0.0%
+  G: 0.6%
+  T: 0.3%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	899	0.0	1	0 899
+19	188384	0.0	1	182239 6145
+20	363	0.0	1	0 363
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L17
+11:41 copying  /BOG_Archive/Gulf_of_California/18S/L/L17/UC10-18S_S10_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC10-18S_S10_L001_R1_001.fastq.gz
+11:41 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC10-18S_S10_L001_R1_001.fastq.gz
+11:41 copying  /BOG_Archive/Gulf_of_California/18S/L/L17/UC10-18S_S10_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC10-18S_S10_L001_R2_001.fastq.gz
+11:41 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC10-18S_S10_L001_R2_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17
+11:41 Merging reads in library L17...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC10-18S_S10_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC10-18S_S10_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.260296
+  C: 0.246392
+  G: 0.216648
+  T: 0.276663
+  5574 uncalled bases
+Assemblying reads: 0%Assemblying reads: 33%Assemblying reads: 67%Assemblying reads: 100%
+
+Assembled reads ...................: 202,894 / 204,621 (99.156%)
+Discarded reads ...................: 1,727 / 204,621 (0.844%)
+Not assembled reads ...............: 0 / 204,621 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17/1_merged.unassembled.reverse.fastq
+11:42 Filtering merged reads...
+180509 sequences kept (of which 0 truncated), 22385 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:42 Compressing PEAR output...
+11:42 PEAR output compressed.
+11:42 Renaming reads in library L17...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17/demultiplexed
+11:42 Demultiplexing: removing tags and adding to sequence ID in library L17...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17/demultiplexed/tag_TTCTAGCT_AG/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17/demultiplexed/tag_TTCTAGCT_AG/2_notags.fasta
+11:42 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17/demultiplexed/tag_TTCTAGCT_AG/2_notags.fasta
+11:42 180509 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17/demultiplexed/tag_TTCTAGCT_AG/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17/demultiplexed/tag_TTCTAGCT_AG/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.81 s (10 us/read; 5.98 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 180,509
+Reads with adapters:                   180,269 (99.9%)
+Reads that were too short:                 190 (0.1%)
+Reads written (passing filters):       180,080 (99.8%)
+
+Total basepairs processed:    73,225,711 bp
+Total written (filtered):     69,322,592 bp (94.7%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 180269 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	141	0.0	1	0 0 141
+20	3291	0.0	2	0 3073 218
+21	176462	0.0	2	170324 6012 126
+22	366	0.0	2	0 334 32
+23	9	0.0	2	0 0 9
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17/demultiplexed/tag_TTCTAGCT_AG/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.86 s (10 us/read; 5.81 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 180,080
+Reads with adapters:                   179,863 (99.9%)
+Reads that were too short:                  32 (0.0%)
+Reads written (passing filters):       179,831 (99.9%)
+
+Total basepairs processed:    69,322,592 bp
+Total written (filtered):     65,816,534 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 179863 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.7%
+  C: 0.0%
+  G: 0.6%
+  T: 0.6%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	886	0.0	1	0 886
+19	178652	0.0	1	172940 5712
+20	325	0.0	1	0 325
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L18
+11:42 copying  /BOG_Archive/Gulf_of_California/18S/L/L18/UC12-18S_S11_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC12-18S_S11_L001_R2_001.fastq.gz
+11:42 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC12-18S_S11_L001_R2_001.fastq.gz
+11:42 copying  /BOG_Archive/Gulf_of_California/18S/L/L18/UC12-18S_S11_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC12-18S_S11_L001_R1_001.fastq.gz
+11:42 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC12-18S_S11_L001_R1_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18
+11:42 Merging reads in library L18...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC12-18S_S11_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC12-18S_S11_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.263454
+  C: 0.245252
+  G: 0.214599
+  T: 0.276695
+  4293 uncalled bases
+Assemblying reads: 0%Assemblying reads: 42%Assemblying reads: 85%Assemblying reads: 100%
+
+Assembled reads ...................: 160,132 / 160,674 (99.663%)
+Discarded reads ...................: 542 / 160,674 (0.337%)
+Not assembled reads ...............: 0 / 160,674 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18/1_merged.unassembled.reverse.fastq
+11:42 Filtering merged reads...
+144303 sequences kept (of which 0 truncated), 15829 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:42 Compressing PEAR output...
+11:42 PEAR output compressed.
+11:42 Renaming reads in library L18...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18/demultiplexed
+11:42 Demultiplexing: removing tags and adding to sequence ID in library L18...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18/demultiplexed/tag_CCTAGAGT_AG/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18/demultiplexed/tag_CCTAGAGT_AG/2_notags.fasta
+11:42 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18/demultiplexed/tag_CCTAGAGT_AG/2_notags.fasta
+11:42 144303 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18/demultiplexed/tag_CCTAGAGT_AG/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18/demultiplexed/tag_CCTAGAGT_AG/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.43 s (10 us/read; 6.05 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 144,303
+Reads with adapters:                   144,095 (99.9%)
+Reads that were too short:                 169 (0.1%)
+Reads written (passing filters):       143,926 (99.7%)
+
+Total basepairs processed:    58,352,381 bp
+Total written (filtered):     55,225,045 bp (94.6%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 144095 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	123	0.0	1	0 0 123
+20	2595	0.0	2	0 2418 177
+21	141077	0.0	2	136221 4746 110
+22	293	0.0	2	0 265 28
+23	7	0.0	2	0 0 7
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18/demultiplexed/tag_CCTAGAGT_AG/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.50 s (10 us/read; 5.76 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 143,926
+Reads with adapters:                   143,728 (99.9%)
+Reads that were too short:                 116 (0.1%)
+Reads written (passing filters):       143,612 (99.8%)
+
+Total basepairs processed:    55,225,045 bp
+Total written (filtered):     52,396,641 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 143728 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.8%
+  C: 0.0%
+  G: 0.6%
+  T: 0.6%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	678	0.0	1	0 678
+19	142777	0.0	1	138250 4527
+20	273	0.0	1	0 273
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L19
+11:43 copying  /BOG_Archive/Gulf_of_California/18S/L/L19/UC13-18S_S12_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC13-18S_S12_L001_R2_001.fastq.gz
+11:43 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC13-18S_S12_L001_R2_001.fastq.gz
+11:43 copying  /BOG_Archive/Gulf_of_California/18S/L/L19/UC13-18S_S12_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC13-18S_S12_L001_R1_001.fastq.gz
+11:43 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC13-18S_S12_L001_R1_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19
+11:43 Merging reads in library L19...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC13-18S_S12_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC13-18S_S12_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.258935
+  C: 0.250223
+  G: 0.219414
+  T: 0.271429
+  4366 uncalled bases
+Assemblying reads: 0%Assemblying reads: 42%Assemblying reads: 84%Assemblying reads: 100%
+
+Assembled reads ...................: 160,534 / 163,094 (98.430%)
+Discarded reads ...................: 2,560 / 163,094 (1.570%)
+Not assembled reads ...............: 0 / 163,094 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19/1_merged.unassembled.reverse.fastq
+11:43 Filtering merged reads...
+142975 sequences kept (of which 0 truncated), 17559 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:43 Compressing PEAR output...
+11:43 PEAR output compressed.
+11:43 Renaming reads in library L19...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19/demultiplexed
+11:43 Demultiplexing: removing tags and adding to sequence ID in library L19...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19/demultiplexed/tag_GCGTAAGA_AG/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19/demultiplexed/tag_GCGTAAGA_AG/2_notags.fasta
+11:43 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19/demultiplexed/tag_GCGTAAGA_AG/2_notags.fasta
+11:43 142975 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19/demultiplexed/tag_GCGTAAGA_AG/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19/demultiplexed/tag_GCGTAAGA_AG/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.43 s (10 us/read; 6.00 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 142,975
+Reads with adapters:                   142,836 (99.9%)
+Reads that were too short:                 197 (0.1%)
+Reads written (passing filters):       142,639 (99.8%)
+
+Total basepairs processed:    57,848,315 bp
+Total written (filtered):     54,770,391 bp (94.7%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 142836 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	117	0.0	1	0 0 117
+20	2508	0.0	2	0 2319 189
+21	139921	0.0	2	134985 4840 96
+22	287	0.0	2	0 269 18
+23	3	0.0	2	0 0 3
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19/demultiplexed/tag_GCGTAAGA_AG/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.52 s (11 us/read; 5.63 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 142,639
+Reads with adapters:                   142,415 (99.8%)
+Reads that were too short:                   7 (0.0%)
+Reads written (passing filters):       142,408 (99.8%)
+
+Total basepairs processed:    54,770,391 bp
+Total written (filtered):     51,977,819 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 142415 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 96.6%
+  C: 0.1%
+  G: 0.6%
+  T: 2.8%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	671	0.0	1	0 671
+19	141505	0.0	1	137055 4450
+20	239	0.0	1	0 239
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L20
+11:43 copying  /BOG_Archive/Gulf_of_California/18S/L/L20/UC14-18S_S13_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC14-18S_S13_L001_R1_001.fastq.gz
+11:43 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC14-18S_S13_L001_R1_001.fastq.gz
+11:43 copying  /BOG_Archive/Gulf_of_California/18S/L/L20/UC14-18S_S13_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC14-18S_S13_L001_R2_001.fastq.gz
+11:43 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC14-18S_S13_L001_R2_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20
+11:43 Merging reads in library L20...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC14-18S_S13_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC14-18S_S13_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.261321
+  C: 0.244053
+  G: 0.213900
+  T: 0.280725
+  4122 uncalled bases
+Assemblying reads: 0%Assemblying reads: 44%Assemblying reads: 89%Assemblying reads: 100%
+
+Assembled reads ...................: 152,448 / 153,291 (99.450%)
+Discarded reads ...................: 843 / 153,291 (0.550%)
+Not assembled reads ...............: 0 / 153,291 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20/1_merged.unassembled.reverse.fastq
+11:44 Filtering merged reads...
+135249 sequences kept (of which 0 truncated), 17199 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:44 Compressing PEAR output...
+11:44 PEAR output compressed.
+11:44 Renaming reads in library L20...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20/demultiplexed
+11:44 Demultiplexing: removing tags and adding to sequence ID in library L20...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20/demultiplexed/tag_CTATTAAG_AG/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20/demultiplexed/tag_CTATTAAG_AG/2_notags.fasta
+11:44 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20/demultiplexed/tag_CTATTAAG_AG/2_notags.fasta
+11:44 135249 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20/demultiplexed/tag_CTATTAAG_AG/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20/demultiplexed/tag_CTATTAAG_AG/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.38 s (10 us/read; 5.88 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 135,249
+Reads with adapters:                   135,114 (99.9%)
+Reads that were too short:                 131 (0.1%)
+Reads written (passing filters):       134,985 (99.8%)
+
+Total basepairs processed:    55,015,903 bp
+Total written (filtered):     52,109,872 bp (94.7%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 135114 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	98	0.0	1	0 0 98
+20	2460	0.0	2	0 2285 175
+21	132294	0.0	2	127659 4523 112
+22	256	0.0	2	0 231 25
+23	6	0.0	2	0 0 6
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20/demultiplexed/tag_CTATTAAG_AG/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.43 s (11 us/read; 5.66 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 134,985
+Reads with adapters:                   134,801 (99.9%)
+Reads that were too short:                  77 (0.1%)
+Reads written (passing filters):       134,724 (99.8%)
+
+Total basepairs processed:    52,109,872 bp
+Total written (filtered):     49,463,780 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 134801 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.0%
+  C: 0.1%
+  G: 0.6%
+  T: 1.3%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	621	0.0	1	0 621
+19	133933	0.0	1	129645 4288
+20	247	0.0	1	0 247
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L21
+11:44 copying  /BOG_Archive/Gulf_of_California/18S/L/L21/UC15-18S_S14_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC15-18S_S14_L001_R2_001.fastq.gz
+11:44 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC15-18S_S14_L001_R2_001.fastq.gz
+11:44 copying  /BOG_Archive/Gulf_of_California/18S/L/L21/UC15-18S_S14_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC15-18S_S14_L001_R1_001.fastq.gz
+11:44 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC15-18S_S14_L001_R1_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21
+11:44 Merging reads in library L21...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC15-18S_S14_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC15-18S_S14_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.259096
+  C: 0.251781
+  G: 0.221483
+  T: 0.267640
+  4171 uncalled bases
+Assemblying reads: 0%Assemblying reads: 44%Assemblying reads: 89%Assemblying reads: 100%
+
+Assembled reads ...................: 152,721 / 154,255 (99.006%)
+Discarded reads ...................: 1,534 / 154,255 (0.994%)
+Not assembled reads ...............: 0 / 154,255 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21/1_merged.unassembled.reverse.fastq
+11:44 Filtering merged reads...
+137070 sequences kept (of which 0 truncated), 15651 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:44 Compressing PEAR output...
+11:44 PEAR output compressed.
+11:44 Renaming reads in library L21...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21/demultiplexed
+11:44 Demultiplexing: removing tags and adding to sequence ID in library L21...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21/demultiplexed/tag_AAGGCTAT_AG/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21/demultiplexed/tag_AAGGCTAT_AG/2_notags.fasta
+11:44 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21/demultiplexed/tag_AAGGCTAT_AG/2_notags.fasta
+11:44 137070 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21/demultiplexed/tag_AAGGCTAT_AG/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21/demultiplexed/tag_AAGGCTAT_AG/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.35 s (10 us/read; 6.09 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 137,070
+Reads with adapters:                   136,924 (99.9%)
+Reads that were too short:                 156 (0.1%)
+Reads written (passing filters):       136,769 (99.8%)
+
+Total basepairs processed:    55,445,078 bp
+Total written (filtered):     52,496,103 bp (94.7%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 136924 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	113	0.0	1	0 0 113
+20	2583	0.0	2	0 2393 190
+21	133935	0.0	2	129162 4680 93
+22	289	0.0	2	0 264 25
+23	4	0.0	2	0 0 4
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21/demultiplexed/tag_AAGGCTAT_AG/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.41 s (10 us/read; 5.82 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 136,769
+Reads with adapters:                   136,533 (99.8%)
+Reads that were too short:                 119 (0.1%)
+Reads written (passing filters):       136,414 (99.7%)
+
+Total basepairs processed:    52,496,103 bp
+Total written (filtered):     49,789,498 bp (94.8%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 136533 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.8%
+  C: 0.1%
+  G: 0.5%
+  T: 0.6%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	626	0.0	1	0 626
+19	135645	0.0	1	131085 4560
+20	262	0.0	1	0 262
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L4
+11:44 copying  /BOG_Archive/Gulf_of_California/18S/L/L4/GOC2a-18S_S15_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/GOC2a-18S_S15_L001_R1_001.fastq.gz
+11:44 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/GOC2a-18S_S15_L001_R1_001.fastq.gz
+11:44 copying  /BOG_Archive/Gulf_of_California/18S/L/L4/GOC2a-18S_S15_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/GOC2a-18S_S15_L001_R2_001.fastq.gz
+11:44 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/GOC2a-18S_S15_L001_R2_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4
+11:44 Merging reads in library L4...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/GOC2a-18S_S15_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/GOC2a-18S_S15_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.254716
+  C: 0.254105
+  G: 0.225095
+  T: 0.266084
+  4170 uncalled bases
+Assemblying reads: 0%Assemblying reads: 49%Assemblying reads: 99%Assemblying reads: 100%
+
+Assembled reads ...................: 136,585 / 138,722 (98.460%)
+Discarded reads ...................: 2,137 / 138,722 (1.540%)
+Not assembled reads ...............: 0 / 138,722 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4/1_merged.unassembled.reverse.fastq
+11:45 Filtering merged reads...
+119929 sequences kept (of which 0 truncated), 16656 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:45 Compressing PEAR output...
+11:45 PEAR output compressed.
+11:45 Renaming reads in library L4...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4/demultiplexed
+11:45 Demultiplexing: removing tags and adding to sequence ID in library L4...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4/demultiplexed/tag_GAGCCTTA_AG/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4/demultiplexed/tag_GAGCCTTA_AG/2_notags.fasta
+11:45 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4/demultiplexed/tag_GAGCCTTA_AG/2_notags.fasta
+11:45 119929 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4/demultiplexed/tag_GAGCCTTA_AG/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4/demultiplexed/tag_GAGCCTTA_AG/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.19 s (10 us/read; 6.05 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 119,929
+Reads with adapters:                   119,800 (99.9%)
+Reads that were too short:                 306 (0.3%)
+Reads written (passing filters):       119,494 (99.6%)
+
+Total basepairs processed:    48,910,616 bp
+Total written (filtered):     46,312,002 bp (94.7%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 119800 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	109	0.0	1	0 0 109
+20	2242	0.0	2	0 2078 164
+21	117174	0.0	2	112817 4279 78
+22	269	0.0	2	0 248 21
+23	6	0.0	2	0 0 6
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4/demultiplexed/tag_GAGCCTTA_AG/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.30 s (11 us/read; 5.52 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 119,494
+Reads with adapters:                   119,325 (99.9%)
+Reads that were too short:                  16 (0.0%)
+Reads written (passing filters):       119,309 (99.8%)
+
+Total basepairs processed:    46,312,002 bp
+Total written (filtered):     43,976,812 bp (95.0%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 119325 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.3%
+  C: 0.1%
+  G: 0.6%
+  T: 1.0%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	580	0.0	1	0 580
+19	118540	0.0	1	114799 3741
+20	205	0.0	1	0 205
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L5
+11:45 copying  /BOG_Archive/Gulf_of_California/18S/L/L5/GOC2b-18S_S16_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/GOC2b-18S_S16_L001_R2_001.fastq.gz
+11:45 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/GOC2b-18S_S16_L001_R2_001.fastq.gz
+11:45 copying  /BOG_Archive/Gulf_of_California/18S/L/L5/GOC2b-18S_S16_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/GOC2b-18S_S16_L001_R1_001.fastq.gz
+11:45 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/GOC2b-18S_S16_L001_R1_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5
+11:45 Merging reads in library L5...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/GOC2b-18S_S16_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/GOC2b-18S_S16_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.253936
+  C: 0.255369
+  G: 0.223683
+  T: 0.267012
+  3804 uncalled bases
+Assemblying reads: 0%Assemblying reads: 68%Assemblying reads: 100%
+
+Assembled reads ...................: 99,918 / 101,183 (98.750%)
+Discarded reads ...................: 1,265 / 101,183 (1.250%)
+Not assembled reads ...............: 0 / 101,183 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5/1_merged.unassembled.reverse.fastq
+11:45 Filtering merged reads...
+81118 sequences kept (of which 0 truncated), 18800 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:45 Compressing PEAR output...
+11:45 PEAR output compressed.
+11:45 Renaming reads in library L5...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5/demultiplexed
+11:45 Demultiplexing: removing tags and adding to sequence ID in library L5...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5/demultiplexed/tag_TTATGCGA_AG/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5/demultiplexed/tag_TTATGCGA_AG/2_notags.fasta
+11:45 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5/demultiplexed/tag_TTATGCGA_AG/2_notags.fasta
+11:45 81118 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5/demultiplexed/tag_TTATGCGA_AG/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5/demultiplexed/tag_TTATGCGA_AG/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 0.79 s (10 us/read; 6.16 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                  81,118
+Reads with adapters:                    80,879 (99.7%)
+Reads that were too short:                 709 (0.9%)
+Reads written (passing filters):        80,195 (98.9%)
+
+Total basepairs processed:    32,875,635 bp
+Total written (filtered):     31,031,985 bp (94.4%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 80879 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	74	0.0	1	0 0 74
+20	1477	0.0	2	0 1390 87
+21	79135	0.0	2	75920 3163 52
+22	191	0.0	2	0 173 18
+23	2	0.0	2	0 0 2
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5/demultiplexed/tag_TTATGCGA_AG/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 0.84 s (10 us/read; 5.73 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                  80,195
+Reads with adapters:                    80,080 (99.9%)
+Reads that were too short:                  10 (0.0%)
+Reads written (passing filters):        80,070 (99.8%)
+
+Total basepairs processed:    31,031,985 bp
+Total written (filtered):     29,464,270 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 80080 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.1%
+  C: 0.0%
+  G: 0.7%
+  T: 1.2%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	389	0.0	1	0 389
+19	79545	0.0	1	76748 2797
+20	146	0.0	1	0 146
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L3
+11:45 copying  /BOG_Archive/Gulf_of_California/18S/L/L3/CP23-18S_S17_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/CP23-18S_S17_L001_R1_001.fastq.gz
+11:45 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/CP23-18S_S17_L001_R1_001.fastq.gz
+11:45 copying  /BOG_Archive/Gulf_of_California/18S/L/L3/CP23-18S_S17_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/CP23-18S_S17_L001_R2_001.fastq.gz
+11:45 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/CP23-18S_S17_L001_R2_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3
+11:45 Merging reads in library L3...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/CP23-18S_S17_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/CP23-18S_S17_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.254534
+  C: 0.252938
+  G: 0.224790
+  T: 0.267738
+  6614 uncalled bases
+Assemblying reads: 0%Assemblying reads: 28%Assemblying reads: 56%Assemblying reads: 85%Assemblying reads: 100%
+
+Assembled reads ...................: 239,233 / 242,813 (98.526%)
+Discarded reads ...................: 3,580 / 242,813 (1.474%)
+Not assembled reads ...............: 0 / 242,813 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3/1_merged.unassembled.reverse.fastq
+11:46 Filtering merged reads...
+210821 sequences kept (of which 0 truncated), 28412 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:46 Compressing PEAR output...
+11:46 PEAR output compressed.
+11:46 Renaming reads in library L3...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3/demultiplexed
+11:46 Demultiplexing: removing tags and adding to sequence ID in library L3...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3/demultiplexed/tag_TCGACTAG_AG/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3/demultiplexed/tag_TCGACTAG_AG/2_notags.fasta
+11:46 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3/demultiplexed/tag_TCGACTAG_AG/2_notags.fasta
+11:46 210821 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3/demultiplexed/tag_TCGACTAG_AG/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3/demultiplexed/tag_TCGACTAG_AG/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.17 s (10 us/read; 5.83 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 210,821
+Reads with adapters:                   210,554 (99.9%)
+Reads that were too short:                  36 (0.0%)
+Reads written (passing filters):       210,520 (99.9%)
+
+Total basepairs processed:    86,402,331 bp
+Total written (filtered):     81,871,827 bp (94.8%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 210554 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	186	0.0	1	0 0 186
+20	4086	0.0	2	0 3796 290
+21	205834	0.0	2	198121 7546 167
+22	437	0.0	2	0 390 47
+23	11	0.0	2	0 0 11
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3/demultiplexed/tag_TCGACTAG_AG/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.21 s (10 us/read; 5.72 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 210,520
+Reads with adapters:                   210,135 (99.8%)
+Reads that were too short:                 128 (0.1%)
+Reads written (passing filters):       210,007 (99.8%)
+
+Total basepairs processed:    81,871,827 bp
+Total written (filtered):     77,706,489 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 210135 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.1%
+  C: 0.1%
+  G: 0.6%
+  T: 1.3%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	1112	0.0	1	0 1112
+19	208619	0.0	1	201435 7184
+20	404	0.0	1	0 404
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L10
+11:46 copying  /BOG_Archive/Gulf_of_California/18S/L/L10/UC3-2-18S_S18_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC3-2-18S_S18_L001_R1_001.fastq.gz
+11:46 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC3-2-18S_S18_L001_R1_001.fastq.gz
+11:46 copying  /BOG_Archive/Gulf_of_California/18S/L/L10/UC3-2-18S_S18_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC3-2-18S_S18_L001_R2_001.fastq.gz
+11:46 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC3-2-18S_S18_L001_R2_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10
+11:46 Merging reads in library L10...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC3-2-18S_S18_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC3-2-18S_S18_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.258461
+  C: 0.251314
+  G: 0.222035
+  T: 0.268190
+  7189 uncalled bases
+Assemblying reads: 0%Assemblying reads: 28%Assemblying reads: 57%Assemblying reads: 85%Assemblying reads: 100%
+
+Assembled reads ...................: 239,792 / 240,761 (99.598%)
+Discarded reads ...................: 969 / 240,761 (0.402%)
+Not assembled reads ...............: 0 / 240,761 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10/1_merged.unassembled.reverse.fastq
+11:47 Filtering merged reads...
+216533 sequences kept (of which 0 truncated), 23259 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:47 Compressing PEAR output...
+11:47 PEAR output compressed.
+11:47 Renaming reads in library L10...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10/demultiplexed
+11:47 Demultiplexing: removing tags and adding to sequence ID in library L10...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10/demultiplexed/tag_TTCTAGCT_AT/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10/demultiplexed/tag_TTCTAGCT_AT/2_notags.fasta
+11:47 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10/demultiplexed/tag_TTCTAGCT_AT/2_notags.fasta
+11:47 216533 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10/demultiplexed/tag_TTCTAGCT_AT/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10/demultiplexed/tag_TTCTAGCT_AT/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.19 s (10 us/read; 5.93 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 216,533
+Reads with adapters:                   216,258 (99.9%)
+Reads that were too short:                 122 (0.1%)
+Reads written (passing filters):       216,137 (99.8%)
+
+Total basepairs processed:    87,483,691 bp
+Total written (filtered):     82,818,583 bp (94.7%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 216258 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	152	0.0	1	0 0 152
+20	3808	0.0	2	0 3547 261
+21	211874	0.0	2	204378 7346 150
+22	411	0.0	2	0 377 34
+23	13	0.0	2	0 0 13
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10/demultiplexed/tag_TTCTAGCT_AT/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.23 s (10 us/read; 5.82 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 216,137
+Reads with adapters:                   215,816 (99.9%)
+Reads that were too short:                  28 (0.0%)
+Reads written (passing filters):       215,788 (99.8%)
+
+Total basepairs processed:    82,818,583 bp
+Total written (filtered):     78,590,643 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 215816 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.7%
+  C: 0.0%
+  G: 0.6%
+  T: 0.7%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	991	0.0	1	0 991
+19	214372	0.0	1	207124 7248
+20	453	0.0	1	0 453
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L2
+11:47 copying  /BOG_Archive/Gulf_of_California/18S/L/L2/CP23-2-18S_S19_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/CP23-2-18S_S19_L001_R1_001.fastq.gz
+11:47 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/CP23-2-18S_S19_L001_R1_001.fastq.gz
+11:47 copying  /BOG_Archive/Gulf_of_California/18S/L/L2/CP23-2-18S_S19_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/CP23-2-18S_S19_L001_R2_001.fastq.gz
+11:47 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/CP23-2-18S_S19_L001_R2_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2
+11:47 Merging reads in library L2...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/CP23-2-18S_S19_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/CP23-2-18S_S19_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.261058
+  C: 0.244138
+  G: 0.214429
+  T: 0.280374
+  4985 uncalled bases
+Assemblying reads: 0%Assemblying reads: 36%Assemblying reads: 73%Assemblying reads: 100%
+
+Assembled reads ...................: 185,709 / 187,592 (98.996%)
+Discarded reads ...................: 1,883 / 187,592 (1.004%)
+Not assembled reads ...............: 0 / 187,592 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2/1_merged.unassembled.reverse.fastq
+11:47 Filtering merged reads...
+163414 sequences kept (of which 0 truncated), 22295 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:47 Compressing PEAR output...
+11:47 PEAR output compressed.
+11:47 Renaming reads in library L2...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2/demultiplexed
+11:47 Demultiplexing: removing tags and adding to sequence ID in library L2...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2/demultiplexed/tag_CCTAGAGT_AT/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2/demultiplexed/tag_CCTAGAGT_AT/2_notags.fasta
+11:47 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2/demultiplexed/tag_CCTAGAGT_AT/2_notags.fasta
+11:47 163414 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2/demultiplexed/tag_CCTAGAGT_AT/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2/demultiplexed/tag_CCTAGAGT_AT/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.65 s (10 us/read; 5.94 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 163,414
+Reads with adapters:                   163,245 (99.9%)
+Reads that were too short:                  26 (0.0%)
+Reads written (passing filters):       163,219 (99.9%)
+
+Total basepairs processed:    66,796,132 bp
+Total written (filtered):     63,298,519 bp (94.8%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 163245 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	129	0.0	1	0 0 129
+20	3015	0.0	2	0 2787 228
+21	159751	0.0	2	154032 5610 109
+22	338	0.0	2	0 316 22
+23	12	0.0	2	0 0 12
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2/demultiplexed/tag_CCTAGAGT_AT/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.73 s (11 us/read; 5.66 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 163,219
+Reads with adapters:                   162,958 (99.8%)
+Reads that were too short:                  65 (0.0%)
+Reads written (passing filters):       162,893 (99.8%)
+
+Total basepairs processed:    63,298,519 bp
+Total written (filtered):     60,089,722 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 162958 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.2%
+  C: 0.1%
+  G: 0.6%
+  T: 1.1%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	808	0.0	1	0 808
+19	161809	0.0	1	156172 5637
+20	341	0.0	1	0 341
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L9
+11:47 copying  /BOG_Archive/Gulf_of_California/18S/L/L9/UC3-1-18S_S20_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC3-1-18S_S20_L001_R2_001.fastq.gz
+11:47 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC3-1-18S_S20_L001_R2_001.fastq.gz
+11:47 copying  /BOG_Archive/Gulf_of_California/18S/L/L9/UC3-1-18S_S20_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/UC3-1-18S_S20_L001_R1_001.fastq.gz
+11:47 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/UC3-1-18S_S20_L001_R1_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9
+11:47 Merging reads in library L9...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC3-1-18S_S20_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/UC3-1-18S_S20_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.257977
+  C: 0.251184
+  G: 0.221947
+  T: 0.268891
+  5200 uncalled bases
+Assemblying reads: 0%Assemblying reads: 41%Assemblying reads: 82%Assemblying reads: 100%
+
+Assembled reads ...................: 166,767 / 167,586 (99.511%)
+Discarded reads ...................: 819 / 167,586 (0.489%)
+Not assembled reads ...............: 0 / 167,586 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9/1_merged.unassembled.reverse.fastq
+11:48 Filtering merged reads...
+148689 sequences kept (of which 0 truncated), 18078 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:48 Compressing PEAR output...
+11:48 PEAR output compressed.
+11:48 Renaming reads in library L9...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9/demultiplexed
+11:48 Demultiplexing: removing tags and adding to sequence ID in library L9...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9/demultiplexed/tag_GCGTAAGA_AT/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9/demultiplexed/tag_GCGTAAGA_AT/2_notags.fasta
+11:48 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9/demultiplexed/tag_GCGTAAGA_AT/2_notags.fasta
+11:48 148689 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9/demultiplexed/tag_GCGTAAGA_AT/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9/demultiplexed/tag_GCGTAAGA_AT/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.47 s (10 us/read; 6.07 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 148,689
+Reads with adapters:                   148,528 (99.9%)
+Reads that were too short:                  82 (0.1%)
+Reads written (passing filters):       148,446 (99.8%)
+
+Total basepairs processed:    60,087,760 bp
+Total written (filtered):     56,896,456 bp (94.7%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 148528 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	133	0.0	1	0 0 133
+20	2598	0.0	2	0 2421 177
+21	145494	0.0	2	140285 5111 98
+22	298	0.0	2	0 278 20
+23	5	0.0	2	0 0 5
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9/demultiplexed/tag_GCGTAAGA_AT/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.58 s (11 us/read; 5.64 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 148,446
+Reads with adapters:                   148,248 (99.9%)
+Reads that were too short:                  10 (0.0%)
+Reads written (passing filters):       148,238 (99.9%)
+
+Total basepairs processed:    56,896,456 bp
+Total written (filtered):     54,002,534 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 148248 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.8%
+  C: 0.0%
+  G: 0.7%
+  T: 0.4%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	642	0.0	1	0 642
+19	147308	0.0	1	142432 4876
+20	298	0.0	1	0 298
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L1
+11:48 copying  /BOG_Archive/Gulf_of_California/18S/L/L1/CP23-1-18S_S21_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/CP23-1-18S_S21_L001_R1_001.fastq.gz
+11:48 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/CP23-1-18S_S21_L001_R1_001.fastq.gz
+11:48 copying  /BOG_Archive/Gulf_of_California/18S/L/L1/CP23-1-18S_S21_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/CP23-1-18S_S21_L001_R2_001.fastq.gz
+11:48 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/CP23-1-18S_S21_L001_R2_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1
+11:48 Merging reads in library L1...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/CP23-1-18S_S21_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/CP23-1-18S_S21_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.253780
+  C: 0.253846
+  G: 0.225133
+  T: 0.267242
+  5940 uncalled bases
+Assemblying reads: 0%Assemblying reads: 30%Assemblying reads: 61%Assemblying reads: 92%Assemblying reads: 100%
+
+Assembled reads ...................: 220,299 / 223,451 (98.589%)
+Discarded reads ...................: 3,152 / 223,451 (1.411%)
+Not assembled reads ...............: 0 / 223,451 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1/1_merged.unassembled.reverse.fastq
+11:49 Filtering merged reads...
+191117 sequences kept (of which 0 truncated), 29182 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:49 Compressing PEAR output...
+11:49 PEAR output compressed.
+11:49 Renaming reads in library L1...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1/demultiplexed
+11:49 Demultiplexing: removing tags and adding to sequence ID in library L1...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1/demultiplexed/tag_CTATTAAG_AT/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1/demultiplexed/tag_CTATTAAG_AT/2_notags.fasta
+11:49 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1/demultiplexed/tag_CTATTAAG_AT/2_notags.fasta
+11:49 191117 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1/demultiplexed/tag_CTATTAAG_AT/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1/demultiplexed/tag_CTATTAAG_AT/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 1.90 s (10 us/read; 6.04 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 191,117
+Reads with adapters:                   190,914 (99.9%)
+Reads that were too short:                  37 (0.0%)
+Reads written (passing filters):       190,877 (99.9%)
+
+Total basepairs processed:    78,316,727 bp
+Total written (filtered):     74,223,986 bp (94.8%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 190914 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	159	0.0	1	0 0 159
+20	3375	0.0	2	0 3098 277
+21	186972	0.0	2	180492 6341 139
+22	392	0.0	2	0 359 33
+23	16	0.0	2	0 0 16
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1/demultiplexed/tag_CTATTAAG_AT/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2.02 s (11 us/read; 5.67 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 190,877
+Reads with adapters:                   190,612 (99.9%)
+Reads that were too short:                 182 (0.1%)
+Reads written (passing filters):       190,430 (99.8%)
+
+Total basepairs processed:    74,223,986 bp
+Total written (filtered):     70,465,512 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 190612 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.0%
+  C: 0.0%
+  G: 0.7%
+  T: 1.4%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	863	0.0	1	0 863
+19	189420	0.0	1	182977 6443
+20	329	0.0	1	0 329
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Library  /BOG_Archive/Gulf_of_California/18S/L/L6
+11:49 copying  /BOG_Archive/Gulf_of_California/18S/L/L6/NTC-1-18S_S1_L001_R2_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/NTC-1-18S_S1_L001_R2_001.fastq.gz
+11:49 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/NTC-1-18S_S1_L001_R2_001.fastq.gz
+11:49 copying  /BOG_Archive/Gulf_of_California/18S/L/L6/NTC-1-18S_S1_L001_R1_001.fastq.gz /home/mbonteam/MBARI/reiko/scripts/data/NTC-1-18S_S1_L001_R1_001.fastq.gz
+11:49 decompressing  pigz -d /home/mbonteam/MBARI/reiko/scripts/data/NTC-1-18S_S1_L001_R1_001.fastq.gz
+find READS in  /home/mbonteam/MBARI/reiko/scripts/data
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6
+11:49 Merging reads in library L6...
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ <
+|_|   |_____/_/   \_\_| \_\
+
+PEAR v0.9.6 [January 15, 2015]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+Forward reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/NTC-1-18S_S1_L001_R1_001.fastq
+Reverse reads file.................: /home/mbonteam/MBARI/reiko/scripts/data/NTC-1-18S_S1_L001_R2_001.fastq
+PHRED..............................: 33
+Using empirical frequencies........: YES
+Statistical method.................: OES
+Maximum assembly length............: 450
+Minimum assembly length............: 75
+p-value............................: 0.010000
+Quality score threshold (trimming).: 19
+Minimum read size after trimming...: 75
+Maximal ratio of uncalled bases....: 0.000000
+Minimum overlap....................: 50
+Scoring method.....................: Scaled score
+Threads............................: 8
+
+Allocating memory..................: 200,000,000 bytes
+Computing empirical frequencies....: DONE
+  A: 0.245969
+  C: 0.260561
+  G: 0.238975
+  T: 0.254495
+  1995026 uncalled bases
+Assemblying reads: 0%Assemblying reads: 39%Assemblying reads: 61%Assemblying reads: 82%Assemblying reads: 100%Assemblying reads: 100%
+
+Assembled reads ...................: 36,051 / 523,292 (6.889%)
+Discarded reads ...................: 487,241 / 523,292 (93.111%)
+Not assembled reads ...............: 0 / 523,292 (0.000%)
+Assembled reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6/1_merged.assembled.fastq
+Discarded reads file...............: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6/1_merged.discarded.fastq
+Unassembled forward reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6/1_merged.unassembled.forward.fastq
+Unassembled reverse reads file.....: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6/1_merged.unassembled.reverse.fastq
+11:49 Filtering merged reads...
+28133 sequences kept (of which 0 truncated), 7918 sequences discarded.
+vsearch v1.8.0_linux_x86_64, 62.8GB RAM, 32 cores
+https://github.com/torognes/vsearch
+
+11:49 Compressing PEAR output...
+11:49 PEAR output compressed.
+11:49 Renaming reads in library L6...
+FILTERED_OUTPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6/2_filtered_renamed.fasta
+Homopolymers not removed.
+mkdir /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6/demultiplexed
+11:49 Demultiplexing: removing tags and adding to sequence ID in library L6...
+demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6/demultiplexed/tag_AAGGCTAT_AT/2_notags.fasta
+[ "${REMOVE_PRIMER}" == "YES" ]
+**demult_file_R= /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6/demultiplexed/tag_AAGGCTAT_AT/2_notags.fasta
+11:49 Counting sequences in primer removal input... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6/demultiplexed/tag_AAGGCTAT_AT/2_notags.fasta
+11:49 28133 sequences found in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6/demultiplexed/tag_AAGGCTAT_AT/2_notags.fasta
+prime_1: 
+ primerL1_removed="${primerL1_removed}"
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -g ^GCTTGTCTCAAAGATTAAGCC -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6/demultiplexed/tag_AAGGCTAT_AT/2_notags.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 0.28 s (10 us/read; 6.03 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                  28,133
+Reads with adapters:                    28,105 (99.9%)
+Reads that were too short:                  62 (0.2%)
+Reads written (passing filters):        28,048 (99.7%)
+
+Total basepairs processed:    11,197,907 bp
+Total written (filtered):     10,593,858 bp (94.6%)
+
+=== Adapter 1 ===
+
+Sequence: GCTTGTCTCAAAGATTAAGCC; Type: anchored 5'; Length: 21; Trimmed: 28105 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+19	21	0.0	1	0 0 21
+20	577	0.0	2	0 531 46
+21	27446	0.0	2	26475 946 25
+22	48	0.0	2	0 42 6
+23	13	0.0	2	0 0 13
+
+This is cutadapt 1.8.3 with Python 2.7.5
+Command line parameters: -a TCCAAGGAAGGCAGCAGGC$ -e 0.10 -m 194 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6/demultiplexed/tag_AAGGCTAT_AT/5_primerL1_removed.fasta
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 0.29 s (10 us/read; 5.80 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                  28,048
+Reads with adapters:                    28,023 (99.9%)
+Reads that were too short:                   0 (0.0%)
+Reads written (passing filters):        28,023 (99.9%)
+
+Total basepairs processed:    10,593,858 bp
+Total written (filtered):     10,052,006 bp (94.9%)
+
+=== Adapter 1 ===
+
+Sequence: TCCAAGGAAGGCAGCAGGC; Type: anchored 3'; Length: 19; Trimmed: 28023 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.9%
+  C: 0.1%
+  G: 0.7%
+  T: 0.3%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+18	152	0.0	1	0 152
+19	27820	0.0	1	26918 902
+20	51	0.0	1	0 51
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+CAT_FASTA= 7_no_primers.fasta
+11:49 Concatenating fasta files... /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/1_demult_concat.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L7/demultiplexed/tag_TTCTAGCT_AA/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L8/demultiplexed/tag_CCTAGAGT_AA/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L11/demultiplexed/tag_GCGTAAGA_AA/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L12/demultiplexed/tag_CTATTAAG_AA/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L13/demultiplexed/tag_AAGGCTAT_AA/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L14/demultiplexed/tag_GAGCCTTA_AA/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L15/demultiplexed/tag_TTATGCGA_AA/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L16/demultiplexed/tag_TCGACTAG_AA/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L17/demultiplexed/tag_TTCTAGCT_AG/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L18/demultiplexed/tag_CCTAGAGT_AG/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L19/demultiplexed/tag_GCGTAAGA_AG/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L20/demultiplexed/tag_CTATTAAG_AG/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L21/demultiplexed/tag_AAGGCTAT_AG/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L4/demultiplexed/tag_GAGCCTTA_AG/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L5/demultiplexed/tag_TTATGCGA_AG/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L3/demultiplexed/tag_TCGACTAG_AG/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L10/demultiplexed/tag_TTCTAGCT_AT/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L2/demultiplexed/tag_CCTAGAGT_AT/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L9/demultiplexed/tag_GCGTAAGA_AT/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L1/demultiplexed/tag_CTATTAAG_AT/7_no_primers.fasta
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/L6/demultiplexed/tag_AAGGCTAT_AT/7_no_primers.fasta
+11:49 Counting reads associated with each sample index (primer tag)...
+11:49 Summary of sequences belonging to each sample index found in /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/1_demult_concat.fasta.tags
+11:49 Identifying identical sequences... python /home/mbonteam/dev/dereplication/dereplicate_fasta.py /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/1_demult_concat.fasta
+11:50 Counting duplicates per identical sequence and excluding singletons... (awk)
+processing batch sample_batch_aa
+11:50 Processing L7_TTCTAGCT...
+11:50 Processing L8_CCTAGAGT...
+11:50 Processing L11_GCGTAAGA...
+11:50 Processing L12_CTATTAAG...
+11:50 Processing L13_AAGGCTAT...
+11:50 Processing L14_GAGCCTTA...
+11:50 Processing L15_TTATGCGA...
+11:50 Processing L16_TCGACTAG...
+processing batch sample_batch_ab
+11:50 Processing L17_TTCTAGCT...
+11:50 Processing L18_CCTAGAGT...
+11:50 Processing L19_GCGTAAGA...
+11:50 Processing L20_CTATTAAG...
+11:50 Processing L21_AAGGCTAT...
+11:50 Processing L4_GAGCCTTA...
+11:50 Processing L5_TTATGCGA...
+11:50 Processing L3_TCGACTAG...
+processing batch sample_batch_ac
+11:50 Processing L10_TTCTAGCT...
+11:50 Processing L2_CCTAGAGT...
+11:50 Processing L9_GCGTAAGA...
+11:50 Processing L1_CTATTAAG...
+11:50 Processing L6_AAGGCTAT...
+11:50 Identical sequences consolidated in file /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/duplicate_table.csv
+11:50 Writing fasta file of duplicate sequences
+11:50 Clustering OTUs...
+11:50 Clustering sequences into OTUs using swarm
+dup_to_OTU_table.R processing ...
+:::::::::::::::::::::: BLAST ::::::::::::::::::::::::::::::::
+12:05  BLASTing...
+ Database:  /MBON/blastdb/nt/nt
+ Percent identity:  80
+ Word size:  11
+ E value:  1e-5
+ Culling Limit:  20
+ Output format: 5
+ Blast input:  /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/OTUs_swarm/OTUs.fasta
+ Blast output:  /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/GOC_20191006_1135_18S_nt.xml
+Taxonomic annotion with MEGAN
+00:13 /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/GOC_20191006_1135_18S_nt.xml ,BLAST output found; proceeding to create Post_Blast file.
+POST_BLAST_FILE= Post_BLAST_processing_20191006_1135.sh
+00:13 Compressing fasta, fastq, and xml files...
+00:14 Cleanup performed.
+
+00:14	 Pipeline finished! Why not treat yourself to a...
+
+
+	~~~ MAI TAI ~~~
+	2 oz	aged rum
+	0.75 oz	fresh squeezed lime juice
+	0.5 oz	orgeat
+	0.5 oz	triple sec
+	0.25 oz	simple syrup
+	Shake, strain, and enjoy! 🍹
+
+
+******************** TAXONOMIC ASSIGNMENT **********************
+*                                                              *
+*   Run Post_BLAST_processing file from your script directory  *
+*        bash  Post_BLAST_processing_20191006_1135.sh        *
+*                                                              *
+*********************** MEGAN & BIOM ***************************
+
+
+OTU_table count= 51910
+OTU_fasta count= 51910
+BLAST count= 51911
+Data are in  /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135

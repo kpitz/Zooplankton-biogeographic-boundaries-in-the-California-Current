@@ -1,0 +1,608 @@
+122- primerL1_removed="${primerL1_removed}"
+123-This is cutadapt 1.8.3 with Python 2.7.5
+124-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N7/demultiplexed/tag_TTCTAGCT_AA/2_notags.fasta
+125:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+139-
+140-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 330849 times.
+141-
+142:No. of allowed errors:
+143-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+144-
+145-Overview of removed sequences
+146:length	count	expect	max.err	error counts
+--
+152-
+153-This is cutadapt 1.8.3 with Python 2.7.5
+154-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N7/demultiplexed/tag_TTCTAGCT_AA/5_primerL1_removed.fasta
+155:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+169-
+170-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 328462 times.
+171-
+172:No. of allowed errors:
+--
+180-  none/other: 0.0%
+181-
+182-Overview of removed sequences
+183:length	count	expect	max.err	error counts
+--
+257- primerL1_removed="${primerL1_removed}"
+258-This is cutadapt 1.8.3 with Python 2.7.5
+259-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N8/demultiplexed/tag_CCTAGAGT_AA/2_notags.fasta
+260:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+274-
+275-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 280949 times.
+276-
+277:No. of allowed errors:
+278-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+279-
+280-Overview of removed sequences
+281:length	count	expect	max.err	error counts
+--
+287-
+288-This is cutadapt 1.8.3 with Python 2.7.5
+289-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N8/demultiplexed/tag_CCTAGAGT_AA/5_primerL1_removed.fasta
+290:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+304-
+305-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 279095 times.
+306-
+307:No. of allowed errors:
+--
+319-    To fix the problem, add "T" to the beginning of the adapter sequence.
+320-
+321-Overview of removed sequences
+322:length	count	expect	max.err	error counts
+--
+399- primerL1_removed="${primerL1_removed}"
+400-This is cutadapt 1.8.3 with Python 2.7.5
+401-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N11/demultiplexed/tag_GCGTAAGA_AA/2_notags.fasta
+402:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+416-
+417-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 543937 times.
+418-
+419:No. of allowed errors:
+420-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+421-
+422-Overview of removed sequences
+423:length	count	expect	max.err	error counts
+--
+429-
+430-This is cutadapt 1.8.3 with Python 2.7.5
+431-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N11/demultiplexed/tag_GCGTAAGA_AA/5_primerL1_removed.fasta
+432:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+446-
+447-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 537711 times.
+448-
+449:No. of allowed errors:
+--
+457-  none/other: 0.0%
+458-
+459-Overview of removed sequences
+460:length	count	expect	max.err	error counts
+--
+534- primerL1_removed="${primerL1_removed}"
+535-This is cutadapt 1.8.3 with Python 2.7.5
+536-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N12/demultiplexed/tag_CTATTAAG_AA/2_notags.fasta
+537:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+551-
+552-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 280559 times.
+553-
+554:No. of allowed errors:
+555-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+556-
+557-Overview of removed sequences
+558:length	count	expect	max.err	error counts
+--
+564-
+565-This is cutadapt 1.8.3 with Python 2.7.5
+566-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N12/demultiplexed/tag_CTATTAAG_AA/5_primerL1_removed.fasta
+567:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+581-
+582-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 279210 times.
+583-
+584:No. of allowed errors:
+--
+596-    To fix the problem, add "T" to the beginning of the adapter sequence.
+597-
+598-Overview of removed sequences
+599:length	count	expect	max.err	error counts
+--
+675- primerL1_removed="${primerL1_removed}"
+676-This is cutadapt 1.8.3 with Python 2.7.5
+677-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N13/demultiplexed/tag_AAGGCTAT_AA/2_notags.fasta
+678:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+692-
+693-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 361949 times.
+694-
+695:No. of allowed errors:
+696-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+697-
+698-Overview of removed sequences
+699:length	count	expect	max.err	error counts
+--
+705-
+706-This is cutadapt 1.8.3 with Python 2.7.5
+707-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N13/demultiplexed/tag_AAGGCTAT_AA/5_primerL1_removed.fasta
+708:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+722-
+723-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 355789 times.
+724-
+725:No. of allowed errors:
+--
+737-    To fix the problem, add "T" to the beginning of the adapter sequence.
+738-
+739-Overview of removed sequences
+740:length	count	expect	max.err	error counts
+--
+817- primerL1_removed="${primerL1_removed}"
+818-This is cutadapt 1.8.3 with Python 2.7.5
+819-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N14/demultiplexed/tag_GAGCCTTA_AA/2_notags.fasta
+820:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+834-
+835-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 371044 times.
+836-
+837:No. of allowed errors:
+838-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+839-
+840-Overview of removed sequences
+841:length	count	expect	max.err	error counts
+--
+847-
+848-This is cutadapt 1.8.3 with Python 2.7.5
+849-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N14/demultiplexed/tag_GAGCCTTA_AA/5_primerL1_removed.fasta
+850:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+864-
+865-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 366719 times.
+866-
+867:No. of allowed errors:
+--
+879-    To fix the problem, add "T" to the beginning of the adapter sequence.
+880-
+881-Overview of removed sequences
+882:length	count	expect	max.err	error counts
+--
+959- primerL1_removed="${primerL1_removed}"
+960-This is cutadapt 1.8.3 with Python 2.7.5
+961-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N15/demultiplexed/tag_TTATGCGA_AA/2_notags.fasta
+962:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+976-
+977-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 386742 times.
+978-
+979:No. of allowed errors:
+980-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+981-
+982-Overview of removed sequences
+983:length	count	expect	max.err	error counts
+--
+989-
+990-This is cutadapt 1.8.3 with Python 2.7.5
+991-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N15/demultiplexed/tag_TTATGCGA_AA/5_primerL1_removed.fasta
+992:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1006-
+1007-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 336159 times.
+1008-
+1009:No. of allowed errors:
+--
+1017-  none/other: 0.0%
+1018-
+1019-Overview of removed sequences
+1020:length	count	expect	max.err	error counts
+--
+1094- primerL1_removed="${primerL1_removed}"
+1095-This is cutadapt 1.8.3 with Python 2.7.5
+1096-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N16/demultiplexed/tag_TCGACTAG_AA/2_notags.fasta
+1097:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1111-
+1112-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 325565 times.
+1113-
+1114:No. of allowed errors:
+1115-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+1116-
+1117-Overview of removed sequences
+1118:length	count	expect	max.err	error counts
+--
+1124-
+1125-This is cutadapt 1.8.3 with Python 2.7.5
+1126-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N16/demultiplexed/tag_TCGACTAG_AA/5_primerL1_removed.fasta
+1127:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1141-
+1142-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 317193 times.
+1143-
+1144:No. of allowed errors:
+--
+1156-    To fix the problem, add "T" to the beginning of the adapter sequence.
+1157-
+1158-Overview of removed sequences
+1159:length	count	expect	max.err	error counts
+--
+1235- primerL1_removed="${primerL1_removed}"
+1236-This is cutadapt 1.8.3 with Python 2.7.5
+1237-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N17/demultiplexed/tag_TTCTAGCT_AG/2_notags.fasta
+1238:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1252-
+1253-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 315190 times.
+1254-
+1255:No. of allowed errors:
+1256-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+1257-
+1258-Overview of removed sequences
+1259:length	count	expect	max.err	error counts
+--
+1265-
+1266-This is cutadapt 1.8.3 with Python 2.7.5
+1267-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N17/demultiplexed/tag_TTCTAGCT_AG/5_primerL1_removed.fasta
+1268:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1282-
+1283-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 257442 times.
+1284-
+1285:No. of allowed errors:
+--
+1293-  none/other: 0.0%
+1294-
+1295-Overview of removed sequences
+1296:length	count	expect	max.err	error counts
+--
+1370- primerL1_removed="${primerL1_removed}"
+1371-This is cutadapt 1.8.3 with Python 2.7.5
+1372-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N18/demultiplexed/tag_CCTAGAGT_AG/2_notags.fasta
+1373:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1387-
+1388-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 281683 times.
+1389-
+1390:No. of allowed errors:
+1391-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+1392-
+1393-Overview of removed sequences
+1394:length	count	expect	max.err	error counts
+--
+1400-
+1401-This is cutadapt 1.8.3 with Python 2.7.5
+1402-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N18/demultiplexed/tag_CCTAGAGT_AG/5_primerL1_removed.fasta
+1403:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1417-
+1418-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 272479 times.
+1419-
+1420:No. of allowed errors:
+--
+1428-  none/other: 0.0%
+1429-
+1430-Overview of removed sequences
+1431:length	count	expect	max.err	error counts
+--
+1505- primerL1_removed="${primerL1_removed}"
+1506-This is cutadapt 1.8.3 with Python 2.7.5
+1507-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N19/demultiplexed/tag_GCGTAAGA_AG/2_notags.fasta
+1508:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1522-
+1523-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 305812 times.
+1524-
+1525:No. of allowed errors:
+1526-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+1527-
+1528-Overview of removed sequences
+1529:length	count	expect	max.err	error counts
+--
+1535-
+1536-This is cutadapt 1.8.3 with Python 2.7.5
+1537-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N19/demultiplexed/tag_GCGTAAGA_AG/5_primerL1_removed.fasta
+1538:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1552-
+1553-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 246488 times.
+1554-
+1555:No. of allowed errors:
+--
+1563-  none/other: 0.0%
+1564-
+1565-Overview of removed sequences
+1566:length	count	expect	max.err	error counts
+--
+1640- primerL1_removed="${primerL1_removed}"
+1641-This is cutadapt 1.8.3 with Python 2.7.5
+1642-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N20/demultiplexed/tag_CTATTAAG_AG/2_notags.fasta
+1643:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1657-
+1658-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 535015 times.
+1659-
+1660:No. of allowed errors:
+1661-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+1662-
+1663-Overview of removed sequences
+1664:length	count	expect	max.err	error counts
+--
+1670-
+1671-This is cutadapt 1.8.3 with Python 2.7.5
+1672-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N20/demultiplexed/tag_CTATTAAG_AG/5_primerL1_removed.fasta
+1673:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1687-
+1688-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 465899 times.
+1689-
+1690:No. of allowed errors:
+--
+1698-  none/other: 0.0%
+1699-
+1700-Overview of removed sequences
+1701:length	count	expect	max.err	error counts
+--
+1775- primerL1_removed="${primerL1_removed}"
+1776-This is cutadapt 1.8.3 with Python 2.7.5
+1777-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N21/demultiplexed/tag_AAGGCTAT_AG/2_notags.fasta
+1778:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1792-
+1793-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 363732 times.
+1794-
+1795:No. of allowed errors:
+1796-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+1797-
+1798-Overview of removed sequences
+1799:length	count	expect	max.err	error counts
+--
+1805-
+1806-This is cutadapt 1.8.3 with Python 2.7.5
+1807-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N21/demultiplexed/tag_AAGGCTAT_AG/5_primerL1_removed.fasta
+1808:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1822-
+1823-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 349636 times.
+1824-
+1825:No. of allowed errors:
+--
+1833-  none/other: 0.0%
+1834-
+1835-Overview of removed sequences
+1836:length	count	expect	max.err	error counts
+--
+1910- primerL1_removed="${primerL1_removed}"
+1911-This is cutadapt 1.8.3 with Python 2.7.5
+1912-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N4/demultiplexed/tag_GAGCCTTA_AG/2_notags.fasta
+1913:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1927-
+1928-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 348550 times.
+1929-
+1930:No. of allowed errors:
+1931-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+1932-
+1933-Overview of removed sequences
+1934:length	count	expect	max.err	error counts
+--
+1940-
+1941-This is cutadapt 1.8.3 with Python 2.7.5
+1942-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N4/demultiplexed/tag_GAGCCTTA_AG/5_primerL1_removed.fasta
+1943:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+1957-
+1958-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 332911 times.
+1959-
+1960:No. of allowed errors:
+--
+1968-  none/other: 0.0%
+1969-
+1970-Overview of removed sequences
+1971:length	count	expect	max.err	error counts
+--
+2045- primerL1_removed="${primerL1_removed}"
+2046-This is cutadapt 1.8.3 with Python 2.7.5
+2047-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N5/demultiplexed/tag_TTATGCGA_AG/2_notags.fasta
+2048:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2062-
+2063-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 276860 times.
+2064-
+2065:No. of allowed errors:
+2066-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+2067-
+2068-Overview of removed sequences
+2069:length	count	expect	max.err	error counts
+--
+2075-
+2076-This is cutadapt 1.8.3 with Python 2.7.5
+2077-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N5/demultiplexed/tag_TTATGCGA_AG/5_primerL1_removed.fasta
+2078:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2092-
+2093-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 268212 times.
+2094-
+2095:No. of allowed errors:
+--
+2103-  none/other: 0.0%
+2104-
+2105-Overview of removed sequences
+2106:length	count	expect	max.err	error counts
+--
+2180- primerL1_removed="${primerL1_removed}"
+2181-This is cutadapt 1.8.3 with Python 2.7.5
+2182-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N3/demultiplexed/tag_TCGACTAG_AG/2_notags.fasta
+2183:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2197-
+2198-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 249468 times.
+2199-
+2200:No. of allowed errors:
+2201-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+2202-
+2203-Overview of removed sequences
+2204:length	count	expect	max.err	error counts
+--
+2210-
+2211-This is cutadapt 1.8.3 with Python 2.7.5
+2212-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N3/demultiplexed/tag_TCGACTAG_AG/5_primerL1_removed.fasta
+2213:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2227-
+2228-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 248112 times.
+2229-
+2230:No. of allowed errors:
+--
+2238-  none/other: 0.0%
+2239-
+2240-Overview of removed sequences
+2241:length	count	expect	max.err	error counts
+--
+2315- primerL1_removed="${primerL1_removed}"
+2316-This is cutadapt 1.8.3 with Python 2.7.5
+2317-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N10/demultiplexed/tag_TTCTAGCT_AT/2_notags.fasta
+2318:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2332-
+2333-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 231509 times.
+2334-
+2335:No. of allowed errors:
+2336-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+2337-
+2338-Overview of removed sequences
+2339:length	count	expect	max.err	error counts
+--
+2345-
+2346-This is cutadapt 1.8.3 with Python 2.7.5
+2347-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N10/demultiplexed/tag_TTCTAGCT_AT/5_primerL1_removed.fasta
+2348:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2362-
+2363-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 223831 times.
+2364-
+2365:No. of allowed errors:
+--
+2377-    To fix the problem, add "T" to the beginning of the adapter sequence.
+2378-
+2379-Overview of removed sequences
+2380:length	count	expect	max.err	error counts
+--
+2457- primerL1_removed="${primerL1_removed}"
+2458-This is cutadapt 1.8.3 with Python 2.7.5
+2459-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N2/demultiplexed/tag_CCTAGAGT_AT/2_notags.fasta
+2460:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2474-
+2475-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 216838 times.
+2476-
+2477:No. of allowed errors:
+2478-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+2479-
+2480-Overview of removed sequences
+2481:length	count	expect	max.err	error counts
+--
+2487-
+2488-This is cutadapt 1.8.3 with Python 2.7.5
+2489-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N2/demultiplexed/tag_CCTAGAGT_AT/5_primerL1_removed.fasta
+2490:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2504-
+2505-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 215912 times.
+2506-
+2507:No. of allowed errors:
+--
+2515-  none/other: 0.0%
+2516-
+2517-Overview of removed sequences
+2518:length	count	expect	max.err	error counts
+--
+2592- primerL1_removed="${primerL1_removed}"
+2593-This is cutadapt 1.8.3 with Python 2.7.5
+2594-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N9/demultiplexed/tag_GCGTAAGA_AT/2_notags.fasta
+2595:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2609-
+2610-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 216230 times.
+2611-
+2612:No. of allowed errors:
+2613-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+2614-
+2615-Overview of removed sequences
+2616:length	count	expect	max.err	error counts
+--
+2622-
+2623-This is cutadapt 1.8.3 with Python 2.7.5
+2624-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N9/demultiplexed/tag_GCGTAAGA_AT/5_primerL1_removed.fasta
+2625:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2639-
+2640-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 211186 times.
+2641-
+2642:No. of allowed errors:
+--
+2650-  none/other: 0.0%
+2651-
+2652-Overview of removed sequences
+2653:length	count	expect	max.err	error counts
+--
+2728- primerL1_removed="${primerL1_removed}"
+2729-This is cutadapt 1.8.3 with Python 2.7.5
+2730-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N1/demultiplexed/tag_CTATTAAG_AT/2_notags.fasta
+2731:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2745-
+2746-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 255961 times.
+2747-
+2748:No. of allowed errors:
+2749-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+2750-
+2751-Overview of removed sequences
+2752:length	count	expect	max.err	error counts
+--
+2758-
+2759-This is cutadapt 1.8.3 with Python 2.7.5
+2760-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N1/demultiplexed/tag_CTATTAAG_AT/5_primerL1_removed.fasta
+2761:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2775-
+2776-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 254160 times.
+2777-
+2778:No. of allowed errors:
+--
+2786-  none/other: 0.0%
+2787-
+2788-Overview of removed sequences
+2789:length	count	expect	max.err	error counts
+--
+2863- primerL1_removed="${primerL1_removed}"
+2864-This is cutadapt 1.8.3 with Python 2.7.5
+2865-Command line parameters: -g ^GGWACWGGWTGAACWGTWTAYCCYCC -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N6/demultiplexed/tag_AAGGCTAT_AT/2_notags.fasta
+2866:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2880-
+2881-Sequence: GGWACWGGWTGAACWGTWTAYCCYCC; Type: anchored 5'; Length: 26; Trimmed: 5845 times.
+2882-
+2883:No. of allowed errors:
+2884-0-9 bp: 0; 10-19 bp: 1; 20-26 bp: 2
+2885-
+2886-Overview of removed sequences
+2887:length	count	expect	max.err	error counts
+--
+2893-
+2894-This is cutadapt 1.8.3 with Python 2.7.5
+2895-Command line parameters: -a TGRTTYTTYGGNCAYCCNGARGTNTA$ -e 0.10 -m 123 --discard-untrimmed /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/N6/demultiplexed/tag_AAGGCTAT_AT/5_primerL1_removed.fasta
+2896:Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+--
+2910-
+2911-Sequence: TGRTTYTTYGGNCAYCCNGARGTNTA; Type: anchored 3'; Length: 26; Trimmed: 5818 times.
+2912-
+2913:No. of allowed errors:
+--
+2921-  none/other: 0.0%
+2922-
+2923-Overview of removed sequences
+2924:length	count	expect	max.err	error counts

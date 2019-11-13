@@ -1,0 +1,50 @@
+Swarm 2.1.5 [Oct 22 2015 08:54:34]
+Copyright (C) 2012-2015 Torbjorn Rognes and Frederic Mahe
+https://github.com/torognes/swarm
+
+Please cite: Mahe F, Rognes T, Quince C, de Vargas C, Dunthorn M (2014)
+Swarm: robust and fast clustering method for amplicon-based studies.
+PeerJ 2:e593 https://dx.doi.org/10.7717/peerj.593
+
+CPU features:      mmx sse sse2 sse3 ssse3 sse4.1 sse4.2 popcnt avx avx2
+Database file:     /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/all_lib/duplicates.fasta
+Output file:       /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/all_lib/OTUs_swarm/OTUs.swarm
+Statistics file:   /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/all_lib/OTUs_swarm/stats.swarm
+Resolution (d):    1
+Threads:           8
+Scores:            match: 5, mismatch: -4
+Gap penalties:     opening: 12, extension: 4
+Converted costs:   mismatch: 9, gap opening: 12, gap extension: 7
+Break OTUs:        Yes
+Fastidious:        Yes, with boundary 3
+
+Reading database:  100%
+Indexing database: 100%
+Database info:     112257054 nt in 377572 sequences, longest 348 nt
+Hashing sequences: 100%
+Clustering:        100%
+
+Results before fastidious processing:
+Number of swarms:  60492
+Largest swarm:     37905
+
+Counting amplicons in heavy and light swarms 100%
+Heavy swarms: 21737, with 338817 amplicons
+Light swarms: 38755, with 38755 amplicons
+Total length of amplicons in light swarms: 10273276
+Bloom filter: bits=16, m=1150606912, k=11, size=137.2MB
+Adding light swarm amplicons to Bloom filter 100%
+Generated 68936079 variants from light swarms
+Checking heavy swarm amplicons against Bloom filter 100%
+Heavy variants: 685469043
+Got 77683 graft candidates
+Grafting light swarms on heavy swarms 100%
+Made 18442 grafts
+
+Writing swarms:    100%
+Writing seeds:     100%
+Writing stats:     100%
+
+Number of swarms:  42050
+Largest swarm:     38846
+Max generations:   12

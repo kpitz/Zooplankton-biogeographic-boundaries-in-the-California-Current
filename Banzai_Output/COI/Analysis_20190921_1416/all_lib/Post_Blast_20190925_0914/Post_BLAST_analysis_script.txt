@@ -1,0 +1,273 @@
+SCRIPT_DIR=/home/mbonteam/dev
+RSCRIPTS=/home/mbonteam/MBARI/reiko/scripts
+###################################################################################################
+STANDARD_PREFIX=GOC_20190921_1416_COI
+DB_NAME=nt
+BIOM_FILE_NAME=cutadapt_GOC_COI_banzai_N
+ANALYSIS_DIR=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416
+DIR=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/all_lib
+START_TIME=20190921_1416
+param_file=/home/mbonteam/MBARI/reiko/scripts/GOC_COI_params.sh
+blast_output=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/all_lib/GOC_20190921_1416_COI_nt.xml
+BLAST_INPUT=/home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/all_lib/OTUs_swarm/OTUs.fasta
+###################################################################################################
+
+# : Uses MEGAN6
+# : version 2 creates a separate post_blast output directory, per CJC request
+# : 2018 Aug 23 RPM
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+OTU_table="${DIR}"/OTUs_swarm/OTU_table.csv
+START_T=$(date +%Y%m%d_%H%M)
+PDIR="${DIR}"/Post_Blast_"${START_T}"
+mkdir "${PDIR}"
+
+# Write a log file of output from this script (everything that prints to terminal)
+LOGFILE="${PDIR}"/Post_BLASTlogfile.txt
+exec > >(tee "${LOGFILE}") 2>&1
+echo "Running script from: "
+echo "$BASH_SOURCE"
+echo "Parameters read from: "
+echo "${param_file}"
+source "${param_file}"
+echo "metadata read from: "
+echo "${SEQUENCING_METADATA}"
+echo 'Post Blast Directory:' 
+echo "${PDIR}"
+echo '_____________________________________________________'
+cp $BASH_SOURCE "${PDIR}"/Post_BLAST_analysis_script.txt
+
+gunzip "${DIR}"/*.xml.gz
+#blast_output="failed"
+
+#b_output=$(ls "${DIR}"/*.xml)
+#blast_output=$(basename $b_output)
+
+echo blast output is ${blast_output}
+
+otu_cnt=$(grep -o  'DUP_' "$DIR"/OTUs_swarm/OTU_table.csv  | wc -l)
+blast_cnt=$(grep -o  'DUP_' "$blast_output"  | wc -l)
+
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+# create megan script exporting all ranks and taxonomic path for the taxonomic assignments
+	if [[ -s "${blast_output}"  ]]; then
+
+		echo $(date +%H:%M) "${blast_output}" ',BLAST output found; proceeding to MEGAN6.  Taxonomic ranks exported to files.'
+		# Specify paths to megan-related files
+		BLAST_XML="${blast_output}"
+		MEGAN_RMA_FILE="${PDIR}"/"${STANDARD_PREFIX}"_"${DB_NAME}"_megan.rma6
+		
+		echo /opt/megan6/tools/blast2rma --in "${BLAST_XML}" --format BlastXML --blastMode BlastN --out "${MEGAN_RMA_FILE}" --minScore "${MINIMUM_SCORE}" --maxExpected "${MAX_EXPECTED}" --topPercent "${TOP_PERCENT}" --minSupport "${MINIMUM_SUPPORT}" --lcaAlgorithm naive --lcaCoveragePercent "${LCA_PERCENT}"
+		/opt/megan6/tools/blast2rma --in "${BLAST_XML}" --format BlastXML --blastMode BlastN --out "${MEGAN_RMA_FILE}" --minScore "${MINIMUM_SCORE}" --maxExpected "${MAX_EXPECTED}" --topPercent "${TOP_PERCENT}" --minSupport "${MINIMUM_SUPPORT}" --lcaAlgorithm naive --lcaCoveragePercent "${LCA_PERCENT}"
+		
+		echo /opt/megan6/tools/rma2info --in "${MEGAN_RMA_FILE}"  --read2class Taxonomy --paths --majorRanksOnly > "${PDIR}"/tpath.txt
+		/opt/megan6/tools/rma2info --in "${MEGAN_RMA_FILE}"  --read2class Taxonomy --paths --majorRanksOnly > "${PDIR}"/tpath.txt
+				# another exception [S] Rubritalea sp. Trut02-60-2015_Venoge-L'Isle;
+		sed -i "s/\x27/ /" "${PDIR}"/tpath.txt
+		sed -i 's|size=||' "${PDIR}"/tpath.txt
+		sed -i "s/$(echo '\t')/;/" "${PDIR}"/tpath.txt
+		#get rid of single/double quotes in taxon names KP
+		sed -i "s/'//g" "${PDIR}"/tpath.txt
+		sed -i 's/"//g' "${PDIR}"/tpath.txt
+		
+		sed -i '1s/^/ROW;DUP;SIZE;KINGDOM;PHYLUM;CLASS;ORDER;FAMILY;GENUS;SPECIES\n/' "${PDIR}"/tpath.txt
+		echo Rscript /home/mbonteam/MBARI/reiko/scripts/mk_megan6_taxa.R "${PDIR}"/tpath.txt "${PDIR}"/obs_md.txt
+		Rscript /home/mbonteam/MBARI/reiko/scripts/mk_megan6_taxa.R "${PDIR}"/tpath.txt "${PDIR}"/obs_md.txt
+		sed -i "s/,/;/" "${PDIR}"/obs_md.txt
+		# I wish they would stop putting extraneous characters in the taxa names. Exception for #
+		sed -i "s/#/ /" "${PDIR}"/obs_md.txt
+		echo Qiime formatting: converts rma2info output, tpath.txt, to qiime format style, i.e. [SK] to k__. Ouput is qiime_obs_md.txt 
+		echo Rscript /home/mbonteam/MBARI/reiko/scripts/mk_qiime_megan6_taxa.R "${PDIR}"/tpath.txt "${PDIR}"/qiime_obs_md.txt
+		Rscript /home/mbonteam/MBARI/reiko/scripts/mk_qiime_megan6_taxa.R "${PDIR}"/tpath.txt "${PDIR}"/qiime_obs_md.txt
+		sed -i "s/,/;/" "${PDIR}"/qiime_obs_md.txt
+		# I wish they would stop putting extraneous characters in the taxa names. Exception for #
+		sed -i "s/#/ /" "${PDIR}"/qiime_obs_md.txt
+
+
+################################################################################
+# PRELIMINARY ANALYSES
+################################################################################
+# Once you have a final CSV file of the number of occurences of each OTU in each sample, run some preliminary analyses in R
+# TODO rename preliminary to OTU analyses; move analysis script to OTU analysis directory
+OUTPUT_PDF="${ANALYSIS_DIR}"/analysis_results_"${START_TIME}".pdf
+
+echo $(date +%H:%M) "passing args to R for preliminary analysis..."
+echo " output pdf: " "${OUTPUT_PDF}"
+echo " otu table: " "${OTU_table}" 
+echo " sequencing metadata: " "${SEQUENCING_METADATA}" 
+echo " libraray column name: " "${LIBRARY_COLUMN_NAME}" 
+echo " tag column name:" "${TAG_COLUMN_NAME}" 
+echo " column name sample name: " "${ColumnName_SampleName}" 
+echo " columnName sample type: " "${ColumnName_SampleType}"
+echo " library_tag_combo column name:" "${LIBRARY_TAG_COMBO_COLUMN_NAME}"
+#Rscript "/home/mbonteam/dev/analyses_prelim.R" "${OUTPUT_PDF}" "${OTU_table}" "${SEQUENCING_METADATA}" "${LIBRARY_COLUMN_NAME}" "${TAG_COLUMN_NAME}" "${ColumnName_SampleName}" "${ColumnName_SampleType}"
+echo Rscript "/home/mbonteam/MBARI/reiko/scripts/analyses_prelim_reiko.R " "${OUTPUT_PDF}" "${OTU_table}" "${SEQUENCING_METADATA}" "${LIBRARY_COLUMN_NAME}" "${TAG_COLUMN_NAME}" "${ColumnName_SampleName}" "${ColumnName_SampleType}" "${LIBRARY_TAG_COMBO_COLUMN_NAME}"
+Rscript "/home/mbonteam/MBARI/reiko/scripts/analyses_prelim_reiko.R" "${OUTPUT_PDF}" "${OTU_table}" "${SEQUENCING_METADATA}" "${LIBRARY_COLUMN_NAME}" "${TAG_COLUMN_NAME}" "${ColumnName_SampleName}" "${ColumnName_SampleType}" "${LIBRARY_TAG_COMBO_COLUMN_NAME}"
+
+echo $(date +%H:%M) "completed R for preliminary analysis..."
+# EMPTY PDFs are 3829 bytes
+minimumsize=4000
+size_PDF=$(wc -c <"${OUTPUT_PDF}")
+if [ "${size_PDF}" -lt "${minimumsize}" ]; then
+    echo 'There was a problem generating the PDF.'
+else
+	REMOTE_PDF="${OUTPUT_PDF_DIR}"/analysis_results_"${START_TIME}".pdf
+	cp "${OUTPUT_PDF}" "${REMOTE_PDF}"
+	echo $(date +%H:%M) "analysis_results pdf written; R for preliminary analysis..."
+
+fi
+
+# ::::::::::::::::::: CREATE BIOM FILE ::::::::::::::::::::::::
+
+# Create sample metadata file
+echo ::: Create biom file metadata :::
+# working files will end up in the source file directory, biom file metadata will be written to analysis all_lib directory
+MY_SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo 'Creating software version file.  /home/mbonteam/MBARI/reiko/scripts/find_versions.sh >' "${MY_SCRIPT}"'/versions.txt'
+/home/mbonteam/MBARI/reiko/scripts/find_versions.sh > "${MY_SCRIPT}"/versions.txt
+
+echo Creating parameter metadata file, output is banzai_sample_metadata.txt
+echo python /home/mbonteam/MBARI/reiko/scripts/extract_params_metadata_v1.py "${MY_SCRIPT}" "${MY_SCRIPT}"/"${param_file}"
+python /home/mbonteam/MBARI/reiko/scripts/extract_params_metadata_v1.py "${MY_SCRIPT}" "${param_file}"
+
+echo Create sample metadata file.  python /home/mbonteam/MBARI/reiko/scripts/make_sample_metadata.py "${MY_SCRIPT}" "${SEQUENCING_METADATA}" "${MY_SCRIPT}"/banzai_param_sample_metadata.txt "${MY_SCRIPT}"/static_sample_metadata.csv "${MY_SCRIPT}"/versions.txt "${PDIR}"/sample_metadata_biom.txt
+
+python /home/mbonteam/MBARI/reiko/scripts/make_sample_metadata.py "${MY_SCRIPT}" "${SEQUENCING_METADATA}" "${MY_SCRIPT}"/banzai_param_sample_metadata.txt "${MY_SCRIPT}"/static_sample_metadata.csv "${MY_SCRIPT}"/versions.txt "${PDIR}"/sample_metadata_biom.txt
+
+		# We need the not assigned and no hits. rerun rma2info with --ignoreUnassigned flag
+		echo /opt/megan6/tools/rma2info --in "${MEGAN_RMA_FILE}"  --read2class Taxonomy --paths --ignoreUnassigned --majorRanksOnly> "${PDIR}"/tpath.csv
+		/opt/megan6/tools/rma2info --in "${MEGAN_RMA_FILE}"  --read2class Taxonomy --paths --ignoreUnassigned --majorRanksOnly > "${PDIR}"/tpath.csv
+		
+		# massage data for Rscript mk_obs_md_all_megan6
+		sed -i 's|root;|,root;|' "${PDIR}"/tpath.csv
+		sed -i 's/\x27//g' "${PDIR}"/tpath.csv
+		echo "Merge no_hits, not_assigned et al into obs_md_all.txt"
+		echo Rscript /home/mbonteam/MBARI/reiko/scripts/mk_obs_md_all_megan6.R "${PDIR}"/tpath.csv "${PDIR}"/obs_md.txt "${PDIR}"/obs_md_all.txt "${BLAST_INPUT}"
+		gunzip "${BLAST_INPUT}".gz
+		Rscript /home/mbonteam/MBARI/reiko/scripts/mk_obs_md_all_megan6.R "${PDIR}"/tpath.csv "${PDIR}"/obs_md.txt "${PDIR}"/obs_md_all.txt "${BLAST_INPUT}"
+
+		echo Qiime formatting: add in not assigned, no hits, etc Input is tpath.csv, qiime_obs_md.txt, "${BLAST_INPUT}". Output is qiime_obs_md_all.txt 
+		echo Rscript /home/mbonteam/MBARI/reiko/scripts/mk_4qiime_obs_md_all_megan6.R "${PDIR}"/tpath.csv "${PDIR}"/qiime_obs_md.txt "${PDIR}"/qiime_obs_md_all.txt "${BLAST_INPUT}"
+		Rscript /home/mbonteam/MBARI/reiko/scripts/mk_4qiime_obs_md_all_megan6.R "${PDIR}"/tpath.csv "${PDIR}"/qiime_obs_md.txt "${PDIR}"/qiime_obs_md_all.txt "${BLAST_INPUT}"
+		sed -i 's/,/;/g' "${PDIR}"/qiime_obs_md_all.txt
+		gzip "${BLAST_INPUT}"
+
+# Merges the taxonomic levels to the OTU table output. Merge all OTU, not only those that match 		
+		echo python /home/mbonteam/MBARI/reiko/scripts/merge_otu_taxa_all_megan6.py "${PDIR}" "${PDIR}"/obs_md_all.txt "${PDIR}"/OTU_table_taxa_all.txt "${DIR}"/OTUs_swarm/OTU_table.txt
+		python /home/mbonteam/MBARI/reiko/scripts/merge_otu_taxa_all_megan6.py "${PDIR}" "${PDIR}"/obs_md_all.txt "${PDIR}"/OTU_table_taxa_all.txt "${DIR}"/OTUs_swarm/OTU_table.txt
+		echo sed -i -e 's/\"//g' "${PDIR}"/OTU_table_taxa_all.txt
+		sed -i -e 's/\"//g' "${PDIR}"/OTU_table_taxa_all.txt
+		#sed -i -e 's/\x27/"/g' "${PDIR}"/obs_md.txt
+		echo Qiime formatting: Merge qiime_obs_md_all.txt to OTU table. Output is qiime_otu_taxa_all.txt.
+		echo python /home/mbonteam/MBARI/reiko/scripts/merge_qiime_otu_taxa_all_megan6.py "${PDIR}" "${PDIR}"/qiime_obs_md_all.txt "${PDIR}"/qiime_otu_taxa_all.txt "${DIR}"/OTUs_swarm/OTU_table.txt
+		python /home/mbonteam/MBARI/reiko/scripts/merge_qiime_otu_taxa_all_megan6.py "${PDIR}" "${PDIR}"/qiime_obs_md_all.txt "${PDIR}"/qiime_OTU_table_taxa_all.txt "${DIR}"/OTUs_swarm/OTU_table.txt
+		echo sed -i -e 's/\"//g' "${PDIR}"/qiime_OTU_table_taxa_all.txt
+		sed -i -e 's/\"//g' "${PDIR}"/qiime_OTU_table_taxa_all.txt
+		sed -i -e 's/,/;/g' "${PDIR}"/qiime_OTU_table_taxa_all.txt
+		sed -i -e 's/DUP/#DUP/' "${PDIR}"/qiime_OTU_table_taxa_all.txt
+# echo "::::::::::::::::::::::: HDF biom :::::::::::::::::::::::::::::::::::::::"
+# echo biom convert -i "${PDIR}"/OTUs_swarm/OTU_table.txt -o "${PDIR}"/"${BIOM_FILE_NAME}"_hdf.biom --table-type='"OTU table"' --to-hdf5
+# biom convert -i "${PDIR}"/OTUs_swarm/OTU_table.txt -o "${PDIR}"/"${BIOM_FILE_NAME}"_hdf.biom --table-type="OTU table" --to-hdf5
+
+# echo biom add-metadata -i "${PDIR}"/"${BIOM_FILE_NAME}"_hdf.biom -o "${PDIR}"/"${BIOM_FILE_NAME}"_hdf_obs.biom --observation-metadata-fp "${PDIR}"/obs_md_all.txt --int-fields size --sc-separated taxonomy
+# biom add-metadata -i "${PDIR}"/"${BIOM_FILE_NAME}"_hdf.biom -o "${PDIR}"/"${BIOM_FILE_NAME}"_hdf_obs.biom --observation-metadata-fp "${PDIR}"/obs_md_all.txt --int-fields size --sc-separated taxonomy
+
+# echo biom add-metadata -i "${PDIR}"/"${BIOM_FILE_NAME}"_hdf_obs.biom -o "${PDIR}"/"${BIOM_FILE_NAME}"_hdf_obs_md.biom --sample-metadata-fp  "${PDIR}"/sample_metadata_biom.txt
+# biom add-metadata -i "${PDIR}"/"${BIOM_FILE_NAME}"_hdf_obs.biom -o "${PDIR}"/"${BIOM_FILE_NAME}"_hdf_obs_md.biom --sample-metadata-fp  "${PDIR}"/sample_metadata_biom.txt
+
+
+echo ":::::::::::::::::::::::::::::::::: JSON biom ::::::::::::::::::::::::::::::::::::"
+echo biom convert -i "${ANALYSIS_DIR}"/all_lib/OTUs_swarm/OTU_table.txt -o "${PDIR}"/"${BIOM_FILE_NAME}"_json.biom --table-type="OTU table" --to-json
+biom convert -i "${ANALYSIS_DIR}"/all_lib/OTUs_swarm/OTU_table.txt -o "${PDIR}"/"${BIOM_FILE_NAME}"_json.biom --table-type="OTU table" --to-json 
+
+echo biom add-metadata -i "${PDIR}"/"${BIOM_FILE_NAME}"_json.biom -o "${PDIR}"/"${BIOM_FILE_NAME}"_json_obs.biom --observation-metadata-fp "${PDIR}"/obs_md_all.txt  --output-as-json
+biom add-metadata -i "${PDIR}"/"${BIOM_FILE_NAME}"_json.biom -o "${PDIR}"/"${BIOM_FILE_NAME}"_json_obs.biom --observation-metadata-fp "${PDIR}"/obs_md_all.txt  --output-as-json
+
+# PYTHON messes up the quotes so we have to fix it. 
+# replace single quotes with double quotes which is what phyloseq wants
+sed -i -e 's/\x27/"/g' "${PDIR}"/"${BIOM_FILE_NAME}"_json_obs.biom
+# biom adds double quotes around the square brackets
+# replace "[" with ["
+sed -i 's/\"\[\"/\[\"/g' "${PDIR}"/"${BIOM_FILE_NAME}"_json_obs.biom
+# replace "]" with "]
+sed -i 's/\"\]\"/\"\]/g' "${PDIR}"/"${BIOM_FILE_NAME}"_json_obs.biom
+
+echo biom add-metadata -i "${PDIR}"/"${BIOM_FILE_NAME}"_json_obs.biom -o "${PDIR}"/"${BIOM_FILE_NAME}"_json_obs_md.biom --sample-metadata-fp "${PDIR}"/sample_metadata_biom.txt --output-as-json
+biom add-metadata -i "${PDIR}"/"${BIOM_FILE_NAME}"_json_obs.biom -o "${PDIR}"/"${BIOM_FILE_NAME}"_json_obs_md.biom --sample-metadata-fp "${PDIR}"/sample_metadata_biom.txt --output-as-json
+
+
+################################################################################
+# Katie's ANALYSES
+################################################################################
+# ::::::::::::::::::: Filter XML File for PhiX and apply genus, species limits ::::::::::::::::::::::::
+#Filter out OTUs with hits to PhiX - remove from complete OTU table (will be unannotated)
+#Also need to filter annotations at the genus and species level to different bitscore, %ID limits
+#Need to call xml file -> feed into python script; want to only go through xml file once because it takes a long time
+#BLAST parameters for species assignment:
+#18S bitscore ~ 200 ; COI bitscore ~ 400 (COI has a longer alignment length)
+#bitscore_sp=500
+#per_ID_sp=97
+#BLAST parameters for genus assignment:
+#18S bitscore ~ 150 ; COI bitscore ~ 400 (COI has a longer alignment length)
+#bitscore_gn=400
+#per_ID_gn=95
+
+echo ::: Filter XML File for PhiX and apply genus, species limits :::
+
+#XML_file="${blast_output}"
+otu_all="${PDIR}"/OTU_table_taxa_all.txt
+
+echo Blast XML file: "${blast_output}"
+echo OTU_table_taxa_all.txt :  "${otu_all}"
+echo python /home/mbonteam/Katie_scripts/XML_Filter.py "${bitscore_sp}" "${per_ID_sp}" "${bitscore_gn}" "${per_ID_gn}" "${blast_output}" "${otu_all}"
+python /home/mbonteam/Katie_scripts/XML_Filter.py "${bitscore_sp}" "${per_ID_sp}" "${bitscore_gn}" "${per_ID_gn}" "${blast_output}" "${otu_all}"
+
+################################################################################
+echo "Create a PEAR report with the names of the read files and the assembled, discarded, and not assembled read numbers.  The report also includes the PEAR parameters"
+echo 'python "${RSCRIPTS}"/mk_PEAR_report.py ' "${ANALYSIS_DIR}"
+python "${RSCRIPTS}"/mk_PEAR_report.py "${ANALYSIS_DIR}"
+
+FINISH_TIME=$(date +%Y%m%d_%H%M)
+
+if [ "$NOTIFY_EMAIL" = "YES" ]; then
+	echo 'Pipeline finished! Started at' $START_TIME 'and finished at' $FINISH_TIME | mail -s "banzai is finished" "${EMAIL_ADDRESS}"
+else
+	echo 'Pipeline finished! Started at' $START_TIME 'and finished at' $FINISH_TIME
+fi
+echo 'Data are in ' "${ANALYSIS_DIR}"
+
+
+echo ''
+echo ''
+echo 'OTU_table count=' "$otu_cnt"
+#echo 'OTU_fasta count=' "$otu_fasta_cnt"
+echo 'BLAST count=' "$blast_cnt"
+echo 'Megan count=' "$megan_cnt"
+#
+echo ''
+echo ''
+ echo -e '\n'$(date +%H:%M)'\tBiom finished! Time for a G&T...\n'
+ echo
+ echo -e '\t~~~~ ><(((°> Gin & Tonic <°)))>< ~~~~'
+ echo -e '\t2 oz\tBoodles or Hendrix Gin'
+ echo -e '\t5 oz\tChilled Indian Fever Tonic Water'
+ echo -e '\t1\tSlice Bearss Lime'
+ echo -e '\t2\tCubes of Ice'
+ echo -e '\t1\tChilled Martini Glass'
+ echo -e '\tShake ice and gin until well chilled'
+ echo -e '\tStrain into chilled Martini glass'
+ echo -e '\tAdd tonic and lime. '
+ echo -e '\tPut your feet up and relax, life is good.' '\xf0\x9f\x8d\xb9\x0a''\n'
+ 
+ else
+	echo 'ERROR: Cannot find blast xml file ;o('
+ fi
+ 
+  ( set -o posix ; set ) > "${PDIR}"/post_blast_variables.txt
+  
+# Remove python RuntimeWarnings as it makes it really difficult to read log file this cannot be done in python because it is in the biom format set of programs
+grep -v -f /home/mbonteam/MBARI/reiko/scripts/warning_patterns.txt Post_BLASTlogfile.txt > Clean_PostBlastlog.txt
+# Quick scan of Post_BLASTlogfile.txt for errors
+source /home/mbonteam/MBARI/reiko/scripts/post_blast_errors.sh  "${PDIR}" "${BASH_SOURCE}"
+

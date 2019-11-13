@@ -1,0 +1,20 @@
+Post Blast Error Report from /home/mbonteam/MBARI/reiko/processed/test_cutadapt/Analysis_20190921_1416/all_lib/Post_Blast_20190925_0914, source is /home/mbonteam/MBARI/reiko/scripts/post_blast_errors.sh
+ Using grep to help identify processing errors.
+ grep output begins with a line number, i.e. 103:cp: cannot create regular file 
+ indicates an error on line 103 in the Post Blast processing file 
+ Results are separated by dashes, -- 
+ 
+***grep -n -i -B 2 "error", plus 2 previous lines *** Ignore QFILTER errors, these are settings from the param file
+145-('MISC parameter found: ', 222, 'PRIMER_MISMATCH_PROPORTION="0.10"')
+146-('MISC parameter found: ', 203, 'remove_chimeras="NO"')
+147:('QFILTER parameter found: ', 121, 'Perform_Expected_Error_Filter="YES" # [YES|NO]')
+148:('QFILTER parameter found: ', 122, 'Max_Expected_Errors="0.5"')
+ 
+***grep -n -i -A 4 "Traceback", plus 4 lines after***
+ 
+***grep -n -i -B 1 "halted", plus 1 line previous***
+ 
+***grep -n -i -A 3 "namespace", plus 3 lines after***
+ 
+***grep -n -i "no such file"***
+431:grep: Post_BLASTlogfile.txt: No such file or directory

@@ -1,0 +1,456 @@
+Running script from: 
+Post_BLAST_processing_20191006_1135.sh
+Parameters read from: 
+cutadapt_GOC_18S_params.sh
+metadata read from: 
+/home/mbonteam/MBARI/reiko/scripts/GOC_18S_Metadata.csv
+Post Blast Directory:
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430
+_____________________________________________________
+blast output is /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/GOC_20191006_1135_18S_nt.xml
+14:30 /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/GOC_20191006_1135_18S_nt.xml ,BLAST output found; proceeding to MEGAN6.  Taxonomic ranks exported to files.
+/opt/megan6/tools/blast2rma --in /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/GOC_20191006_1135_18S_nt.xml --format BlastXML --blastMode BlastN --out /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/GOC_20191006_1135_18S_nt_megan.rma6 --minScore 100 --maxExpected 1e-25 --topPercent 2 --minSupport 1 --lcaAlgorithm naive --lcaCoveragePercent 85
+Version   MEGAN Community Edition (version 6.12.1, built 17 Jul 2018)
+Copyright (C) 2018 Daniel H. Huson. This program comes with ABSOLUTELY NO WARRANTY.
+Loading ncbi.map: 1,787,384
+Loading ncbi.tre: 1,787,388
+Processing BlastXML file: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/GOC_20191006_1135_18S_nt.xml
+Output file:  /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/GOC_20191006_1135_18S_nt_megan.rma6
+Classifications: Taxonomy
+Parsing file: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/GOC_20191006_1135_18S_nt.xml
+10% 20% 30% 40% 50% 60% 70% 80% 90% 100% (474.1s)
+Total reads:            51,910
+Alignments:          1,048,610
+100% (0.0s)
+Binning reads: Initializing...
+Initializing binning...
+Using 'Naive LCA' algorithm (85.0 %) for binning: Taxonomy
+Binning reads...
+Binning reads: Analyzing alignments
+Total reads:           51,910
+With hits:              51,909 
+Alignments:          1,048,610
+Assig. Taxonomy:        50,112
+Binning reads: Applying min-support & disabled filter to Taxonomy...
+Min-supp. changes:           0
+Binning reads: Writing classification tables
+Numb. Tax. classes:        486
+Binning reads: Syncing
+Class. Taxonomy:           486
+100% (297.9s)
+Total time:  784s
+Peak memory: 2.0 of 2.1G
+Version   MEGAN Community Edition (version 6.12.1, built 17 Jul 2018)
+Copyright (C) 2018 Daniel H. Huson. This program comes with ABSOLUTELY NO WARRANTY.
+Loading MEGAN File: GOC_20191006_1135_18S_nt_megan.rma6
+Loading ncbi.map: 1,787,384
+Loading ncbi.tre: 1,787,388
+Total time:  24s
+Peak memory: 1.6 of 2.1G
+Rscript /home/mbonteam/MBARI/reiko/scripts/mk_megan6_taxa.R /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/tpath.txt /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/obs_md.txt
+Qiime formatting: converts rma2info output, tpath.txt, to qiime format style, i.e. [SK] to k__. Ouput is qiime_obs_md.txt
+Rscript /home/mbonteam/MBARI/reiko/scripts/mk_qiime_megan6_taxa.R /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/tpath.txt /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/qiime_obs_md.txt
+14:44 passing args to R for preliminary analysis...
+ output pdf:  /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/analysis_results_20191006_1135.pdf
+ otu table:  /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/OTUs_swarm/OTU_table.csv
+ sequencing metadata:  /home/mbonteam/MBARI/reiko/scripts/GOC_18S_Metadata.csv
+ libraray column name:  library
+ tag column name: tag_sequence
+ column name sample name:  sample_name
+ columnName sample type:  sample_type
+ library_tag_combo column name: library_tag_combo
+Rscript /home/mbonteam/MBARI/reiko/scripts/analyses_prelim_reiko.R  /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/analysis_results_20191006_1135.pdf /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/OTUs_swarm/OTU_table.csv /home/mbonteam/MBARI/reiko/scripts/GOC_18S_Metadata.csv library tag_sequence sample_name sample_type library_tag_combo
+[1] "loading  vegan"
+Loading required package: permute
+Loading required package: lattice
+This is vegan 2.5-2
+[1] "The sample IDs in the metadata and OTU table match up -- great jorb!"
+ [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[16] TRUE TRUE TRUE TRUE TRUE TRUE
+[1] "21 rows found in OTU table, 21 rows found in metadata"
+[1] 21
+[1] "passed if(TRUE)"
+[1] 21
+[1] "DATA line 163"
+ [1] "L10_TTCTAGCT" "L11_GCGTAAGA" "L12_CTATTAAG" "L13_AAGGCTAT" "L14_GAGCCTTA"
+ [6] "L15_TTATGCGA" "L16_TCGACTAG" "L17_TTCTAGCT" "L18_CCTAGAGT" "L19_GCGTAAGA"
+[11] "L1_CTATTAAG"  "L20_CTATTAAG" "L21_AAGGCTAT" "L2_CCTAGAGT"  "L3_TCGACTAG" 
+[16] "L4_GAGCCTTA"  "L5_TTATGCGA"  "L6_AAGGCTAT"  "L7_TTCTAGCT"  "L8_CCTAGAGT" 
+[21] "L9_GCGTAAGA" 
+[1] "tag_to_sequencing_data line 165"
+ [1] 17  3  4  5  6  7  8  9 10 11 20 12 13 18 16 14 15 21  1  2 19
+[1] "tag_to_samplename"
+ [1] UC3_2_18S  UC3_18S    UC4_18S    UC5_18S    UC6_18S    UC7_18S   
+ [7] UC9_18S    UC10_18S   UC12_18S   UC13_18S   CP23_1_18S UC14_18S  
+[13] UC15_18S   CP23_2_18S CP23_18S   GOC2a_18S  GOC2b_18S  NTC_1_18S 
+[19] UC1_18S    UC2_18S    UC3_1_18S 
+21 Levels: CP23_1_18S CP23_18S CP23_2_18S GOC2a_18S GOC2b_18S ... UC9_18S
+[1] "begin stripchart Reads per sample, line 179"
+[1] "begin plot total sum of reads per dup/OTU across samples, line 215"
+[1] "Create new OTU table for biom conversion"
+[1] "begin plot richness against reads, line 293"
+[1] "begin boxplot shannon index, line 304"
+[1] "begin plot cluster richness, line 321"
+[1] "begin stripchart total reads, line 343"
+[1] "begin stripchart shannon index, line 358"
+             sample_name   sample_type Tag      Lib DUP_1 DUP_2
+L1_CTATTAAG   CP23_1_18S environmental  L1 CTATTAAG   594  2902
+L3_TCGACTAG     CP23_18S environmental  L3 TCGACTAG   790  3840
+L2_CCTAGAGT   CP23_2_18S environmental  L2 CCTAGAGT  1448  2510
+L4_GAGCCTTA    GOC2a_18S environmental  L4 GAGCCTTA     6 23333
+L5_TTATGCGA    GOC2b_18S environmental  L5 TTATGCGA    10 15727
+L6_AAGGCTAT    NTC_1_18S environmental  L6 AAGGCTAT    52     1
+L7_TTCTAGCT      UC1_18S environmental  L7 TTCTAGCT 70605     0
+L17_TTCTAGCT    UC10_18S environmental L17 TTCTAGCT  3452  1082
+L18_CCTAGAGT    UC12_18S environmental L18 CCTAGAGT  9702 12346
+L19_GCGTAAGA    UC13_18S environmental L19 GCGTAAGA    49 10890
+L20_CTATTAAG    UC14_18S environmental L20 CTATTAAG   387  5996
+L21_AAGGCTAT    UC15_18S environmental L21 AAGGCTAT  7279 17140
+L8_CCTAGAGT      UC2_18S environmental  L8 CCTAGAGT 62985     7
+L11_GCGTAAGA     UC3_18S environmental L11 GCGTAAGA 54958     3
+L10_TTCTAGCT   UC3_2_18S environmental L10 TTCTAGCT 64031     0
+L12_CTATTAAG     UC4_18S environmental L12 CTATTAAG 37411     3
+L13_AAGGCTAT     UC5_18S environmental L13 AAGGCTAT 30119     3
+L14_GAGCCTTA     UC6_18S environmental L14 GAGCCTTA 71749     1
+L15_TTATGCGA     UC7_18S environmental L15 TTATGCGA 43113     7
+L16_TCGACTAG     UC9_18S environmental L16 TCGACTAG 58582     2
+[1] "begin stripchart cluster richness, line 396"
+[1] "begin Plot rarefaction curves, line 411"
+[1] "begin plot proportion of reads, line 433"
+null device 
+          1 
+14:44 completed R for preliminary analysis...
+14:44 analysis_results pdf written; R for preliminary analysis...
+::: Create biom file metadata :::
+Creating software version file.  /home/mbonteam/MBARI/reiko/scripts/find_versions.sh > /home/mbonteam/MBARI/reiko/scripts/versions.txt
+Creating parameter metadata file, output is banzai_sample_metadata.txt
+python /home/mbonteam/MBARI/reiko/scripts/extract_params_metadata_v1.py /home/mbonteam/MBARI/reiko/scripts /home/mbonteam/MBARI/reiko/scripts/cutadapt_GOC_18S_params.sh
+('Biom sample metadata extracted from ', 'cutadapt_GOC_18S_params.sh')
+('Column number parameter found: ', 176, 'ColumnName_SampleName="sample_name"')
+('Column number parameter found: ', 229, 'ColumnName_SampleName="sample_name"')
+('Column number parameter found: ', 148, 'TAG_COLUMN_NAME="tag_sequence"')
+('Column number parameter found: ', 169, 'PRIMER_1_COLUMN_NAME="primer_sequence_F"')
+('Column number parameter found: ', 222, 'PRIMER_1_COLUMN_NAME="primer_sequence_F"')
+('Column number parameter found: ', 170, 'PRIMER_2_COLUMN_NAME="primer_sequence_R"')
+('Column number parameter found: ', 223, 'PRIMER_2_COLUMN_NAME="primer_sequence_R"')
+('PEAR parameter found: ', 97, 'Quality_Threshold=19')
+('PEAR parameter found: ', 100, 'UNCALLEDMAX=0')
+('PEAR parameter found: ', 103, 'TEST=1')
+('PEAR parameter found: ', 106, 'PVALUE=0.01')
+('PEAR parameter found: ', 109, 'SCORING=2')
+('PEAR parameter found: ', 114, 'min_seq_length=75')
+('BLAST parameter found: ', 240, "BLAST_DB='/MBON/blastdb/nt/nt'")
+('BLAST parameter found: ', 246, 'PERCENT_IDENTITY="80"')
+('BLAST parameter found: ', 249, 'WORD_SIZE="11"')
+('BLAST parameter found: ', 250, 'EVALUE="1e-5"')
+('BLAST parameter found: ', 252, 'MAXIMUM_MATCHES="100"')
+('BLAST parameter found: ', 257, 'MAXIMUM_MATCHES="100"')
+('BLAST parameter found: ', 253, 'culling_limit="20"')
+('BLAST parameter found: ', 258, 'culling_limit="20"')
+('CLUSTER parameter found: ', 183, 'CLUSTER_OTUS="YES"')
+('CLUSTER parameter found: ', 194, 'cluster_method="swarm" #[ swarm | vsearch | usearch ]')
+('CLUSTER parameter found: ', 197, 'cluster_radius="1"')
+('CLUSTER parameter found: ', 191, 'min_OTU_abun="0.005"')
+('HOMOP parameter found: ', 133, 'REMOVE_HOMOPOLYMERS="NO"')
+('HOMOP parameter found: ', 136, 'HOMOPOLYMER_MAX="7"')
+('MISC parameter found: ', 174, 'PRIMER_MISMATCH_PROPORTION="0.10"')
+('MISC parameter found: ', 227, 'PRIMER_MISMATCH_PROPORTION="0.10"')
+('MISC parameter found: ', 208, 'remove_chimeras="NO"')
+('QFILTER parameter found: ', 126, 'Perform_Expected_Error_Filter="YES" # [YES|NO]')
+('QFILTER parameter found: ', 127, 'Max_Expected_Errors="0.5"')
+Output written to banzai_param_sample_metadata.txt
+Create sample metadata file. python /home/mbonteam/MBARI/reiko/scripts/make_sample_metadata.py /home/mbonteam/MBARI/reiko/scripts /home/mbonteam/MBARI/reiko/scripts/GOC_18S_Metadata.csv /home/mbonteam/MBARI/reiko/scripts/banzai_param_sample_metadata.txt /home/mbonteam/MBARI/reiko/scripts/static_sample_metadata.csv /home/mbonteam/MBARI/reiko/scripts/versions.txt /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/sample_metadata_biom.txt
+('Banzai param metadata extracted from ', '/home/mbonteam/MBARI/reiko/scripts/banzai_param_sample_metadata.txt')
+('Banzai metadata extracted from ', '/home/mbonteam/MBARI/reiko/scripts/GOC_18S_Metadata.csv')
+('Static metadata extracted from ', '/home/mbonteam/MBARI/reiko/scripts/static_sample_metadata.csv')
+('Column number parameter found: ', 1, 'sample_name')
+('Column number parameter found: ', 1, 'sample_name')
+('Column number parameter found: ', 2, 'tag_sequence')
+('Column number parameter found: ', 3, 'tag_sequence_original')
+('Column number parameter found: ', 4, 'primer_sequence_F')
+('Column number parameter found: ', 4, 'primer_sequence_F')
+('Column number parameter found: ', 5, 'primer_sequence_R')
+('Column number parameter found: ', 6, 'primer_sequence_R_RC')
+('Column number parameter found: ', 5, 'primer_sequence_R')
+('Column number parameter found: ', 6, 'primer_sequence_R_RC')
+('Software version metadata extracted from ', '/home/mbonteam/MBARI/reiko/scripts/versions.txt')
+Version   MEGAN Community Edition (version 6.12.1, built 17 Jul 2018)
+Copyright (C) 2018 Daniel H. Huson. This program comes with ABSOLUTELY NO WARRANTY.
+Loading MEGAN File: GOC_20191006_1135_18S_nt_megan.rma6
+Loading ncbi.map: 1,787,384
+Loading ncbi.tre: 1,787,388
+Total time:  24s
+Peak memory: 1.6 of 2.1G
+Merge no_hits, not_assigned et al into obs_md_all.txt
+Rscript /home/mbonteam/MBARI/reiko/scripts/mk_obs_md_all_megan6.R /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/tpath.csv /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/obs_md.txt /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/obs_md_all.txt /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/OTUs_swarm/OTUs.fasta
+gzip: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/OTUs_swarm/OTUs.fasta.gz: No such file or directory
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘magrittr’
+
+The following object is masked from ‘package:tidyr’:
+
+    extract
+
+Warning messages:
+1: Expected 7 pieces. Additional pieces discarded in 6880 rows [2535, 2536, 2537, 2553, 2997, 2998, 2999, 3000, 3001, 3002, 3003, 3004, 3005, 3255, 11690, 11691, 11692, 22836, 22837, 22861, ...]. 
+2: Expected 7 pieces. Missing pieces filled with `NA` in 25976 rows [1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1817, 1818, 1819, 1820, 1821, 1822, 1823, 1824, 1825, ...]. 
+Qiime formatting: add in not assigned, no hits, etc Input is tpath.csv, qiime_obs_md.txt, /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/OTUs_swarm/OTUs.fasta. Output is qiime_obs_md_all.txt
+Rscript /home/mbonteam/MBARI/reiko/scripts/mk_4qiime_obs_md_all_megan6.R /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/tpath.csv /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/qiime_obs_md.txt /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/qiime_obs_md_all.txt /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/OTUs_swarm/OTUs.fasta
+Warning messages:
+1: Expected 2 pieces. Additional pieces discarded in 50105 rows [1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1817, 1818, 1819, 1820, 1821, 1822, 1823, 1824, 1825, ...]. 
+2: Expected 8 pieces. Missing pieces filled with `NA` in 51910 rows [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, ...]. 
+Joining by: dup
+Joining by: dup
+Joining by: dup
+Joining by: dup
+python /home/mbonteam/MBARI/reiko/scripts/merge_otu_taxa_all_megan6.py /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430 /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/obs_md_all.txt /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/OTU_table_taxa_all.txt
+sed -i -e s/\"//g /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/OTU_table_taxa_all.txt
+Qiime formatting: Merge qiime_obs_md_all.txt to OTU table. Output is qiime_otu_taxa_all.txt.
+python /home/mbonteam/MBARI/reiko/scripts/merge_qiime_otu_taxa_all_megan6.py /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430 /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/qiime_obs_md_all.txt /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/qiime_otu_taxa_all.txt
+Traceback (most recent call last):
+  File "/home/mbonteam/MBARI/reiko/scripts/merge_qiime_otu_taxa_all_megan6.py", line 50, in <module>
+    main(sys.argv[1:])
+  File "/home/mbonteam/MBARI/reiko/scripts/merge_qiime_otu_taxa_all_megan6.py", line 35, in main
+    with open('./OTUs_swarm/OTU_table.txt', 'rU') as f2:
+IOError: [Errno 2] No such file or directory: './OTUs_swarm/OTU_table.txt'
+sed -i -e s/\"//g /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/qiime_OTU_table_taxa_all.txt
+sed: can't read /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/qiime_OTU_table_taxa_all.txt: No such file or directory
+sed: can't read /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/qiime_OTU_table_taxa_all.txt: No such file or directory
+sed: can't read /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/qiime_OTU_table_taxa_all.txt: No such file or directory
+:::::::::::::::::::::::::::::::::: JSON biom ::::::::::::::::::::::::::::::::::::
+biom convert -i /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/OTUs_swarm/OTU_table.txt -o /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/cutadapt_GOC_18S_banzai_L_json.biom --table-type=OTU table --to-json
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:148: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from ._shortest_path import shortest_path, floyd_warshall, dijkstra,\
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:148: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from ._shortest_path import shortest_path, floyd_warshall, dijkstra,\
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/_validation.py:5: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from ._tools import csgraph_to_dense, csgraph_from_dense,\
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/_validation.py:5: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from ._tools import csgraph_to_dense, csgraph_from_dense,\
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:150: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from ._traversal import breadth_first_order, depth_first_order, \
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:150: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from ._traversal import breadth_first_order, depth_first_order, \
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:152: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from ._min_spanning_tree import minimum_spanning_tree
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:152: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from ._min_spanning_tree import minimum_spanning_tree
+/usr/lib64/python2.7/site-packages/h5py/__init__.py:36: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  from ._conv import register_converters as _register_converters
+/usr/lib64/python2.7/site-packages/h5py/__init__.py:45: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  from . import h5a, h5d, h5ds, h5f, h5fd, h5g, h5r, h5s, h5t, h5p, h5z
+/usr/lib64/python2.7/site-packages/h5py/_hl/group.py:22: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  from .. import h5g, h5i, h5o, h5r, h5t, h5l, h5p
+/usr/lib64/python2.7/site-packages/scipy/sparse/coo.py:181: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if np.rank(M) != 2:
+/usr/lib64/python2.7/site-packages/scipy/sparse/coo.py:198: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if np.rank(self.data) != 1 or np.rank(self.row) != 1 or np.rank(self.col) != 1:
+/usr/lib64/python2.7/site-packages/scipy/sparse/compressed.py:132: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if np.rank(self.data) != 1 or np.rank(self.indices) != 1 or np.rank(self.indptr) != 1:
+biom add-metadata -i /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/cutadapt_GOC_18S_banzai_L_json.biom -o /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/cutadapt_GOC_18S_banzai_L_json_obs.biom --observation-metadata-fp /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/obs_md_all.txt --output-as-json
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:148: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from ._shortest_path import shortest_path, floyd_warshall, dijkstra,\
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:148: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from ._shortest_path import shortest_path, floyd_warshall, dijkstra,\
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/_validation.py:5: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from ._tools import csgraph_to_dense, csgraph_from_dense,\
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/_validation.py:5: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from ._tools import csgraph_to_dense, csgraph_from_dense,\
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:150: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from ._traversal import breadth_first_order, depth_first_order, \
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:150: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from ._traversal import breadth_first_order, depth_first_order, \
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:152: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from ._min_spanning_tree import minimum_spanning_tree
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:152: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from ._min_spanning_tree import minimum_spanning_tree
+/usr/lib64/python2.7/site-packages/h5py/__init__.py:36: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  from ._conv import register_converters as _register_converters
+/usr/lib64/python2.7/site-packages/h5py/__init__.py:45: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  from . import h5a, h5d, h5ds, h5f, h5fd, h5g, h5r, h5s, h5t, h5p, h5z
+/usr/lib64/python2.7/site-packages/h5py/_hl/group.py:22: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  from .. import h5g, h5i, h5o, h5r, h5t, h5l, h5p
+/usr/lib64/python2.7/site-packages/scipy/sparse/coo.py:181: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if np.rank(M) != 2:
+/usr/lib64/python2.7/site-packages/scipy/sparse/coo.py:198: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if np.rank(self.data) != 1 or np.rank(self.row) != 1 or np.rank(self.col) != 1:
+/usr/lib64/python2.7/site-packages/scipy/sparse/compressed.py:132: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if np.rank(self.data) != 1 or np.rank(self.indices) != 1 or np.rank(self.indptr) != 1:
+biom add-metadata -i /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/cutadapt_GOC_18S_banzai_L_json_obs.biom -o /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/cutadapt_GOC_18S_banzai_L_json_obs_md.biom --sample-metadata-fp /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/sample_metadata_biom.txt --output-as-json
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:148: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from ._shortest_path import shortest_path, floyd_warshall, dijkstra,\
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:148: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from ._shortest_path import shortest_path, floyd_warshall, dijkstra,\
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/_validation.py:5: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from ._tools import csgraph_to_dense, csgraph_from_dense,\
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/_validation.py:5: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from ._tools import csgraph_to_dense, csgraph_from_dense,\
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:150: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from ._traversal import breadth_first_order, depth_first_order, \
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:150: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from ._traversal import breadth_first_order, depth_first_order, \
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:152: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from ._min_spanning_tree import minimum_spanning_tree
+/usr/lib64/python2.7/site-packages/scipy/sparse/csgraph/__init__.py:152: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from ._min_spanning_tree import minimum_spanning_tree
+/usr/lib64/python2.7/site-packages/h5py/__init__.py:36: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  from ._conv import register_converters as _register_converters
+/usr/lib64/python2.7/site-packages/h5py/__init__.py:45: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  from . import h5a, h5d, h5ds, h5f, h5fd, h5g, h5r, h5s, h5t, h5p, h5z
+/usr/lib64/python2.7/site-packages/h5py/_hl/group.py:22: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  from .. import h5g, h5i, h5o, h5r, h5t, h5l, h5p
+/usr/lib64/python2.7/site-packages/scipy/sparse/coo.py:181: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if np.rank(M) != 2:
+/usr/lib64/python2.7/site-packages/scipy/sparse/coo.py:198: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if np.rank(self.data) != 1 or np.rank(self.row) != 1 or np.rank(self.col) != 1:
+/usr/lib64/python2.7/site-packages/scipy/sparse/compressed.py:132: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if np.rank(self.data) != 1 or np.rank(self.indices) != 1 or np.rank(self.indptr) != 1:
+::: Filter XML File for PhiX and apply genus, species limits :::
+Blast XML file: /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/GOC_20191006_1135_18S_nt.xml
+OTU_table_taxa_all.txt : /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/OTU_table_taxa_all.txt
+python /home/mbonteam/Katie_scripts/XML_Filter.py 600 97 550 95 /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/GOC_20191006_1135_18S_nt.xml /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430/OTU_table_taxa_all.txt
+/usr/lib64/python2.7/site-packages/pandas/__init__.py:7: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from pandas import hashtable, tslib, lib
+/usr/lib64/python2.7/site-packages/pandas/__init__.py:7: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from pandas import hashtable, tslib, lib
+/usr/lib64/python2.7/site-packages/pandas/core/common.py:16: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  import pandas.algos as algos
+/usr/lib64/python2.7/site-packages/pandas/core/common.py:16: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  import pandas.algos as algos
+/usr/lib64/python2.7/site-packages/bottleneck/__init__.py:15: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from .func import (nansum, nanmax, nanmin, nanmean, nanstd, nanvar, median,
+/usr/lib64/python2.7/site-packages/bottleneck/__init__.py:15: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from .func import (nansum, nanmax, nanmin, nanmean, nanstd, nanvar, median,
+/usr/lib64/python2.7/site-packages/bottleneck/__init__.py:21: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from .move import (move_sum, move_nansum,
+/usr/lib64/python2.7/site-packages/bottleneck/__init__.py:21: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from .move import (move_sum, move_nansum,
+/usr/lib64/python2.7/site-packages/pandas/core/index.py:12: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  import pandas.index as _index
+/usr/lib64/python2.7/site-packages/pandas/core/index.py:12: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  import pandas.index as _index
+/usr/lib64/python2.7/site-packages/pandas/tseries/frequencies.py:16: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  import pandas._period as period
+/usr/lib64/python2.7/site-packages/pandas/tseries/frequencies.py:16: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  import pandas._period as period
+/usr/lib64/python2.7/site-packages/pandas/sparse/array.py:16: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  from pandas._sparse import BlockIndex, IntIndex
+/usr/lib64/python2.7/site-packages/pandas/sparse/array.py:16: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  from pandas._sparse import BlockIndex, IntIndex
+/usr/lib64/python2.7/site-packages/pandas/io/parsers.py:28: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility
+  import pandas.parser as _parser
+/usr/lib64/python2.7/site-packages/pandas/io/parsers.py:28: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility
+  import pandas.parser as _parser
+/home/mbonteam/Katie_scripts/XML_Filter.py:59: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  taxa_dat['Kingdom']=taxa_dat['taxonomy'].str.split("\'").str[1]
+/home/mbonteam/Katie_scripts/XML_Filter.py:60: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  taxa_dat['Phylum']=taxa_dat['taxonomy'].str.split("\'").str[3]
+/home/mbonteam/Katie_scripts/XML_Filter.py:61: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  taxa_dat['Class']=taxa_dat['taxonomy'].str.split("\'").str[5]
+/home/mbonteam/Katie_scripts/XML_Filter.py:62: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  taxa_dat['Order']=taxa_dat['taxonomy'].str.split("\'").str[7]
+/home/mbonteam/Katie_scripts/XML_Filter.py:63: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  taxa_dat['Family']=taxa_dat['taxonomy'].str.split("\'").str[9]
+/home/mbonteam/Katie_scripts/XML_Filter.py:64: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  taxa_dat['Genus']=taxa_dat['taxonomy'].str.split("\'").str[11]
+/home/mbonteam/Katie_scripts/XML_Filter.py:65: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  taxa_dat['Species']=taxa_dat['taxonomy'].str.split("\'").str[13]
+/home/mbonteam/Katie_scripts/XML_Filter.py:66: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  taxa_dat.drop('taxonomy', axis=1, inplace=True)
+('Species bitscore limit: ', 600, ', Percent Identity Limit: ', 97)
+('Genus bitscore limit: ', 550, ', Percent Identity Limit: ', 95)
+('Blast XML file: ', '/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/GOC_20191006_1135_18S_nt.xml')
+('directory', '/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib')
+(1000, 'blast records completed')
+(5000, 'blast records completed')
+(10000, 'blast records completed')
+(20000, 'blast records completed')
+(30000, 'blast records completed')
+(40000, 'blast records completed')
+(50000, 'blast records completed')
+Done parsing Blast xml File!
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Blast_results_xml_stats.csv
+('All False? DUPs: ', False    51909
+dtype: int64)
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Filtered_OTU_taxa_table.csv
+('PhiX', ' number of OTUs: ', 0)
+('phiX', ' number of OTUs: ', 0)
+('Total Number OTUs with PhiX hits:', 0)
+('Total Number reads with PhiX hits:', 0)
+('Number of OTUs to drop: ', 0)
+Create a PEAR report with the names of the read files and the assembled, discarded, and not assembled read numbers.  The report also includes the PEAR parameters
+python "${RSCRIPTS}"/mk_PEAR_report.py  /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135
+/home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135
+PEAR read result summary
+(' Average assembled reads: ', 94.79609523809525, '%')
+(' Average discarded  reads: ', 5.203904761904762, '%')
+(' Total samples: ', 21)
+Data are in  /home/mbonteam/MBARI/reiko/processed/test_cutadapt/18S/Analysis_20191006_1135/all_lib/Post_Blast_20191008_1430
+
+
+OTU_table count= 51910
+BLAST count= 51911
+Megan count= 
+
+
+
+14:49	Biom finished! Time for a G&T...
+
+
+	~~~~ ><(((°> Gin & Tonic <°)))>< ~~~~
+	2 oz	Boodles or Hendrix Gin
+	5 oz	Chilled Indian Fever Tonic Water
+	1	Slice Bearss Lime
+	2	Cubes of Ice
+	1	Chilled Martini Glass
+	Shake ice and gin until well chilled
+	Strain into chilled Martini glass
+	Add tonic and lime. 
+	Put your feet up and relax, life is good. 🍹
+
+
+Post_BLAST_processing_20191006_1135.sh: line 287: /home/mbonteam/MBARI/reiko/scripts/post_blast_errors.sh: No such file or directory
