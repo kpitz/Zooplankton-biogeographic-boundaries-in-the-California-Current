@@ -1,0 +1,992 @@
+---
+title: "COI 18S GOC statistics"
+author: Katie Pitz
+date: November 11, 2020
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
+---
+
+# Set Working Directory
+```{r setup}
+knitr::opts_knit$set(root.dir = '/Users/kpitz/Projects/Gulf_of_California/Data_for_upload/')
+```
+
+```{r}
+getwd()
+```
+
+# Import packages
+```{r}
+library(biomformat)
+library(multcomp)
+library(car)
+library(ggpubr)
+library(ggplot2)
+library(ggdendro)
+library(phyloseq)
+library(vegan)
+library(clustsig) #SIMPER/SIMPROF
+library(dplyr)
+library(tidyr)
+library(scales)
+library(grid)
+library(reshape2)
+library(magrittr) # double pipes with dplyr
+library(tibble)
+library(cluster)
+```
+
+
+# Read in Data, Rarefy, Export Rarefied Data
+Data filtered and size limited (jupyter notebook)
+GOC_18S_Filter_Data.ipynb
+GOC_COI_Filter_Data.ipynb
+
+## COI
+Exported Tables
+/Users/kpitz/Projects/Gulf_of_California/Decontaminated_tables/GOC_COI_seq_table_092519.csv
+/Users/kpitz/Projects/Gulf_of_California/Decontaminated_tables/GOC_COI_otu_table_092519.csv
+/Users/kpitz/Projects/Gulf_of_California/Decontaminated_tables/GOC_COI_taxa_table_092519.csv
+
+```{r}
+#Data has been filtered in python notebook
+GOC_COI <- merge_phyloseq(otu_table(as.matrix(read.csv(file = "Filtered_Data/GOC_COI_otu_table_092519.csv", row.names = 1,check.names = FALSE)), taxa_are_rows = TRUE),tax_table(as.matrix(read.csv(file = "Filtered_Data/GOC_COI_taxa_table_092519.csv", row.names = 1))),sample_data(read.csv(file = "Combined_PCTD_Metadata_043019.csv", row.names = 1)))
+
+GOC_COI
+```
+
+
+Rarefy
+```{r}
+#rarefy
+rarefy_lim <- 10000 #set read limit for rarefaction
+seed_num <- 678  #set arbitrary seed number for repeatability 
+GOC_COI_r = prune_samples(sample_sums(GOC_COI)>=rarefy_lim, GOC_COI)
+GOC_COI_r = rarefy_even_depth(GOC_COI_r, sample.size = min(sample_sums(GOC_COI_r)), rngseed = seed_num, replace = FALSE, trimOTUs = TRUE, verbose = TRUE)
+GOC_COI_r
+print(min(sample_sums(GOC_COI_r)))
+```
+
+Export Rarefied tables for Plotting
+```{r}
+#save OTU table, taxa table
+#Export tables for python analysis
+#create matrix of Data acceptable to vegan (transposed so samples in rows)
+vegan_otu <- function(physeq) {
+  OTU <- otu_table(physeq)
+  if (taxa_are_rows(OTU)) {
+    OTU <- t(OTU)
+  }
+  return(as(OTU, "matrix"))
+}
+
+
+#save rarefied; merged data
+vegan_matrix_COI=vegan_otu(GOC_COI_r)
+otu_tab_COI=otu_table(GOC_COI_r)
+tax_tab_COI= tax_table(GOC_COI_r)
+samp_dat_COI <- sample_data(GOC_COI_r)
+
+
+#save to csv file
+#write.csv(otu_tab_COI, '/Users/kpitz/Projects/MBON/Rarefied_Data_unmerged/GOC_COI_OTU_Table_092619_rare.csv')
+#write.csv(tax_tab_COI, '/Users/kpitz/Projects/MBON/Rarefied_Data_unmerged/GOC_COI_taxa_table_092619_rare.csv')
+#write.csv(samp_dat_COI, '/Users/kpitz/Projects/MBON/Rarefied_Data_unmerged/GOC_COI_samp_dat_092619_rare.csv')
+
+```
+
+
+## 18S
+files = ['/Users/kpitz/Projects/Gulf_of_California/Decontaminated_tables/GOC_18S_seq_table_100119.csv',
+         '/Users/kpitz/Projects/Gulf_of_California/Decontaminated_tables/GOC_18S_otu_table_100119.csv',
+         '/Users/kpitz/Projects/Gulf_of_California/Decontaminated_tables/GOC_18S_taxa_table_100119.csv']
+```{r}
+#Data has been size limited and common contaminants removed in python; annotations from Filtered file
+GOC_18S <- merge_phyloseq(otu_table(as.matrix(read.csv(file = "Filtered_Data/GOC_18S_otu_table_100119.csv", row.names = 1,check.names = FALSE)), taxa_are_rows = TRUE),tax_table(as.matrix(read.csv(file = "Filtered_Data/GOC_18S_taxa_table_100119.csv", row.names = 1))),sample_data(read.csv(file = "Combined_PCTD_Metadata_043019.csv", row.names = 1)))
+
+GOC_18S
+```
+
+Rarefy
+```{r}
+#rarefy
+rarefy_lim <- 15000 #set read limit for rarefaction
+seed_num <- 678  #set arbitrary seed number for repeatability 
+GOC_18S_r = prune_samples(sample_sums(GOC_18S)>=rarefy_lim, GOC_18S)
+GOC_18S_r = rarefy_even_depth(GOC_18S_r, sample.size = min(sample_sums(GOC_18S_r)), rngseed = seed_num, replace = FALSE, trimOTUs = TRUE, verbose = TRUE)
+GOC_18S_r
+print(min(sample_sums(GOC_18S_r)))
+```
+
+Export Rarefied tables for Plotting
+```{r}
+#save OTU table, taxa table
+#Export tables for python analysis
+#create matrix of Data acceptable to vegan (transposed so samples in rows)
+vegan_otu <- function(physeq) {
+  OTU <- otu_table(physeq)
+  if (taxa_are_rows(OTU)) {
+    OTU <- t(OTU)
+  }
+  return(as(OTU, "matrix"))
+}
+
+
+#save rarefied; merged data
+vegan_matrix_18S=vegan_otu(GOC_18S_r)
+otu_tab_18S=otu_table(GOC_18S_r)
+tax_tab_18S= tax_table(GOC_18S_r)
+samp_dat_18S <- sample_data(GOC_18S_r)
+
+
+#save to csv file
+#write.csv(otu_tab_18S, '/Users/kpitz/Projects/MBON/Rarefied_Data_unmerged/GOC_18S_OTU_Table_100119_rare.csv')
+#write.csv(tax_tab_18S, '/Users/kpitz/Projects/MBON/Rarefied_Data_unmerged/GOC_18S_taxa_table_100119_rare.csv')
+#write.csv(samp_dat_18S, '/Users/kpitz/Projects/MBON/Rarefied_Data_unmerged/GOC_18S_samp_dat_100119_rare.csv')
+
+```
+
+# Begin Here to Recreate Figures using Rarefied Data
+Import Rarefied data to edit figures
+```{r}
+#Data previously Rarefied
+GOC_COI_r <- merge_phyloseq(otu_table(as.matrix(read.csv(file = "Rarefied_Data/GOC_COI_OTU_Table_092619_rare.csv", row.names = 1,check.names = FALSE)), taxa_are_rows = TRUE),tax_table(as.matrix(read.csv(file = "Rarefied_Data/GOC_COI_taxa_table_092619_rare.csv", row.names = 1))),sample_data(read.csv(file = "Combined_PCTD_Metadata_043019.csv", row.names = 1)))
+
+GOC_COI_r
+```
+
+```{r}
+#Data previously Rarefied
+GOC_18S_r <- merge_phyloseq(otu_table(as.matrix(read.csv(file = "Rarefied_Data/GOC_18S_OTU_Table_100119_rare.csv", row.names = 1,check.names = FALSE)), taxa_are_rows = TRUE),tax_table(as.matrix(read.csv(file = "Rarefied_Data/GOC_18S_taxa_table_100119_rare.csv", row.names = 1))),sample_data(read.csv(file = "Combined_PCTD_Metadata_043019.csv", row.names = 1)))
+
+GOC_18S_r
+```
+
+```{r}
+vegan_otu <- function(physeq) {
+  OTU <- otu_table(physeq)
+  if (taxa_are_rows(OTU)) {
+    OTU <- t(OTU)
+  }
+  return(as(OTU, "matrix"))
+}
+
+
+#save rarefied; merged data
+vegan_matrix_18S=vegan_otu(GOC_18S_r)
+otu_tab_18S=otu_table(GOC_18S_r)
+tax_tab_18S= tax_table(GOC_18S_r)
+samp_dat_18S <- sample_data(GOC_18S_r)
+
+vegan_matrix_COI=vegan_otu(GOC_COI_r)
+otu_tab_COI=otu_table(GOC_COI_r)
+tax_tab_COI= tax_table(GOC_COI_r)
+samp_dat_COI <- sample_data(GOC_COI_r)
+```
+
+# Transform sample metadata
+```{r}
+
+#Transform Numeric Data in metadata
+sample_data(GOC_COI_r) <- transform(sample_data(GOC_COI_r), TMP_C = as.numeric(TMP),
+                                NO3_um = as.numeric(NO3),
+                                CHL_GFF = as.numeric(CHL_GFF),
+                                oxy_ml = as.numeric(OXY_ML),
+                                sigma_theta = as.numeric(SIG_T),
+                                DEPTH_M = as.numeric(DEPTH),
+                                Fluor = as.numeric(FLUOR),
+                                SAL = as.numeric(SAL)
+)
+#check modes of data
+sapply(sample_data(GOC_COI_r), mode)
+
+samp_dat <- sample_data(GOC_COI_r)
+```
+
+
+```{r}
+#Transform Numeric Data in metadata
+sample_data(GOC_18S_r) <- transform(sample_data(GOC_18S_r), TMP_C = as.numeric(TMP),
+                                NO3_um = as.numeric(NO3),
+                                CHL_GFF = as.numeric(CHL_GFF),
+                                oxy_ml = as.numeric(OXY_ML),
+                                sigma_theta = as.numeric(SIG_T),
+                                DEPTH_M = as.numeric(DEPTH),
+                                Fluor = as.numeric(FLUOR),
+                                SAL = as.numeric(SAL)
+)
+#check modes of data
+sapply(sample_data(GOC_18S_r), mode)
+
+samp_dat <- sample_data(GOC_18S_r)
+```
+
+#  Compare Diversity
+
+Simpson, Shannon Diversity, Chao1 Richness
+```{r}
+#Phyloseq
+#18S
+p_oBiom <- plot_richness(GOC_COI_r,x="Description", measures=c("Shannon","Simpson", "Chao1"), nrow=1, color='Time_of_Day') +
+  theme(text = element_text(size=16), strip.text.x = element_text(size = 16), axis.text = element_text(size = rel(1), colour = "black")) +
+  xlab("Sampling Region") + 
+  ggtitle("COI Rarefied")+theme_bw()+scale_x_discrete(limits=c('PCNorth','EUNorth','EUSouth'))
+
+p_oBiom + geom_boxplot(data=p_oBiom$data, aes(x=Description, y=value, color=NULL), alpha=0.1)
+
+#COI
+p_oBiom <- plot_richness(GOC_18S_r,x="Description", measures=c("Shannon","Simpson", "Chao1"), nrow=1,color='Time_of_Day') +
+  theme(text = element_text(size=16), strip.text.x = element_text(size = 16), axis.text = element_text(size = rel(1), colour = "black")) +
+  xlab("Sampling Region") + 
+  ggtitle("18S Rarefied")+theme_bw()+scale_x_discrete(limits=c('PCNorth','EUNorth','EUSouth'))
+
+p_oBiom + geom_boxplot(data=p_oBiom$data, aes(x=Description, y=value, color=NULL), alpha=0.1)
+
+```
+
+Create Dataframe of Shannon Diversity Data
+The following section draws from the tutorial:
+http://www.sthda.com/english/wiki/one-way-anova-test-in-r
+
+## COI
+```{r}
+#Shannon
+H <- diversity(vegan_matrix_COI)
+H <- bind_rows(H)
+H <- tbl_df(H)
+
+H %<>%
+   rownames_to_column %>%
+   gather(var, value, -rowname) %>% 
+   spread(rowname, value)
+
+#Need to group by description
+samp_df <- tbl_df(samp_dat_COI)
+samp_df$sample_names <- rownames(samp_dat_COI)
+#join by index
+joined_df <- inner_join(H,samp_df, by=c('var'='sample_names'))
+
+joined_df$Description <- ordered(joined_df$Description,
+                         levels = c("PCNorth", "EUNorth", "EUSouth"))
+levels(joined_df$Description)
+
+joined_df = rename(joined_df, 'Diversity'='1')
+
+joined_df$Diversity <- as.numeric(joined_df$Diversity)
+
+
+ggboxplot(joined_df, x = "Description", y = "Diversity", 
+          color = "Description", palette = c("#00AFBB", "#E7B800", "#FC4E07"),
+          order = c("PCNorth", "EUNorth", "EUSouth"),
+          ylab = "Diversity", xlab = "Description")
+
+ggline(joined_df, x = "Description", y = "Diversity", 
+       add = c("mean_se", "jitter"), 
+       order = c("PCNorth", "EUNorth", "EUSouth"),
+       ylab = "Diversity", xlab = "Description")
+
+ggline(joined_df, x = "Time_of_Day", y = "Diversity", 
+       add = c("mean_se", "jitter"), 
+       order = c("day", "night", "transition"),
+       color='Description',
+       ylab = "Diversity", xlab = "Time_of_Day")
+
+```
+
+ANOVA
+```{r}
+print('Region')
+# Compute the analysis of variance
+res.aov <- aov(Diversity ~ Description, data = joined_df)
+# Summary of the analysis
+summary(res.aov)
+
+TukeyHSD(res.aov)
+
+#Another method
+#library(multcomp)
+#perform multiple comparison procedures for an ANOVA. glht stands for general linear hypothesis tests
+summary(glht(res.aov, linfct = mcp(Description = "Tukey")))
+
+print('Time of Day')
+# Compute the analysis of variance
+res.aov <- aov(Diversity ~ Time_of_Day, data = joined_df)
+# Summary of the analysis
+summary(res.aov)
+
+#TukeyHSD(res.aov)
+
+#Another method
+#library(multcomp)
+#perform multiple comparison procedures for an ANOVA. glht stands for general linear hypothesis tests
+summary(glht(res.aov, linfct = mcp(Time_of_Day = "Tukey")))
+```
+
+If ANOVA result is significant, compute Tukey HSD (Tukey Honest Significant Differences, R function: TukeyHSD()) for performing multiple pairwise-comparison between the means of groups.
+
+The function TukeyHD() takes the fitted ANOVA as an argument.
+diff: difference between means of the two groups
+lwr, upr: the lower and the upper end point of the confidence interval at 95% (default)
+p adj: p-value after adjustment for the multiple comparisons.
+
+
+Homogeneity of variances
+```{r}
+res.aov <- aov(Diversity ~ Description, data = joined_df)
+#Homogeneity of variances
+plot(res.aov, 1)
+
+leveneTest(Diversity ~ Description, data = joined_df)
+```
+From the output above we can see that the p-value is not less than the significance level of 0.05. This means that there is no evidence to suggest that the variance across groups is statistically significantly different. Therefore, we can assume the homogeneity of variances in the different treatment groups. http://www.sthda.com/english/wiki/one-way-anova-test-in-r
+
+Homogeneity of variances
+```{r}
+res.aov <- aov(Diversity ~ Time_of_Day, data = joined_df)
+#Homogeneity of variances
+plot(res.aov, 1)
+
+leveneTest(Diversity ~ Time_of_Day, data = joined_df)
+```
+
+
+Look at correlation between environmental variables and diversity
+```{r}
+#look at Temperature vs Diversity
+
+#average by site
+avgdf = joined_df %>% group_by(site, TMP) %>% summarize(Diversity = mean(Diversity))
+avgdf
+
+res <- cor.test(avgdf$Diversity, avgdf$TMP, 
+                    method = "pearson")
+res
+
+ggscatter(avgdf, x = "TMP", y = "Diversity", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Temperature", ylab = "Shannon Diversity", label="site", font.label=(8))
+ggsave('Figures/Bray_Temp_Corr_Banzai_COI.png')
+```
+
+Compare Diversity means 18S
+
+Create Dataframe of Shannon Diversity Data
+The following section draws from the tutorial:
+http://www.sthda.com/english/wiki/one-way-anova-test-in-r
+
+## 18S
+```{r}
+#Shannon
+H <- diversity(vegan_matrix_18S)
+H <- bind_rows(H)
+H <- tbl_df(H)
+
+H %<>%
+   rownames_to_column %>%
+   gather(var, value, -rowname) %>% 
+   spread(rowname, value)
+
+#Need to group by description
+samp_df <- tbl_df(samp_dat_18S)
+samp_df$sample_names <- rownames(samp_dat_18S)
+#join by index
+joined_df <- inner_join(H,samp_df, by=c('var'='sample_names'))
+
+joined_df$Description <- ordered(joined_df$Description,
+                         levels = c("PCNorth", "EUNorth", "EUSouth"))
+levels(joined_df$Description)
+
+joined_df = rename(joined_df, 'Diversity'='1')
+
+joined_df$Diversity <- as.numeric(joined_df$Diversity)
+
+
+ggboxplot(joined_df, x = "Description", y = "Diversity", 
+          color = "Description", palette = c("#00AFBB", "#E7B800", "#FC4E07"),
+          order = c("PCNorth", "EUNorth", "EUSouth"),
+          ylab = "Diversity", xlab = "Description")
+
+ggline(joined_df, x = "Description", y = "Diversity", 
+       add = c("mean_se", "jitter"), 
+       order = c("PCNorth", "EUNorth", "EUSouth"),
+       ylab = "Diversity", xlab = "Description")
+
+ggline(joined_df, x = "Time_of_Day", y = "Diversity", 
+       add = c("mean_se", "jitter"), 
+       order = c("day", "night", "transition"),
+       color='Description',
+       ylab = "Diversity", xlab = "Time_of_Day")
+
+```
+
+ANOVA
+```{r}
+print('Region')
+# Compute the analysis of variance
+res.aov <- aov(Diversity ~ Description, data = joined_df)
+# Summary of the analysis
+summary(res.aov)
+
+TukeyHSD(res.aov)
+
+#Another method
+#library(multcomp)
+#perform multiple comparison procedures for an ANOVA. glht stands for general linear hypothesis tests
+summary(glht(res.aov, linfct = mcp(Description = "Tukey")))
+
+print('Time of Day')
+# Compute the analysis of variance
+res.aov <- aov(Diversity ~ Time_of_Day, data = joined_df)
+# Summary of the analysis
+summary(res.aov)
+
+#TukeyHSD(res.aov)
+
+#Another method
+#library(multcomp)
+#perform multiple comparison procedures for an ANOVA. glht stands for general linear hypothesis tests
+summary(glht(res.aov, linfct = mcp(Time_of_Day = "Tukey")))
+```
+
+If ANOVA result is significant, compute Tukey HSD (Tukey Honest Significant Differences, R function: TukeyHSD()) for performing multiple pairwise-comparison between the means of groups.
+
+The function TukeyHD() takes the fitted ANOVA as an argument.
+diff: difference between means of the two groups
+lwr, upr: the lower and the upper end point of the confidence interval at 95% (default)
+p adj: p-value after adjustment for the multiple comparisons.
+
+
+Homogeneity of variances
+```{r}
+res.aov <- aov(Diversity ~ Description, data = joined_df)
+#Homogeneity of variances
+plot(res.aov, 1)
+
+leveneTest(Diversity ~ Description, data = joined_df)
+```
+From the output above we can see that the p-value is not less than the significance level of 0.05. This means that there is no evidence to suggest that the variance across groups is statistically significantly different. Therefore, we can assume the homogeneity of variances in the different treatment groups. http://www.sthda.com/english/wiki/one-way-anova-test-in-r
+
+Homogeneity of variances
+```{r}
+res.aov <- aov(Diversity ~ Time_of_Day, data = joined_df)
+#Homogeneity of variances
+plot(res.aov, 1)
+
+leveneTest(Diversity ~ Time_of_Day, data = joined_df)
+```
+
+
+Look at correlation between environmental variables and diversity
+```{r}
+#look at Temperature vs Diversity
+
+#average by site
+avgdf = joined_df %>% group_by(site, TMP) %>% summarize(Diversity = mean(Diversity))
+avgdf
+
+res <- cor.test(avgdf$Diversity, avgdf$TMP, 
+                    method = "pearson")
+res
+
+ggscatter(avgdf, x = "TMP", y = "Diversity", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Temperature", ylab = "Shannon Diversity", label="site", font.label=(8))
+ggsave('Figures/Bray_Temp_Corr_Banzai_18S.png')
+```
+
+
+# Dendrogram Plots
+
+SIMPROF Analysis 18S
+```{r}
+#create hierarchical cluster diagram - example
+dist.mat <- vegdist(vegan_matrix_18S, method="bray", binary=FALSE)
+clust.res<-hclust(dist.mat, method="average")
+plot(clust.res)
+
+#SIMPROF: gives clusters that pass a significance threshold
+########################################
+simprof_mat_18S = simprof(vegan_matrix_18S, num.expected=100, num.simulated=99, 
+                      method.cluster="complete", method.distance = "braycurtis", 
+                      alpha = 0.05, sample.orientation = "row")
+
+#visualize with colored hierarchical cluster diagram by sample name
+plot_sim <- simprof.plot(simprof_mat_18S)
+simprof_mat_18S
+#simprof has 4 objects (list of lists)
+#how to call a significant cluster:
+#simprof_mat[[4]][[1]]
+
+#Map these results to an nmds plot
+simprofCLUSTERS_18S = data.frame()
+
+#only considers clusters of more than two samples
+for(j in 1:length(simprof_mat_18S$significantclusters)){
+  if(length(simprof_mat_18S$significantclusters[[j]]) > 1){
+    simprofCLUSTERS_18S <- rbind(simprofCLUSTERS_18S, cbind(j, simprof_mat_18S$significantclusters[[j]]))
+  }
+}
+
+#create df with samples as index and clusterID as "simprofCLUSTER"
+rownames(simprofCLUSTERS_18S) <- simprofCLUSTERS_18S[,2]
+colnames(simprofCLUSTERS_18S) <- c("simprofCLUSTER", "group")
+
+simprofCLUSTERS_18S
+```
+
+
+```{r}
+#Plot with ggplot2
+
+library(ggplot2)
+library(ggdendro)
+
+dendr <- dendro_data(simprof_mat_18S[[3]], type="rectangle") 
+
+#Define cluster based on similarity percent - good for plotting
+clust <- cutree(simprof_mat_18S[[3]], h = 40)               # find 'cut' clusters (k) or choose level (h) numeric scalar or vector with heights where the tree should be cut.
+clust2 <- cutree(simprof_mat_18S[[3]], h = 60)
+clust3 <- cutree(simprof_mat_18S[[3]], h = 20)  
+clust4 <- cutree(simprof_mat_18S[[3]], h = 80)  
+
+clust.df <- data.frame(label = names(clust), cluster_40 = clust, cluster_60 = clust2, cluster_20 = clust3, cluster_80 = clust4)
+sapply(clust.df, mode)
+clust.df$label <- as.character(clust.df$label)
+clust.df <- clust.df[order(clust.df$label),]
+
+#join sample data with cluster df and simprofCLUSTERS df:
+tree_scores <- merge(clust.df, samp_dat,by=0)
+rownames(tree_scores) <- tree_scores$Row.names
+#remove duplicated column after assigning index
+tree_scores$Row.names <- NULL
+#merge with simprof cluster df
+tree_scores <- merge(tree_scores, simprofCLUSTERS_18S,by=0, all=TRUE )
+
+
+#dendr$labels is df of x,y and attributes -> add to it with metadata (tree_scores)
+tree_data_18S <- merge(dendr$labels, tree_scores,by="label")
+tree_data_18S$Site <- tree_data_18S$Row.names
+
+svglite::svglite("Figures/Dendro_18S_Banzai.svg", height=4.5, width=4.5)
+
+cbPalette <- c("#56B4E9", "#E69F00", "#009E73")
+ggplot() + 
+  geom_segment(data=segment(dendr), aes(x=x, y=y, xend=xend, yend=yend)) +
+  geom_point(data=tree_data_18S, aes(x=x, y=y, color=Description, shape=Time_of_Day),alpha=1, size=5)+ 
+  geom_text(data=tree_data_18S, aes(x=x, y=y, label=Site, hjust=-.4), size=3) +
+  #geom_text(data=tree_data_18S, aes(x=x, y=y, label=simprofCLUSTER, hjust=3), size=5) +
+  geom_hline(yintercept=20, color="blue", linetype = "longdash", alpha=0.8) +
+  geom_hline(yintercept=40, color="green", linetype = "longdash", alpha=0.8) +
+  geom_hline(yintercept=60, color="orange", linetype = "longdash", alpha=0.8) +
+  coord_flip() + scale_y_reverse(expand=c(2, 0)) +
+  scale_colour_manual(values=cbPalette) +
+  theme(axis.line.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.title.y=element_blank(),
+        panel.background=element_rect(fill="white"),
+        panel.grid=element_blank())
+
+dev.off()
+
+cbPalette <- c("#56B4E9", "#E69F00", "#009E73")
+ggplot() + 
+  geom_segment(data=segment(dendr), aes(x=x, y=y, xend=xend, yend=yend)) +
+  geom_point(data=tree_data_18S, aes(x=x, y=y, color=Description, shape=Time_of_Day),alpha=1, size=5)+ 
+  geom_text(data=tree_data_18S, aes(x=x, y=y, label=Site, hjust=-.4), size=3) +
+  #geom_text(data=tree_data_18S, aes(x=x, y=y, label=simprofCLUSTER, hjust=3), size=5) +
+  geom_hline(yintercept=20, color="blue", linetype = "longdash", alpha=0.8) +
+  geom_hline(yintercept=40, color="green", linetype = "longdash", alpha=0.8) +
+  geom_hline(yintercept=60, color="orange", linetype = "longdash", alpha=0.8) +
+  coord_flip() + scale_y_reverse(expand=c(2, 0)) +
+  scale_colour_manual(values=cbPalette) +
+  theme(axis.line.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.title.y=element_blank(),
+        panel.background=element_rect(fill="white"),
+        panel.grid=element_blank())
+```
+
+
+SIMPROF Analysis COI
+```{r}
+#create hierarchical cluster diagram - example
+dist.mat <- vegdist(vegan_matrix_COI, method="bray", binary=FALSE)
+clust.res<-hclust(dist.mat, method="average")
+plot(clust.res)
+
+#SIMPROF: gives clusters that pass a significance threshold
+########################################
+simprof_mat_COI = simprof(vegan_matrix_COI, num.expected=100, num.simulated=99, 
+                      method.cluster="complete", method.distance = "braycurtis", 
+                      alpha = 0.05, sample.orientation = "row")
+
+#visualize with colored hierarchical cluster diagram by sample name
+plot_sim <- simprof.plot(simprof_mat_COI)
+simprof_mat_COI
+#simprof has 4 objects (list of lists)
+#how to call a significant cluster:
+#simprof_mat[[4]][[1]]
+
+#Map these results to an nmds plot
+simprofCLUSTERS_COI = data.frame()
+
+#only considers clusters of more than two samples
+for(j in 1:length(simprof_mat_COI$significantclusters)){
+  if(length(simprof_mat_COI$significantclusters[[j]]) > 1){
+    simprofCLUSTERS_COI <- rbind(simprofCLUSTERS_COI, cbind(j, simprof_mat_COI$significantclusters[[j]]))
+  }
+}
+
+#create df with samples as index and clusterID as "simprofCLUSTER"
+rownames(simprofCLUSTERS_COI) <- simprofCLUSTERS_COI[,2]
+colnames(simprofCLUSTERS_COI) <- c("simprofCLUSTER", "group")
+
+simprofCLUSTERS_COI
+```
+
+
+COI
+```{r}
+#Plot with ggplot2
+library(ggplot2)
+library(ggdendro)
+
+dendr <- dendro_data(simprof_mat_COI[[3]], type="rectangle", compress=TRUE) 
+
+#Define cluster based on similarity percent - good for plotting
+clust <- cutree(simprof_mat_COI[[3]], h = 40)               # find 'cut' clusters (k) or choose level (h) numeric scalar or vector with heights where the tree should be cut.
+clust2 <- cutree(simprof_mat_COI[[3]], h = 60)
+clust3 <- cutree(simprof_mat_COI[[3]], h = 20)  
+clust4 <- cutree(simprof_mat_COI[[3]], h = 80)  
+
+clust.df <- data.frame(label = names(clust), cluster_40 = clust, cluster_60 = clust2, cluster_20 = clust3, cluster_80 = clust4)
+sapply(clust.df, mode)
+clust.df$label <- as.character(clust.df$label)
+clust.df <- clust.df[order(clust.df$label),]
+
+#join sample data with cluster df and simprofCLUSTERS df:
+tree_scores <- merge(clust.df, samp_dat,by=0)
+rownames(tree_scores) <- tree_scores$Row.names
+#remove duplicated column after assigning index
+tree_scores$Row.names <- NULL
+#merge with simprof cluster df
+tree_scores <- merge(tree_scores, simprofCLUSTERS_COI,by=0, all=TRUE )
+
+
+#dendr$labels is df of x,y and attributes -> add to it with metadata (tree_scores)
+tree_data_COI <- merge(dendr$labels, tree_scores,by="label")
+tree_data_COI$Site <- tree_data_COI$Row.names
+
+svglite::svglite("Figures/Dendro_COI_Banzai.svg", height=4.5, width=4.5)
+
+cbPalette <- c("#56B4E9", "#E69F00", "#009E73")
+ggplot() + 
+  geom_segment(data=segment(dendr), aes(x=x, y=y, xend=xend, yend=yend)) +
+  geom_point(data=tree_data_COI, aes(x=x, y=y, color=Description, shape=Time_of_Day),alpha=1, size=5)+ 
+  geom_text(data=tree_data_COI, aes(x=x, y=y, label=Site, hjust=-.4), size=3) +
+  #geom_text(data=tree_data_COI, aes(x=x, y=y, label=simprofCLUSTER, hjust=4), size=5) +
+  geom_hline(yintercept=20, color="blue", linetype = "longdash", alpha=0.8) +
+  geom_hline(yintercept=40, color="green", linetype = "longdash", alpha=0.8) +
+  geom_hline(yintercept=60, color="orange", linetype = "longdash", alpha=0.8) +
+  #coord_flip() + scale_y_reverse(expand=c(0.2, 0)) +
+  coord_flip() + scale_y_reverse(expand=c(2, 0)) +
+  scale_colour_manual(values=cbPalette) +
+  theme(axis.line.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.title.y=element_blank(),
+        panel.background=element_rect(fill="white"),
+        panel.grid=element_blank())
+
+dev.off()
+
+cbPalette <- c("#56B4E9", "#E69F00", "#009E73")
+ggplot() + 
+  geom_segment(data=segment(dendr), aes(x=x, y=y, xend=xend, yend=yend)) +
+  geom_point(data=tree_data_COI, aes(x=x, y=y, color=Description, shape=Time_of_Day),alpha=1, size=5)+ 
+  geom_text(data=tree_data_COI, aes(x=x, y=y, label=Site, hjust=-.4), size=3) +
+  #geom_text(data=tree_data_COI, aes(x=x, y=y, label=simprofCLUSTER, hjust=4), size=5) +
+  geom_hline(yintercept=20, color="blue", linetype = "longdash", alpha=0.8) +
+  geom_hline(yintercept=40, color="green", linetype = "longdash", alpha=0.8) +
+  geom_hline(yintercept=60, color="orange", linetype = "longdash", alpha=0.8) +
+  #coord_flip() + scale_y_reverse(expand=c(0.2, 0)) +
+  coord_flip() + scale_y_reverse(expand=c(2, 0)) +
+  scale_colour_manual(values=cbPalette) +
+  theme(axis.line.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.title.y=element_blank(),
+        panel.background=element_rect(fill="white"),
+        panel.grid=element_blank())
+
+```
+
+
+# NMDS Analysis
+Nonmetric Multidimensional Scaling
+
+## COI
+
+```{r}
+#make NMDS plot
+set.seed(12) #set seed if want reproducible plots, otherwise random
+NMDS_analysis=metaMDS(vegan_matrix_COI, # Our community-by-species matrix
+                      k=2, trymax = 50) # The number of reduced dimensions
+stressplot(NMDS_analysis)
+```
+
+```{r}
+species.scores <- as.data.frame(scores(NMDS_analysis, "species"))  #Using the scores function from vegan to extract the species scores and convert to a data.frame
+species.scores$species <- rownames(species.scores)  # create a column of species, represents OTU IDs
+nmds_sp_scores <- merge(species.scores, tax_tab_COI,by="row.names", all=TRUE)
+data.scores <- as.data.frame(scores(NMDS_analysis))  #Using the scores function from vegan to extract the site scores and convert to a data.frame
+rownames(tree_data_COI) <- tree_data_COI$label
+nmds_scores <- merge(data.scores, tree_data_COI,by="row.names", all=TRUE)
+```
+
+Rename NMDS data to save for later.
+```{r}
+nmds_COI <- nmds_scores
+```
+
+Plot
+```{r}
+ggplot() + 
+  geom_point(data=nmds_COI,aes(x=NMDS1,y=NMDS2, colour=Description, shape=Treatment),size=7,alpha=0.9) + # add the point markers
+  geom_text(data=nmds_COI,aes(x=NMDS1,y=NMDS2,label=Treatment),size=3,vjust=0.4) +  # add the site labels
+  scale_colour_brewer(palette = "Dark2")+
+  coord_equal() +
+  theme_bw()
+
+ggplot() + 
+  stat_ellipse(data=nmds_COI,aes(x=NMDS1,y=NMDS2, colour=Description),type = "t", linetype=2) +
+  stat_ellipse(data=nmds_COI,aes(x=NMDS1,y=NMDS2, fill=Description),geom= "polygon", alpha=0.2) +
+  geom_point(data=nmds_COI,aes(x=NMDS1,y=NMDS2, colour=Description, shape=Treatment),size=7,alpha=0.9) + # add the point markers
+  geom_text(data=nmds_COI,aes(x=NMDS1,y=NMDS2,label=Treatment),size=3,vjust=0.4) +  # add the site labels
+  scale_colour_brewer(palette = "Dark2")+
+  scale_fill_brewer(palette = "Dark2")+
+  coord_equal() +
+  theme_bw()
+
+```
+
+## 18S
+
+```{r}
+#make NMDS plot
+set.seed(12) #set seed if want reproducible plots, otherwise random
+NMDS_analysis=metaMDS(vegan_matrix_18S, # Our community-by-species matrix
+                      k=2, trymax = 50) # The number of reduced dimensions
+NMDS_analysis
+stressplot(NMDS_analysis)
+```
+
+```{r}
+species.scores <- as.data.frame(scores(NMDS_analysis, "species"))  #Using the scores function from vegan to extract the species scores and convert to a data.frame
+species.scores$species <- rownames(species.scores)  # create a column of species, represents OTU IDs
+nmds_sp_scores <- merge(species.scores, tax_tab_18S,by="row.names", all=TRUE)
+data.scores <- as.data.frame(scores(NMDS_analysis))  #Using the scores function from vegan to extract the site scores and convert to a data.frame
+rownames(tree_data_18S) <- tree_data_18S$label
+nmds_scores <- merge(data.scores, tree_data_18S,by="row.names", all=TRUE)
+#head(nmds_sp_scores)
+```
+
+save nmds data
+```{r}
+nmds_18S <- nmds_scores
+```
+
+Plot
+```{r}
+ggplot() + 
+  geom_point(data=nmds_18S,aes(x=NMDS1,y=NMDS2, colour=Description, shape=Treatment),size=7,alpha=0.9) + # add the point markers
+  geom_text(data=nmds_18S,aes(x=NMDS1,y=NMDS2,label=Treatment),size=3,vjust=0.4) +  # add the site labels
+  scale_colour_brewer(palette = "Dark2")+
+  coord_equal() +
+  theme_bw()
+
+ggplot() + 
+  stat_ellipse(data=nmds_18S,aes(x=NMDS1,y=NMDS2, colour=Description),type = "t", linetype=2) +
+  stat_ellipse(data=nmds_18S,aes(x=NMDS1,y=NMDS2, fill=Description),geom= "polygon", alpha=0.2) +
+  geom_point(data=nmds_18S,aes(x=NMDS1,y=NMDS2, colour=Description, shape=Treatment),size=7,alpha=0.9) + # add the point markers
+  geom_text(data=nmds_18S,aes(x=NMDS1,y=NMDS2,label=Treatment),size=3,vjust=0.4) +  # add the site labels
+  scale_colour_brewer(palette = "Dark2")+
+  scale_fill_brewer(palette = "Dark2")+
+  coord_equal() +
+  theme_bw()
+
+```
+
+# Procrustes Analysis
+
+Plot 18S and COI
+```{r}
+ggplot() + 
+  geom_point(data=nmds_18S,aes(x=NMDS1,y=NMDS2, colour=Description, shape=Treatment),size=7,alpha=0.9) + # add the point markers
+  geom_text(data=nmds_18S,aes(x=NMDS1,y=NMDS2,label=site),size=3,vjust=0.4) +  # add the site labels
+  scale_colour_brewer(palette = "Dark2")+
+  coord_equal() +
+  theme_bw()+ labs(title = "18S")
+
+ggplot() + 
+  geom_point(data=nmds_COI,aes(x=NMDS1,y=NMDS2, colour=Description, shape=Treatment),size=7,alpha=0.9) + # add the point markers
+  geom_text(data=nmds_COI,aes(x=NMDS1,y=NMDS2,label=site),size=3,vjust=0.4) +  # add the site labels
+  scale_colour_brewer(palette = "Dark2")+
+  coord_equal() +
+  theme_bw()+ labs(title = "COI")
+```
+
+```{r}
+#Procrustes Analysis
+
+X <- subset(nmds_18S, select=c("NMDS1", "NMDS2"))
+row.names(X) <- nmds_18S$Row.names
+Y <- subset(nmds_COI, select=c("NMDS1", "NMDS2"))
+row.names(Y) <- nmds_COI$Row.names
+test <- procrustes(X , Y, scale = TRUE, symmetric = FALSE, scores = "sites")
+
+test1 <- plot(test, kind=1)
+plot(test, kind=2)
+summary(test)
+residuals(test)
+```
+
+Plot with colors
+```{r}
+heads.scores <- as.data.frame(scores(test1$heads))
+heads.scores$label <- rownames(heads.scores)
+heads.scores$Description <- nmds_COI[,c("Description")]
+
+points.scores <- as.data.frame(scores(test1$points))
+points.scores$label <- rownames(points.scores)
+points.scores$Description <- nmds_COI[,c("Description")]
+
+cbPalette <- c("#56B4E9", "#E69F00", "#009E73")
+ggplot() + 
+  geom_point(data=heads.scores,aes(x=NMDS1,y=NMDS2, colour=Description),shape=19,size=6,alpha=0.9) +
+  geom_point(data=points.scores,aes(x=Dim1,y=Dim2, colour=Description),shape=17,size=6,alpha=0.9) +  # add the site labels
+  geom_text(data=heads.scores,aes(x=NMDS1,y=NMDS2,label=label),size=3,vjust=2) +  # add the site labels
+  geom_segment(aes(xend = heads.scores$NMDS1,yend = heads.scores$NMDS2,x = points.scores$Dim1,y = points.scores$Dim2),colour='black',alpha=0.6, size=0.2) +
+  scale_colour_manual(values=cbPalette) +
+  coord_equal() +
+  theme_bw() + labs(title = "GOC clusters: ")
+
+
+```
+
+Plot with arrows
+```{r}
+heads.scores <- as.data.frame(scores(test1$heads))
+heads.scores$label <- rownames(heads.scores)
+heads.scores$Description <- nmds_COI[,c("Description")]
+
+points.scores <- as.data.frame(scores(test1$points))
+points.scores$label <- rownames(points.scores)
+points.scores$Description <- nmds_COI[,c("Description")]
+
+# Plot with colors
+svglite::svglite("Figures/Procrustes_COI_18S_Banzai.svg", height=6, width=6)
+cbPalette <- c("#56B4E9", "#E69F00", "#009E73")
+ggplot() + 
+  geom_point(data=heads.scores,aes(x=NMDS1,y=NMDS2, colour=Description),shape=19,size=4,alpha=0.9) +
+  geom_point(data=points.scores,aes(x=Dim1,y=Dim2, colour=Description),shape=17,size=4,alpha=0.9) +  # add the site labels
+  geom_text(data=heads.scores,aes(x=NMDS1,y=NMDS2,label=label),size=3,vjust=2) +  # add the site labels
+  geom_segment(aes(xend = heads.scores$NMDS1,yend = heads.scores$NMDS2,x = points.scores$Dim1,y = points.scores$Dim2),colour='black',alpha=0.6, size=0.2) +
+  scale_colour_manual(values=cbPalette) +
+  coord_equal() +
+  theme_bw() + labs(title = "GOC clusters: ")
+dev.off()
+
+# Plot with Arrows
+ggplot() + 
+  geom_point(data=heads.scores,aes(x=NMDS1,y=NMDS2),size=3,alpha=0.9) +
+  geom_point(data=points.scores,aes(x=Dim1,y=Dim2),colour='red',size=3) +  # add the site labels
+  geom_text(data=heads.scores,aes(x=NMDS1,y=NMDS2,label=label),size=3,vjust=1.8) +  # add the site labels
+  geom_segment(aes(xend = heads.scores$NMDS1,yend = heads.scores$NMDS2,x = points.scores$Dim1,y = points.scores$Dim2),colour='black',arrow=arrow(length=unit(0.30,"cm")), size=0.5) +
+  coord_equal() +
+  theme_bw() + labs(title = "GOC clusters: ")
+```
+
+# PERMANOVA
+
+## 18S
+
+```{r}
+# ADONIS test
+
+# Calculate bray curtis distance matrix
+B_bray <- phyloseq::distance(GOC_18S_r, method = "bray")
+
+# make a data frame from the sample_data
+sampledf <- data.frame(sample_data(GOC_18S_r))
+
+# ADONIS calc
+adonis_18S = adonis(B_bray ~ Description + Time_of_Day, data = sampledf)
+adonis_18S
+
+```
+
+```{r}
+# Homogeneity of dispersion test
+model<-betadisper(B_bray,sampledf$Time_of_Day)
+permutest(model, pairwise = TRUE)
+plot(model)
+boxplot(model)
+
+model<-betadisper(B_bray,sampledf$Description)
+permutest(model, pairwise = TRUE)
+plot(model)
+boxplot(model)
+
+```
+
+## COI
+```{r}
+# ADONIS test
+
+# Calculate bray curtis distance matrix
+B_bray <- phyloseq::distance(GOC_COI_r, method = "bray")
+
+# make a data frame from the sample_data
+sampledf <- data.frame(sample_data(GOC_COI_r))
+
+# ADONIS calc
+adonis_COI = adonis(B_bray ~ Description + Time_of_Day, data = sampledf)
+adonis_COI
+
+```
+
+
+```{r}
+# Homogeneity of dispersion test
+model<-betadisper(B_bray,sampledf$Time_of_Day)
+permutest(model, pairwise = TRUE)
+plot(model)
+boxplot(model)
+
+model<-betadisper(B_bray,sampledf$Description)
+permutest(model, pairwise = TRUE)
+plot(model)
+boxplot(model)
+
+```
+
+# Package citations
+```{r}
+citation("ggplot2")
+citation("clustsig")
+citation("phyloseq")
+citation("vegan")
+citation("dplyr")
+citation("biomformat")
+citation("ggdendro")
+citation("ggpubr")
+citation("car")
+citation("multcomp")
+```
