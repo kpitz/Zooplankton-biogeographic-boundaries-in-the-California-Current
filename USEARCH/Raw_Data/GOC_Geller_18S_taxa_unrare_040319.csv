@@ -1,0 +1,343 @@
+#OTU ID,Kingdom,Phylum,Class,Order,Family,Genus,Species
+OTU_1,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,difficilis
+OTU_10,not used, Ctenophora, Tentaculata, Lobata, Ocyropsidae, Ocyropsis,inerme
+OTU_100,not used,Radiozoa, Polycystinea, Collodaria, Sphaerozoidae, Collozoum,no hits
+OTU_101,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_102,not used, Echinodermata, Echinoidea, Echinoida, Echinometridae, Heliocidaris,no hits
+OTU_103,not used, Arthropoda, Maxillopoda, Calanoida, Eucalanidae, Pareucalanus,no hits
+OTU_104,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_105,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_106,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_107,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_108,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_109,not used, Echinodermata, Ophiuroidea, Ophiuridea, Ophiotrichidae, Ophiothrix,no hits
+OTU_11,not used, Arthropoda, Maxillopoda, Calanoida, Scolecitrichidae, Scolecithrix,no hits
+OTU_110,not used, Annelida, Polychaeta, Aciculata, Phyllodocidae, Eumida,sanguinea
+OTU_111,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_112,not used,Dinoflagellata, Dinophyceae, Blastodiniales,Blastodinidae, Blastodinium,no hits
+OTU_113,not used, Mollusca, Gastropoda,no hits,no hits,no hits,no hits
+OTU_114,not used, Echinodermata, Ophiuroidea, Ophiuridea, Ophiodermatidae, Ophiopsammus,no hits
+OTU_115,not used, Chaetognatha, Sagittoidea, Aphragmophora, Sagittidae, Pseudosagitta,no hits
+OTU_116,not used, Cnidaria, Hydrozoa, Trachymedusae, Halicreatidae, Halicreas,no hits
+OTU_117,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_118,not used, Chordata, Thaliacea, Salpida, Salpidae, Ritteriella,no hits
+OTU_119,not used,Dinoflagellata, Dinophyceae, Blastodiniales,Blastodinidae, Blastodinium,no hits
+OTU_12,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_120,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_121,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_122,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_123,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nyctiphanes,no hits
+OTU_124,not used, Chordata, Craniata, Neopterygii, Teleostei,Potamalosa ,richmondia
+OTU_125,not used, Chordata, Thaliacea, Salpida, Salpidae, Cyclosalpa,no hits
+OTU_126,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_127,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Meganyctiphanes,no hits
+OTU_128,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_129,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_13,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_130,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_131,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_132,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_133,not used, Arthropoda, Maxillopoda, Cyclopoida, Oithonidae, Oithona,no hits
+OTU_134,not used, Arthropoda, Maxillopoda, Calanoida, Calanidae, Calanus,no hits
+OTU_135,not used,Dinoflagellata, Dinophyceae, Peridiniales, Heterocapsaceae, Heterocapsa,no hits
+OTU_136,not used, Arthropoda, Maxillopoda, Calanoida, Eucalanidae, Subeucalanus,no hits
+OTU_137,not used, Arthropoda, Malacostraca, Decapoda,no hits,Plesionika,no hits
+OTU_138,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_139,not used, Bryozoa, Gymnolaemata,no hits, Membraniporidae, Membranipora,no hits
+OTU_14,not used, Chordata, Thaliacea, Doliolida, Doliolidae, Dolioletta,no hits
+OTU_140,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_141,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_142,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_143,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Euphausia,no hits
+OTU_144,not used, Arthropoda, Maxillopoda, Calanoida, Pontellidae, Labidocera,no hits
+OTU_145,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_146,not used, Chordata, Craniata, Neopterygii, Teleostei,Bostockia ,porosa
+OTU_147,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_148,not used, Arthropoda, Malacostraca, Mysida, Mysidae, Boreomysinae,no hits
+OTU_149,not used, Cercozoa, Ascetosporea, Haplosporidia,no hits,no hits,no hits
+OTU_15,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_150,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_151,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_152,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_153,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_154,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_155,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_156,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_157,not used, Arthropoda, Malacostraca, Decapoda,no hits,Spirontocaris,no hits
+OTU_158,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_159,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_16,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Meganyctiphanes,no hits
+OTU_160,not used, Annelida, Polychaeta, Canalipalpata, Sabellariidae, ,no hits
+OTU_161,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_162,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_163,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_164,not used, Chordata, Thaliacea, Salpida, Salpidae, Soestia,no hits
+OTU_165,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_166,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_167,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_168,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_169,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_17,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_170,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_171,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_172,not used, Chordata,no hits, Appendicularia, Oikopleuridae, Bathochordaeus,no hits
+OTU_173,not used, Arthropoda, Maxillopoda, Calanoida, Acartiidae, Acartia,no hits
+OTU_174,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_175,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_176,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_177,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_178,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_179,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_18,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_180,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_181,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_182,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Meganyctiphanes,no hits
+OTU_183,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_184,not used, Arthropoda, Maxillopoda, Calanoida, Calanidae, Mesocalanus,no hits
+OTU_185,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_186,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_187,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_188,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_189,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_19,not used, Arthropoda, Maxillopoda, Calanoida, Pontellidae, Anomalocera,no hits
+OTU_190,not used, Chaetognatha, Sagittoidea, Aphragmophora, Sagittidae, Pseudosagitta,no hits
+OTU_191,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_192,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_193,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Meganyctiphanes,no hits
+OTU_194,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_195,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_196,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_197,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_198,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_199,not used, Chaetognatha, Sagittoidea, Aphragmophora, Sagittidae, Parasagitta,no hits
+OTU_2,not used, Cnidaria, Hydrozoa, Siphonophorae, Calycophorae, Prayidae, Rosacea
+OTU_20,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_200,not used, Arthropoda, Maxillopoda, Calanoida, Eucalanidae, Rhincalanus,no hits
+OTU_201,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_202,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_203,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_204,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Tessarabrachion,no hits
+OTU_205,not used, Arthropoda, Maxillopoda, Calanoida, Calanidae, Calanus,no hits
+OTU_206,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_207,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_208,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_209,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_21,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_210,not used, Arthropoda, Maxillopoda, Calanoida, Calanidae, Calanus,no hits
+OTU_211,not used, Arthropoda, Maxillopoda, Calanoida, Metridinidae, Metridia,no hits
+OTU_212,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_213,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_214,not used, Chordata,no hits, Appendicularia, Oikopleuridae, Oikopleura,no hits
+OTU_215,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_216,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_217,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_218,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_219,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_22,not used, Annelida, Polychaeta, Aciculata, Alciopidae, Vanadis,longissima
+OTU_220,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_221,not used, Arthropoda, Malacostraca, Decapoda, Pandalidae, Plesionika,no hits
+OTU_222,not used, Cercozoa, Ascetosporea, Haplosporidia,no hits,no hits,no hits
+OTU_223,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_224,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_225,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_226,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_227,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_228,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_229,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_23,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_230,not used, Arthropoda, Maxillopoda, Calanoida, Calanidae, Calanus,no hits
+OTU_231,not used, Arthropoda, Maxillopoda, Calanoida, Eucalanidae, Subeucalanus,no hits
+OTU_232,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_233,not used, Chordata, Craniata, Neopterygii, Teleostei,Cyprinodon ,variegatus
+OTU_234,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_235,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_236,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_237,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_238,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_239,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Meganyctiphanes,no hits
+OTU_24,not used, Arthropoda, Maxillopoda, Calanoida, Acartiidae, Acartia,no hits
+OTU_240,not used, Annelida, Polychaeta, Aciculata, Archinomidae, Archinome,rosacea
+OTU_241,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_242,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_243,not used, Annelida, Polychaeta, Aciculata, Phyllodocidae, Eumida,no hits
+OTU_244,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_245,not used, Mollusca, Gastropoda,no hits,no hits,no hits,no hits
+OTU_246,not used, Arthropoda, Malacostraca, Mysida, Mysidae,Amblyopsoides,no hits
+OTU_247,not used, Arthropoda, Branchiopoda, Diplostraca, Sididae, Penilia,no hits
+OTU_248,not used, Arthropoda, Malacostraca, Stomatopoda, Hemisquillidae, Hemisquilla,no hits
+OTU_249,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_25,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_250,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_251,not used, Mollusca, Gastropoda,no hits,no hits,no hits,no hits
+OTU_252,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_253,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_254,not used, Annelida, Polychaeta, Aciculata, Tomopteridae, Tomopteris,no hits
+OTU_255,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_256,not used, Mollusca, Gastropoda,no hits,no hits,no hits,no hits
+OTU_257,not used, Echinodermata, Asteroidea, Valvatacea, Astropectinidae, Astropecten,no hits
+OTU_258,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_259,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_26,not used, Arthropoda, Maxillopoda, Harpacticoida, Peltidiidae, Alteuthellopsis,no hits
+OTU_260,not used, Annelida, Polychaeta, Echiuroinea, Echiuridae, Arhynchite,no hits
+OTU_261,not used, Brachiopoda,no hits,no hits,no hits, Phoronis,no hits
+OTU_262,not used, Echinodermata, Asteroidea, Forcipulatacea, Asteriidae, Pisaster,no hits
+OTU_263,not used, Cnidaria, Hydrozoa, Leptothecata, Campanulariidae, Obelia,no hits
+OTU_264,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_265,not used, Cnidaria, Hydrozoa, Leptothecata, Campanulariidae, Clytia,no hits
+OTU_266,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_267,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_268,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_269,not used, Echinodermata, Holothuroidea, Dendrochirotacea, Cucumariidae, Cucumaria,no hits
+OTU_27,not used,Dinoflagellata, Dinophyceae, Pyrocystales, Pyrocystaceae, Pyrocystis,noctiluca
+OTU_270,not used, Annelida, Polychaeta, Aciculata, Phyllodocidae, Chaetoparia,no hits
+OTU_271,not used, Chaetognatha, Sagittoidea, Aphragmophora, Sagittidae, Sagitta,no hits
+OTU_272,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_273,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_274,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_275,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_276,not used, Arthropoda, Malacostraca, Decapoda,no hits,no hits,no hits
+OTU_277,not used, Nemertea,Anopla, Palaeonemertea, Hubrechtidae, Hubrechtella,no hits
+OTU_278,not used, Hemichordata, Enteropneusta,no hits,no hits,no hits,no hits
+OTU_279,not used, Cnidaria, Anthozoa, Ceriantharia, Arachnactidae, Arachnanthus,no hits
+OTU_28,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_280,not used, Hemichordata, Enteropneusta,no hits, Spengelidae, Schizocardium,no hits
+OTU_281,not used, Mollusca, Gastropoda,no hits,no hits, Alviniconcha,no hits
+OTU_282,not used, Mollusca, Bivalvia, Myoida, Hiatellidae, Hiatella,no hits
+OTU_283,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_284,not used, Arthropoda, Malacostraca, Decapoda, Benthesicymidae,Gennadas, 
+OTU_285,not used, Mollusca, Gastropoda,no hits, Cavoliniidae, Euthyneura,no hits
+OTU_286,not used, Arthropoda, Malacostraca, Decapoda,no hits,Nikoides,no hits
+OTU_287,not used, Annelida, Polychaeta, Canalipalpata, Sabellariidae, Gunnarea,no hits
+OTU_288,not used, Chordata, Thaliacea, Pyrosomata, Pyrosomatidae, Pyrosomella,no hits
+OTU_289,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_29,not used, Arthropoda, Maxillopoda, Poecilostomatoida, Corycaeidae, Ditrichocorycaeus,no hits
+OTU_290,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_291,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_292,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nyctiphanes,no hits
+OTU_293,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_294,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_295,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_296,not used,Dinoflagellata, Dinophyceae, Blastodiniales,Blastodinidae, Blastodinium,no hits
+OTU_297,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_298,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_299,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_3,not used, Chaetognatha, Sagittoidea, Aphragmophora, Sagittidae, Parasagitta,no hits
+OTU_30,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_300,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_301,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_302,not used, Arthropoda, Maxillopoda, Calanoida, Euchaetidae, Paraeuchaeta,no hits
+OTU_303,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_304,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_305,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_306,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_307,not used, Arthropoda, Maxillopoda, Calanoida, Pontellidae, Labidocera,no hits
+OTU_308,not used, Arthropoda, Insecta, Coleoptera,no hits,Suphis,no hits
+OTU_309,not used,Dinoflagellata, Dinophyceae, Blastodiniales,Blastodinidae, Blastodinium,no hits
+OTU_31,not used,Dinoflagellata, Dinophyceae, Blastodiniales,Blastodinidae, Blastodinium,no hits
+OTU_310,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_311,not used, Arthropoda, Maxillopoda, Calanoida, Eucalanidae, Subeucalanus,no hits
+OTU_312,not used,Dinoflagellata, Dinophyceae, Gonyaulacales, Ceratiaceae, Tripos,no hits
+OTU_313,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_314,not used, Cnidaria, Hydrozoa, Anthoathecata, Aplanulata, Corymorphidae, Corymorpha
+OTU_315,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_316,not used, Arthropoda, Maxillopoda, Calanoida, Calanidae, Calanus,no hits
+OTU_317,not used, Arthropoda, Maxillopoda, Calanoida, Lucicutiidae, Lucicutia,no hits
+OTU_318,not used,Dinoflagellata, Dinophyceae, Blastodiniales,Blastodinidae, Blastodinium,no hits
+OTU_319,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_32,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_320,not used,Dinoflagellata, Dinophyceae, Gonyaulacales, Ceratiaceae, Tripos,no hits
+OTU_321,not used, Annelida, Polychaeta, Canalipalpata, Spionidae, Laonice,no hits
+OTU_322,not used, Annelida, Polychaeta, Aciculata, Tomopteridae, Tomopteris,no hits
+OTU_323,not used,Dinoflagellata, Dinophyceae, Gonyaulacales, Ceratiaceae, Tripos,no hits
+OTU_324,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_325,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_326,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_327,not used,Dinoflagellata, Dinophyceae, Syndiniales, Syndiniaceae, Hematodinium,no hits
+OTU_328,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_329,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_33,not used, Arthropoda, Maxillopoda, Calanoida, Spinocalanidae, Mimocalanus,no hits
+OTU_330,not used, Mollusca, Gastropoda,no hits, Anadoridoidea, Euthyneura,no hits
+OTU_331,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_332,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_333,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_334,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_335,not used, Arthropoda, Maxillopoda, Calanoida, Calanidae, Calanus,no hits
+OTU_336,not used, Ctenophora, Tentaculata, Thalassocalycida, Thalassocalycidae, Thalassocalyce,no hits
+OTU_337,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_338,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_339,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_34,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_340,not used, Arthropoda, Maxillopoda, Calanoida, Calanidae, Calanus,no hits
+OTU_341,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_342,not used,Dinoflagellata, Dinophyceae,no hits,no hits,no hits,no hits
+OTU_35,not used, Arthropoda, Malacostraca, Decapoda,no hits,Daldorfia, 
+OTU_36,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_37,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_38,not used, Cnidaria, Hydrozoa, Anthoathecata, Filifera, Eudendriidae, Eudendrium
+OTU_39,not used, Arthropoda, Maxillopoda, Calanoida, Candaciidae, Candacia,no hits
+OTU_4,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_40,not used, Chaetognatha, Sagittoidea, Aphragmophora, Sagittidae, Parasagitta,no hits
+OTU_41,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Euphausia,no hits
+OTU_42,not used, Arthropoda, Maxillopoda, Poecilostomatoida, Oncaeidae, Oncaea,no hits
+OTU_43,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_44,not used, Cnidaria, Hydrozoa, Trachymedusae, Rhopalonematidae, Pantachogon,no hits
+OTU_45,not used,Dinoflagellata, Dinophyceae, Blastodiniales,Blastodinidae, Blastodinium,no hits
+OTU_46,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_47,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_48,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_49,not used, Annelida, Polychaeta, Aciculata, Phyllodocidae, Phyllodoce,no hits
+OTU_5,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_50,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_51,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_52,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_53,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_54,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_55,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_56,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_57,not used, Chordata, Craniata, Neopterygii, Teleostei,Mugil,cephalus
+OTU_58,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_59,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_6,not used, Arthropoda, Maxillopoda, Calanoida, Eucalanidae, Rhincalanus,no hits
+OTU_60,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_61,not used, Chordata, Craniata,no hits, Retropinnidae,Retropinna,tasmanica
+OTU_62,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_63,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_64,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_65,not used, Mollusca, Gastropoda,no hits,no hits,no hits,no hits
+OTU_66,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_67,not used,Unknown,Dinophycea,Blastodiniales,Blastodinidae,Blastodinium,Blastodinium navicula
+OTU_68,not used, Annelida, Polychaeta,no hits, Chaetopteridae, Phyllochaetopterus,no hits
+OTU_69,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_7,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Euphausia,no hits
+OTU_70,not used, Mollusca, Gastropoda,no hits,no hits,no hits,no hits
+OTU_71,not used, Chordata, Thaliacea, Salpida, Salpidae, Iasis,no hits
+OTU_72,not used, Arthropoda, Maxillopoda, Calanoida, Metridinidae, Metridia,no hits
+OTU_73,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_74,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_75,not used, Arthropoda, Maxillopoda, Calanoida, Calanidae, Calanus,no hits
+OTU_76,not used, Cnidaria, Hydrozoa, Narcomedusae, Aeginidae, Solmundella,no hits
+OTU_77,not used, Arthropoda, Maxillopoda, Calanoida, Acartiidae, Acartia,no hits
+OTU_78,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_79,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_8,not used, Arthropoda, Maxillopoda, Calanoida, Euchaetidae, Euchaeta,no hits
+OTU_80,not used, Arthropoda, Maxillopoda, Calanoida, Centropagidae, Centropages,no hits
+OTU_81,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_82,not used, Arthropoda, Maxillopoda, Calanoida, Augaptilidae, Haloptilus,no hits
+OTU_83,not used, Arthropoda, Maxillopoda, Poecilostomatoida, Sapphirinidae, Sapphirina,no hits
+OTU_84,not used, Cnidaria, Anthozoa, Actiniaria, Andvakiidae, Andvakia,no hits
+OTU_85,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_86,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_87,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_88,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_89,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_9,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_90,not used, Arthropoda, Maxillopoda, Calanoida, Candaciidae, Candacia,no hits
+OTU_91,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_92,not used, Chordata, Craniata, Neopterygii, Teleostei,Leptatherina ,wallacei
+OTU_93,not used, Mollusca, Gastropoda,no hits,no hits, Euthyneura,no hits
+OTU_94,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_95,not used, Arthropoda, Malacostraca, Euphausiacea, Euphausiidae, Nematoscelis,no hits
+OTU_96,not used, Arthropoda, Malacostraca, Stomatopoda, Squillidae, Kempina,no hits
+OTU_97,not used,no hits,no hits,no hits,no hits,no hits,no hits
+OTU_98,not used,Radiozoa, Polycystinea,no hits,no hits,no hits,no hits
+OTU_99,not used, Arthropoda, Maxillopoda, Harpacticoida, Euterpinidae, Euterpina,no hits
